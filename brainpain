@@ -1,0 +1,22 @@
+12 cf 1
+13 cf 1
+14 cf 1
+15 cf 1
+16 cf 1
+17 cf 1
+18 cf 1
+19 cf 1
+20 cf 1
+21 cf 0.1 f 0.9 (%10 chance of ac being 30 and 90% chance of ac being 31)
+22 f 1
+23 f 1
+24 f 1
+25 f 1
+26 f 1
+27 f 1
+28 f 1
+29 f 1
+30 f 0.1 s 0.9
+31 cs 1
+
+ac = 30.1
