@@ -1,64 +1,87 @@
-from enum import auto, Enum
 from dataclasses import dataclass
 
-
-_list = {"a": [0, 1], "b": [2, 3]}
+classes_dict_list = {}
+with open("data.json", "r", encoding="utf-8") as f:
+    classes_dict_list = f
 
 
 @dataclass
-class Player:
+class Sheet:
     name: str
     level: int
+    weaponBonus: int = 0
     armorBonus: int = 0
     saveBonus: int = 0
+    attackModifier: str = "str"
+    spellcastingModifier: str = "cha"
 
     def __post_init__(self):
-        self.ac = _list[name][level] + armorBonus
-        self.fort = _list[name][level] + saveBonus
-        self.refl = _list[name][level] + saveBonus
-        self.will = _list[name][level] + saveBonus
-
-
-@dataclass
-class Enemy:
-    level: int
-    armorBonus: int = 0
-    saveBonus: int = 0
-
-    def __post_init__(self):
-        self.ac = _list[name][level] + armorBonus
-        self.fort = _list[name][level] + saveBonus
-        self.refl = _list[name][level] + saveBonus
-        self.will = _list[name][level] + saveBonus
+        self.ac = classes_dict_list[self.name][self.level] + self.armorBonus
+        self.fort = classes_dict_list[self.name][self.level] + self.saveBonus
+        self.refl = classes_dict_list[self.name][self.level] + self.saveBonus
+        self.will = classes_dict_list[self.name][self.level] + self.saveBonus
 
 
 def all_get_rates(
-    playerclass, level, attributes, bonuses, flags={"agile": False, "finesse": False}
+    playerclass,
+    level,
+    attributes,
+    bonuses,
+    attackModifier,
+    spellcastingModifier,
+    flags={"agile": False},
 ):
-    player = playerclass.getProficiencies(level)
-    enemy = enemyModes[level - 1]
+    player = Sheet()
+    enemy = Sheet()
 
     if flags["agile"]:
-        if flags["finesse"]:
-            weapon_rates0 = get_rates(player.weapon + attributes["str"], enemy.ac)
-            weapon_rates1 = get_rates(player.weapon - 4 + attributes["str"], enemy.ac)
-            weapon_rates2 = get_rates(player.weapon - 8 + attributes["str"], enemy.ac)
-        else:
-            weapon_rates0 = get_rates(player.weapon + attributes["dex"], enemy.ac)
-            weapon_rates1 = get_rates(player.weapon - 5 + attributes["dex"], enemy.ac)
-            weapon_rates2 = get_rates(player.weapon - 10 + attributes["dex"], enemy.ac)
+        weapon_rates0 = get_rates(player.weapon + attributes[attackModifier], enemy.ac)
+        weapon_rates1 = get_rates(
+            player.weapon - 4 + attributes[attackModifier], enemy.ac
+        )
+        weapon_rates2 = get_rates(
+            player.weapon - 8 + attributes[attackModifier], enemy.ac
+        )
+    else:
+        weapon_rates0 = get_rates(player.weapon + attributes[attackModifier], enemy.ac)
+        weapon_rates1 = get_rates(
+            player.weapon - 5 + attributes[attackModifier], enemy.ac
+        )
+        weapon_rates2 = get_rates(
+            player.weapon - 10 + attributes[attackModifier], enemy.ac
+        )
 
-    spell_ac_rates = get_rates(player.spell + attributes[scm], enemy.ac)
-    spell_fort_rates = get_rates(player.spell + attributes[scm], enemy.fort + 10)
-    spell_ref_rates = get_rates(player.spell + attributes[scm], enemy.ref + 10)
-    spell_will_rates = get_rates(player.spell + attributes[scm], enemy.will + 10)
+    spell_ac_rates = get_rates(
+        player.spell + attributes[enemy.spellcastingModifier], enemy.ac
+    )
+    spell_fort_rates = get_rates(
+        player.spell + attributes[enemy.spellcastingModifier], enemy.fort + 10
+    )
+    spell_ref_rates = get_rates(
+        player.spell + attributes[enemy.spellcastingModifier], enemy.ref + 10
+    )
+    spell_will_rates = get_rates(
+        player.spell + attributes[enemy.spellcastingModifier], enemy.will + 10
+    )
 
     ac_rates = get_rates(enemy.normal_attack, player.ac)
     fort_rates = get_rates(enemy.spell_attack, player.fort + 10)
     ref_rates = get_rates(enemy.spell_attack, player.ref + 10)
     will_rates = get_rates(enemy.spell_attack, player.will + 10)
 
-    return weapon_rates, spell_rates
+    return (
+        weapon_rates0,
+        weapon_rates1,
+        weapon_rates2,
+        spell_ac_rates,
+        spell_fort_rates,
+        spell_ref_rates,
+        spell_will_rates,
+        ac_rates,
+        fort_rates,
+        ref_rates,
+        will_rates,
+    )
 
 
 attributes = {"str": 0, "dex": 0, "con": 0, "int": 0, "wis": 0, "cha": 0}
@@ -123,12 +146,3 @@ def get_rates(prof, ac):
         sidesThatFail += 1
 
     return (sidesThatCritFail, sidesThatFail, sidesThatHit, sidesThatCritHit)
-
-
-prof = 11
-dc = 30.1
-
-a, b = all_get_rates(alchemist, 1, attributes, bonuses)
-
-print(a)
-print(b)
