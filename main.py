@@ -18,17 +18,17 @@ class Sheet:
     spellcastingModifier: str = "cha"
 
     def __post_init__(self):
-        profs = classes_dict_list[self.name][self.level]
+        self.profs = classes_dict_list[self.name][self.level]
         self.weaponRoll = (
-            profs[0] + self.attributes[self.attackModifier] + self.weapon["bonus"]
+            self.profs[0] + self.attributes[self.attackModifier] + self.weapon["bonus"]
         )
-        self.spell = profs[1] + self.attributes[self.spellcastingModifier]
-        self.ac = profs[2] + self.attributes["dex"] + self.armor["ACbonus"]
-        self.fort = profs[3] + self.attributes["con"] + self.armor["SaveBonus"]
-        self.refl = profs[4] + self.attributes["dex"] + self.armor["SaveBonus"]
-        self.will = profs[5] + self.attributes["wis"] + self.armor["SaveBonus"]
+        self.spell = self.profs[1] + self.attributes[self.spellcastingModifier]
+        self.ac = self.profs[2] + self.attributes["dex"] + self.armor["ACbonus"]
+        self.fort = self.profs[3] + self.attributes["con"] + self.armor["SaveBonus"]
+        self.refl = self.profs[4] + self.attributes["dex"] + self.armor["SaveBonus"]
+        self.will = self.profs[5] + self.attributes["wis"] + self.armor["SaveBonus"]
 
-    def all_get_rates(
+    def get_rates(
         self,
         enemyLevel,
     ):
@@ -57,6 +57,17 @@ class Sheet:
             "spell_ref_rates": spell_ref_rates,
             "spell_will_rates": spell_will_rates,
         }
+
+    def print_rates(self, e):
+        wasd = self.get_rates(e)
+        for key, value in wasd.items():
+            print(
+                f"{key}: "
+                f"crit fail chance: {value[0]}% "
+                f"fail chance: {value[1]}% "
+                f"hit chance: {value[2]}% "
+                f"crit hit chance: {value[3]}%"
+            )
 
 
 def clamp(n, min, max):
@@ -115,9 +126,24 @@ def get_rates(prof, ac):
     else:
         sidesThatFail += 1
 
-    return (sidesThatCritFail, sidesThatFail, sidesThatHit, sidesThatCritHit)
+    return (
+        sidesThatCritFail * 5,
+        sidesThatFail * 5,
+        sidesThatHit * 5,
+        sidesThatCritHit * 5,
+    )
+
+
+def get_save_rates(prof, ac, profLevel):
+    rates = get_rates(prof, ac)
+    if profLevel >= 6:
+        cf, f, s, cs = rates
+        rates = cf, f, 0, s + cs
+        if profLevel >= 8:
+            cf, f, s, cs = rates
+            rates = 0, cf + f, s, cs
+    return rates
 
 
 #
-test = Sheet("alchemist", 1).all_get_rates(1)
-print(test)
+test = Sheet("alchemist", 1).print_rates(1)
