@@ -34,19 +34,14 @@ class Sheet:
     ):
         enemy = enemyDB[enemyLevel - 1]
 
-        if self.weapon["agile"]:
-            weapon_rates0 = get_rates(self.weaponRoll, enemy["ac"])
-            weapon_rates1 = get_rates(self.weaponRoll - 4, enemy["ac"])
-            weapon_rates2 = get_rates(self.weaponRoll - 8, enemy["ac"])
-        else:
-            weapon_rates0 = get_rates(self.weaponRoll, enemy["ac"])
-            weapon_rates1 = get_rates(self.weaponRoll - 5, enemy["ac"])
-            weapon_rates2 = get_rates(self.weaponRoll - 10, enemy["ac"])
+        weapon_rates0, weapon_rates1, weapon_rates2 = get_strike_rates(
+            self.weaponRoll, enemy["ac"], self.weapon["agile"]
+        )
 
-        spell_ac_rates = get_rates(self.spell, enemy["ac"])
-        spell_fort_rates = get_rates(self.spell, enemy["fort"] + 10)
-        spell_ref_rates = get_rates(self.spell, enemy["refl"] + 10)
-        spell_will_rates = get_rates(self.spell, enemy["will"] + 10)
+        spell_ac_rates = get_d20_rates(self.spell, enemy["ac"])
+        spell_fort_rates = get_d20_rates(self.spell, enemy["fort"] + 10)
+        spell_ref_rates = get_d20_rates(self.spell, enemy["refl"] + 10)
+        spell_will_rates = get_d20_rates(self.spell, enemy["will"] + 10)
 
         return {
             "weapon_rates0": weapon_rates0,
@@ -59,8 +54,8 @@ class Sheet:
         }
 
     def print_rates(self, e):
-        wasd = self.get_rates(e)
-        for key, value in wasd.items():
+        rates = self.get_rates(e)
+        for key, value in rates.items():
             print(
                 f"{key}: "
                 f"crit fail chance: {value[0]}% "
@@ -80,10 +75,10 @@ def clamp(n, min, max):
 
 
 # a minToHit value of 11.2 means that when the dice rolls 11
-# there's a 20% chance of it being a failure
-# and 80% chance of it being a hit
+# there's a 20% value of it being a failure
+# and 80% value of it being a hit
 # so it would be a total of 59% chance to hit before subtracting critical hits
-def get_rates(prof, ac):
+def get_d20_rates(prof: int, ac: int) -> (float, float, float, float):
     # 2-19
     diceFacesUsed = 0
 
@@ -102,6 +97,7 @@ def get_rates(prof, ac):
 
     sidesThatCritFail = 18 - diceFacesUsed
 
+    # Nat 1
     Nat1Value = prof + 1
     if Nat1Value >= ac + 10:
         value = clamp(Nat1Value - ac + 10 + 1, 0, 1)
@@ -113,7 +109,8 @@ def get_rates(prof, ac):
         sidesThatCritFail += 1 - value
     else:
         sidesThatCritFail += 1
-    # 20
+
+    # Nat 20
     Nat20Value = prof + 20
     if Nat20Value + 1 >= ac:
         value = clamp(Nat20Value - ac + 1, 0, 1)
@@ -135,14 +132,27 @@ def get_rates(prof, ac):
 
 
 def get_save_rates(prof, ac, profLevel):
-    rates = get_rates(prof, ac)
+    cf, f, s, cs = get_d20_rates(prof, ac)
     if profLevel >= 6:
-        cf, f, s, cs = rates
-        rates = cf, f, 0, s + cs
+        cs = s + cs
+        s = 0
         if profLevel >= 8:
-            cf, f, s, cs = rates
-            rates = 0, cf + f, s, cs
-    return rates
+            f = cf + f
+            cf = 0
+    return cf, f, s, cs
+
+
+def get_strike_rates(prof, ac, agile=0):
+    if agile:
+        weapon_rates0 = get_d20_rates(prof, ac)
+        weapon_rates1 = get_d20_rates(prof - 4, ac)
+        weapon_rates2 = get_d20_rates(prof - 8, ac)
+    else:
+        weapon_rates0 = get_d20_rates(prof, ac)
+        weapon_rates1 = get_d20_rates(prof - 5, ac)
+        weapon_rates2 = get_d20_rates(prof - 10, ac)
+
+    return weapon_rates0, weapon_rates1, weapon_rates2
 
 
 #
