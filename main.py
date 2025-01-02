@@ -39,29 +39,43 @@ class Sheet:
         )
 
         spell_ac_rates = get_d20_rates(self.spell, enemy["ac"])
-        spell_fort_rates = get_d20_rates(self.spell, enemy["fort"] + 10)
-        spell_ref_rates = get_d20_rates(self.spell, enemy["refl"] + 10)
-        spell_will_rates = get_d20_rates(self.spell, enemy["will"] + 10)
+
+        spell_fort_save_rates = get_d20_rates(enemy["fort"], self.spell + 10)
+        spell_ref_save_rates = get_d20_rates(enemy["refl"], self.spell + 10)
+        spell_will_save_rates = get_d20_rates(enemy["will"], self.spell + 10)
 
         return {
-            "weapon_rates0": weapon_rates0,
-            "weapon_rates1": weapon_rates1,
-            "weapon_rates2": weapon_rates2,
-            "spell_ac_rates": spell_ac_rates,
-            "spell_fort_rates": spell_fort_rates,
-            "spell_ref_rates": spell_ref_rates,
-            "spell_will_rates": spell_will_rates,
+            "attacking rates": {
+                "weapon_rates0": weapon_rates0,
+                "weapon_rates1": weapon_rates1,
+                "weapon_rates2": weapon_rates2,
+                "spell_ac_rates": spell_ac_rates,
+            },
+            "enemy rates": {
+                "spell_fort_save_rates": spell_fort_save_rates,
+                "spell_ref_save_rates": spell_ref_save_rates,
+                "spell_will_save_rates": spell_will_save_rates,
+            },
         }
 
     def print_rates(self, e):
-        rates = self.get_rates(e)
-        for key, value in rates.items():
+        attack_rates = self.get_rates(e)["attacking rates"]
+        enemy_rates = self.get_rates(e)["enemy rates"]
+        for key, value in attack_rates.items():
             print(
                 f"{key}: "
-                f"crit fail chance: {value[0]}% "
-                f"fail chance: {value[1]}% "
-                f"hit chance: {value[2]}% "
-                f"crit hit chance: {value[3]}%"
+                f"chance character crit fail: {value[0]}% "
+                f"chance character fail chance: {value[1]}% "
+                f"chance character hit chance: {value[2]}% "
+                f"chance character crit hit chance: {value[3]}%"
+            )
+        for key, value in enemy_rates.items():
+            print(
+                f"{key}: "
+                f"chance enemy crit fail: {value[0]}% "
+                f"chance enemy fail chance: {value[1]}% "
+                f"chance enemy hit chance: {value[2]}% "
+                f"chance enemy crit hit chance: {value[3]}%"
             )
 
 
