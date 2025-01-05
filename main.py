@@ -4,7 +4,9 @@ import json
 classes_dict_list = {}
 with open("data.json", "r", encoding="utf-8") as f:
     classes_dict_list = json.load(f)
-enemyDB = [{"ac": 10, "fort": 10, "refl": 10, "will": 10}]
+enemyDB = {}
+with open("results.json", "r", encoding="utf-8") as f:
+    enemyDB = json.load(f)
 
 
 @dataclass
@@ -30,9 +32,8 @@ class Sheet:
 
     def get_rates(
         self,
-        enemyLevel,
+        enemy,
     ):
-        enemy = enemyDB[enemyLevel - 1]
 
         weapon_rates0, weapon_rates1, weapon_rates2 = get_strike_rates(
             self.weaponRoll, enemy["ac"], self.weapon["agile"]
@@ -92,7 +93,7 @@ def clamp(n, min, max):
 # there's a 20% value of it being a failure
 # and 80% value of it being a hit
 # so it would be a total of 59% chance to hit before subtracting critical hits
-def get_d20_rates(prof: int, ac: int) -> (float, float, float, float):
+def get_d20_rates(prof: float, ac: float) -> (float, float, float, float):
     # 2-19
     diceFacesUsed = 0
 
@@ -138,10 +139,10 @@ def get_d20_rates(prof: int, ac: int) -> (float, float, float, float):
         sidesThatFail += 1
 
     return (
-        sidesThatCritFail * 5,
-        sidesThatFail * 5,
-        sidesThatHit * 5,
-        sidesThatCritHit * 5,
+        round(sidesThatCritFail * 5, 2),
+        round(sidesThatFail * 5, 2),
+        round(sidesThatHit * 5, 2),
+        round(sidesThatCritHit * 5, 2),
     )
 
 
@@ -170,4 +171,11 @@ def get_strike_rates(prof, ac, agile=0):
 
 
 #
-test = Sheet("alchemist", 1).print_rates(1)
+# ;-;
+enemyy = enemyDB[0]
+enemy = {}
+enemy["ac"] = enemyy["avg_ac"]
+enemy["fort"] = enemyy["avg_fort"]
+enemy["refl"] = enemyy["avg_refl"]
+enemy["will"] = enemyy["avg_will"]
+test = Sheet("alchemist", 1).print_rates(enemy)
