@@ -1,6 +1,7 @@
 import sqlite3
 import csv
 import json
+import statistics
 
 
 # Function to execute SQL command on CSV data and save results to a JSON file
@@ -8,6 +9,9 @@ def execute_sql_on_csv(csv_file_path, json_file_path):
     # Step 1: Open the CSV file and read it
     with open(csv_file_path, newline="") as csvfile:
         csvreader = csv.DictReader(csvfile)
+
+        # Collect all rows into a list (to be used later for attack values)
+        data_rows = list(csvreader)
 
         # Step 2: Connect to an in-memory SQLite database
         conn = sqlite3.connect(":memory:")  # or provide a file path for a persistent DB
@@ -37,7 +41,7 @@ def execute_sql_on_csv(csv_file_path, json_file_path):
         )
 
         # Step 4: Insert data from CSV into SQLite with error handling
-        for row in csvreader:
+        for row in data_rows:
             level = row["level"]
             hp = row.get("hp", "0").strip()
             ac = row.get("ac", "0").strip()
@@ -45,16 +49,7 @@ def execute_sql_on_csv(csv_file_path, json_file_path):
             reflex = row.get("reflex", "0").strip()
             will = row.get("will", "0").strip()
 
-            # Attack bonus processing (sum of attacks)
-            attack_bonus_list = row.get("attack_bonus", "").split()
-            if attack_bonus_list:
-                attack_bonus = sum(
-                    map(lambda x: int(x.strip(",+")), attack_bonus_list)
-                ) / max(
-                    1, len(attack_bonus_list)
-                )  # Avoid division by zero
-            else:
-                attack_bonus = 0
+            attack_bonus = None
 
             spell_dc = row.get("spell_dc", "0").strip()
             spell_attack_bonus = row.get("spell_attack_bonus", "0").strip()
@@ -97,7 +92,7 @@ def execute_sql_on_csv(csv_file_path, json_file_path):
             ROUND(AVG(fortitude), 2) as fort,
             ROUND(AVG(reflex), 2) as refl,
             ROUND(AVG(will), 2) as will,
-            ROUND(AVG(attack_bonus), 2) as attack_bonus,
+            null as attack_bonus,
             ROUND(AVG(CASE WHEN spell_dc != 0 THEN spell_dc END), 2) as spell_dc,
             ROUND(AVG(CASE WHEN spell_attack_bonus != 0 THEN spell_attack_bonus END), 2) as spell_attack_bonus
         FROM foo
@@ -151,14 +146,7 @@ def execute_sql_on_csv(csv_file_path, json_file_path):
                 ORDER BY COUNT(will) DESC
                 LIMIT 1
             ) AS will,
-            (
-                SELECT attack_bonus
-                FROM foo
-                WHERE level = f.level AND attack_bonus != 0
-                GROUP BY attack_bonus
-                ORDER BY COUNT(attack_bonus) DESC
-                LIMIT 1
-            ) AS attack_bonus,
+            null AS attack_bonus,
             (
                 SELECT spell_dc
                 FROM foo
@@ -179,30 +167,53 @@ def execute_sql_on_csv(csv_file_path, json_file_path):
         GROUP BY level
         ORDER BY CAST(level AS INTEGER) ASC;
         """
-
         cursor.execute(sql_command_mode)
         mode_results = cursor.fetchall()
 
-        # Step 7: Save results to a JSON file with the desired structure
+        # Step 7: Process attack_bonus values outside of SQL queries
+        attack_values_avg = []
+        attack_values_mode = []
+        for row in data_rows:
+            attacks_list = row[
+                "attack_bonus"
+            ].split()  # Ensure split for attack bonuses
+            # Calculating average attack bonus for each level
+            if attacks_list:
+                attack_values_avg.append(
+                    sum(map(lambda x: int(x.strip(",+")), attacks_list))
+                    / len(attacks_list)
+                )
+                attack_values_mode.append(
+                    statistics.mode([int(x.strip(",+")) for x in attacks_list])
+                )
+            else:
+                attack_values_avg.append(0)
+                attack_values_mode.append(0)
+
+        # Step 8: Save results to a JSON file with the desired structure
         result_dict = []
         column_names = [description[0] for description in cursor.description]
 
         # Combine average and mode results into the JSON structure
-        for avg_row, mode_row in zip(average_results, mode_results):
+        for i, (avg_row, mode_row) in enumerate(zip(average_results, mode_results)):
             level = avg_row[0]  # Fetch the level from average result
             average = dict(zip(column_names[1:], avg_row[1:]))  # Get averages from row
             mode = dict(zip(column_names[1:], mode_row[1:]))  # Get mode from row
+
+            # Insert attack values into the JSON result
+            average["attack_bonus"] = attack_values_avg[i]
+            mode["attack_bonus"] = attack_values_mode[i]
 
             result_dict.append(
                 {"level": level, "avg": average, "mode": mode}
             )  # Store 'avg' and 'mode' values at the same level
 
-        # Step 8: Write to JSON file
-        with open(json_file_path, "w") as jsonfile:
-            json.dump(result_dict, jsonfile, indent=4)
-
         # Step 9: Close the database connection
         conn.close()
+
+        # Step 10: Write to JSON file
+        with open(json_file_path, "w") as jsonfile:
+            json.dump(result_dict, jsonfile, indent=4)
 
 
 # Example usage
