@@ -222,7 +222,7 @@ def execute_sql_on_csv(csv_file_path, json_file_path):
 
 # Example usage
 csv_file_path = "table-data.csv"  # Replace with your CSV file path
-json_file_path = "results.json"  # Path to save the JSON file
+json_file_path = "enemy_data.json"  # Path to save the JSON file
 
 # Execute the SQL query on the CSV data and save the result to a JSON file
 execute_sql_on_csv(csv_file_path, json_file_path)

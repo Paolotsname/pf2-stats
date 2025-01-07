@@ -2,10 +2,10 @@ from dataclasses import dataclass
 import json
 
 classes_profs_json = {}
-with open("data.json", "r", encoding="utf-8") as f:
+with open("class_data.json", "r", encoding="utf-8") as f:
     classes_profs_json = json.load(f)
 enemy_avg_json = {}
-with open("results.json", "r", encoding="utf-8") as f:
+with open("enemy_data.json", "r", encoding="utf-8") as f:
     enemy_avg_json = json.load(f)
 
 

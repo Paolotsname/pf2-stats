@@ -291,4 +291,4 @@ list_classes = {
     },
 }
 
-save_to_file(list_classes, "data.json")
+save_to_file(list_classes, "class_data.json")
