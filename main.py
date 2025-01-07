@@ -232,5 +232,5 @@ def get_strike_rates(prof, target, agile=0):
 #
 # c:
 enemy_level = 1
-enemy = enemy_avg_json[enemy_level + 1]["avg"]
+enemy = enemy_avg_json[enemy_level + 1]["average"]
 test = Sheet("alchemist", 1).print_rates(enemy)
