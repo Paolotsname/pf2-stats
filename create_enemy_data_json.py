@@ -92,7 +92,7 @@ def execute_sql_on_csv(csv_file_path, json_file_path):
             ROUND(AVG(fortitude), 2) as fort,
             ROUND(AVG(reflex), 2) as refl,
             ROUND(AVG(will), 2) as will,
-            null as attack_bonus,
+            NULL as attack_bonus,
             ROUND(AVG(CASE WHEN spell_dc != 0 THEN spell_dc END), 2) as spell_dc,
             ROUND(AVG(CASE WHEN spell_attack_bonus != 0 THEN spell_attack_bonus END), 2) as spell_attack_bonus
         FROM foo
@@ -146,7 +146,7 @@ def execute_sql_on_csv(csv_file_path, json_file_path):
                 ORDER BY COUNT(will) DESC
                 LIMIT 1
             ) AS will,
-            null AS attack_bonus,
+            NULL AS attack_bonus,
             (
                 SELECT spell_dc
                 FROM foo
