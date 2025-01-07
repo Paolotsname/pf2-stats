@@ -13,6 +13,14 @@ def execute_sql_on_csv(csv_file_path, json_file_path):
         conn = sqlite3.connect(":memory:")  # or provide a file path for a persistent DB
         cursor = conn.cursor()
 
+        # Optional: Increase the memory cache to improve performance
+        cursor.execute(
+            "PRAGMA cache_size = 10000;"
+        )  # Adjust cache size for better memory usage
+        cursor.execute(
+            "PRAGMA temp_store = MEMORY;"
+        )  # Store temporary tables in memory
+
         # Step 3: Create table schema in SQLite
         cursor.execute(
             """CREATE TABLE foo (
@@ -30,7 +38,6 @@ def execute_sql_on_csv(csv_file_path, json_file_path):
 
         # Step 4: Insert data from CSV into SQLite with error handling
         for row in csvreader:
-            # Ensure proper data types (convert to int or handle non-numeric cases)
             level = row["level"]
             hp = row.get("hp", "0").strip()
             ac = row.get("ac", "0").strip()
@@ -40,11 +47,14 @@ def execute_sql_on_csv(csv_file_path, json_file_path):
 
             # Attack bonus processing (sum of attacks)
             attack_bonus_list = row.get("attack_bonus", "").split()
-            attack_bonus = sum(
-                map(lambda x: int(x.strip(",+")), attack_bonus_list)
-            ) / max(
-                1, len(attack_bonus_list)
-            )  # Avoid division by zero from "unseen servant"
+            if attack_bonus_list:
+                attack_bonus = sum(
+                    map(lambda x: int(x.strip(",+")), attack_bonus_list)
+                ) / max(
+                    1, len(attack_bonus_list)
+                )  # Avoid division by zero
+            else:
+                attack_bonus = 0
 
             spell_dc = row.get("spell_dc", "0").strip()
             spell_attack_bonus = row.get("spell_attack_bonus", "0").strip()
@@ -78,37 +88,118 @@ def execute_sql_on_csv(csv_file_path, json_file_path):
                 ),
             )
 
-        # Step 5: Modify the SQL query to ensure -1 comes before 0 and round averages to 2 decimal places
-        sql_command_with_sorting = """
+        # Step 5: Execute the SQL query for averages
+        sql_command_avg = """
         SELECT
             level,
-            ROUND(AVG(hp), 2) as avg_hp,
-            ROUND(AVG(ac), 2) as avg_ac,
-            ROUND(AVG(fortitude), 2) as avg_fort,
-            ROUND(AVG(reflex), 2) as avg_refl,
-            ROUND(AVG(will), 2) as avg_will,
-            ROUND(AVG(attack_bonus), 2) as avg_attack_bonus,
-            ROUND(AVG(CASE WHEN spell_dc != 0 THEN spell_dc END), 2) as avg_spell_dc,
-            ROUND(AVG(CASE WHEN spell_attack_bonus != 0 THEN spell_attack_bonus END), 2) as avg_spell_attack_bonus
+            ROUND(AVG(hp), 2) as hp,
+            ROUND(AVG(ac), 2) as ac,
+            ROUND(AVG(fortitude), 2) as fort,
+            ROUND(AVG(reflex), 2) as refl,
+            ROUND(AVG(will), 2) as will,
+            ROUND(AVG(attack_bonus), 2) as attack_bonus,
+            ROUND(AVG(CASE WHEN spell_dc != 0 THEN spell_dc END), 2) as spell_dc,
+            ROUND(AVG(CASE WHEN spell_attack_bonus != 0 THEN spell_attack_bonus END), 2) as spell_attack_bonus
         FROM foo
         GROUP BY level
         ORDER BY CAST(level AS INTEGER) ASC;
         """
+        cursor.execute(sql_command_avg)
+        average_results = cursor.fetchall()
 
-        # Step 6: Execute the SQL command with the adjusted sorting
-        cursor.execute(sql_command_with_sorting)
+        # Step 6: Execute the SQL query for modes (Updated to exclude zeroes)
+        sql_command_mode = """
+        SELECT
+            level,
+            (
+                SELECT hp
+                FROM foo
+                WHERE level = f.level AND hp != 0
+                GROUP BY hp
+                ORDER BY COUNT(hp) DESC
+                LIMIT 1
+            ) AS hp,
+            (
+                SELECT ac
+                FROM foo
+                WHERE level = f.level AND ac != 0
+                GROUP BY ac
+                ORDER BY COUNT(ac) DESC
+                LIMIT 1
+            ) AS ac,
+            (
+                SELECT fortitude
+                FROM foo
+                WHERE level = f.level AND fortitude != 0
+                GROUP BY fortitude
+                ORDER BY COUNT(fortitude) DESC
+                LIMIT 1
+            ) AS fort,
+            (
+                SELECT reflex
+                FROM foo
+                WHERE level = f.level AND reflex != 0
+                GROUP BY reflex
+                ORDER BY COUNT(reflex) DESC
+                LIMIT 1
+            ) AS refl,
+            (
+                SELECT will
+                FROM foo
+                WHERE level = f.level AND will != 0
+                GROUP BY will
+                ORDER BY COUNT(will) DESC
+                LIMIT 1
+            ) AS will,
+            (
+                SELECT attack_bonus
+                FROM foo
+                WHERE level = f.level AND attack_bonus != 0
+                GROUP BY attack_bonus
+                ORDER BY COUNT(attack_bonus) DESC
+                LIMIT 1
+            ) AS attack_bonus,
+            (
+                SELECT spell_dc
+                FROM foo
+                WHERE level = f.level AND spell_dc != 0
+                GROUP BY spell_dc
+                ORDER BY COUNT(spell_dc) DESC
+                LIMIT 1
+            ) AS spell_dc,
+            (
+                SELECT spell_attack_bonus
+                FROM foo
+                WHERE level = f.level AND spell_attack_bonus != 0
+                GROUP BY spell_attack_bonus
+                ORDER BY COUNT(spell_attack_bonus) DESC
+                LIMIT 1
+            ) AS spell_attack_bonus
+        FROM foo f
+        GROUP BY level
+        ORDER BY CAST(level AS INTEGER) ASC;
+        """
 
-        # Step 7: Fetch the result of the query
-        results = cursor.fetchall()
+        cursor.execute(sql_command_mode)
+        mode_results = cursor.fetchall()
 
-        # Step 8: Save results to a JSON file
+        # Step 7: Save results to a JSON file with the desired structure
+        result_dict = []
+        column_names = [description[0] for description in cursor.description]
+
+        # Combine average and mode results into the JSON structure
+        for avg_row, mode_row in zip(average_results, mode_results):
+            level = avg_row[0]  # Fetch the level from average result
+            average = dict(zip(column_names[1:], avg_row[1:]))  # Get averages from row
+            mode = dict(zip(column_names[1:], mode_row[1:]))  # Get mode from row
+
+            result_dict.append(
+                {"level": level, "avg": average, "mode": mode}
+            )  # Store 'avg' and 'mode' values at the same level
+
+        # Step 8: Write to JSON file
         with open(json_file_path, "w") as jsonfile:
-            # Convert the results to a list of dictionaries
-            column_names = [description[0] for description in cursor.description]
-            results_dict = [dict(zip(column_names, row)) for row in results]
-
-            # Write to JSON file
-            json.dump(results_dict, jsonfile, indent=4)
+            json.dump(result_dict, jsonfile, indent=4)
 
         # Step 9: Close the database connection
         conn.close()

@@ -1,299 +1,623 @@
 [
     {
         "level": "-1",
-        "avg_hp": 8.02,
-        "avg_ac": 14.52,
-        "avg_fort": 3.85,
-        "avg_refl": 5.5,
-        "avg_will": 4.19,
-        "avg_attack_bonus": 5.97,
-        "avg_spell_dc": 15.0,
-        "avg_spell_attack_bonus": null
+        "avg": {
+            "hp": 8.02,
+            "ac": 14.52,
+            "fort": 3.85,
+            "refl": 5.5,
+            "will": 4.19,
+            "attack_bonus": 5.97,
+            "spell_dc": 15.0,
+            "spell_attack_bonus": null
+        },
+        "mode": {
+            "hp": 8,
+            "ac": 15,
+            "fort": 2,
+            "refl": 7,
+            "will": 3,
+            "attack_bonus": 7,
+            "spell_dc": 16,
+            "spell_attack_bonus": null
+        }
     },
     {
         "level": "0",
-        "avg_hp": 16.55,
-        "avg_ac": 15.2,
-        "avg_fort": 5.88,
-        "avg_refl": 6.08,
-        "avg_will": 4.28,
-        "avg_attack_bonus": 6.29,
-        "avg_spell_dc": 14.71,
-        "avg_spell_attack_bonus": null
+        "avg": {
+            "hp": 16.55,
+            "ac": 15.2,
+            "fort": 5.88,
+            "refl": 6.08,
+            "will": 4.28,
+            "attack_bonus": 6.29,
+            "spell_dc": 14.71,
+            "spell_attack_bonus": null
+        },
+        "mode": {
+            "hp": 15,
+            "ac": 16,
+            "fort": 7,
+            "refl": 7,
+            "will": 4,
+            "attack_bonus": 6,
+            "spell_dc": 15,
+            "spell_attack_bonus": null
+        }
     },
     {
         "level": "1",
-        "avg_hp": 20.11,
-        "avg_ac": 15.66,
-        "avg_fort": 6.05,
-        "avg_refl": 7.37,
-        "avg_will": 5.4,
-        "avg_attack_bonus": 7.58,
-        "avg_spell_dc": 16.46,
-        "avg_spell_attack_bonus": 8.55
+        "avg": {
+            "hp": 20.11,
+            "ac": 15.66,
+            "fort": 6.05,
+            "refl": 7.37,
+            "will": 5.4,
+            "attack_bonus": 7.58,
+            "spell_dc": 16.46,
+            "spell_attack_bonus": 8.55
+        },
+        "mode": {
+            "hp": 20,
+            "ac": 16,
+            "fort": 6,
+            "refl": 9,
+            "will": 5,
+            "attack_bonus": 9,
+            "spell_dc": 17,
+            "spell_attack_bonus": 9
+        }
     },
     {
         "level": "2",
-        "avg_hp": 31.42,
-        "avg_ac": 16.97,
-        "avg_fort": 7.79,
-        "avg_refl": 8.07,
-        "avg_will": 6.54,
-        "avg_attack_bonus": 9.22,
-        "avg_spell_dc": 17.36,
-        "avg_spell_attack_bonus": 9.33
+        "avg": {
+            "hp": 31.42,
+            "ac": 16.97,
+            "fort": 7.79,
+            "refl": 8.07,
+            "will": 6.54,
+            "attack_bonus": 9.22,
+            "spell_dc": 17.36,
+            "spell_attack_bonus": 9.33
+        },
+        "mode": {
+            "hp": 30,
+            "ac": 18,
+            "fort": 7,
+            "refl": 10,
+            "will": 6,
+            "attack_bonus": 10,
+            "spell_dc": 18,
+            "spell_attack_bonus": 10
+        }
     },
     {
         "level": "3",
-        "avg_hp": 46.38,
-        "avg_ac": 16.7,
-        "avg_fort": 8.31,
-        "avg_refl": 8.6,
-        "avg_will": 6.97,
-        "avg_attack_bonus": 10.08,
-        "avg_spell_dc": 19.38,
-        "avg_spell_attack_bonus": 11.22
+        "avg": {
+            "hp": 46.38,
+            "ac": 16.7,
+            "fort": 8.31,
+            "refl": 8.6,
+            "will": 6.97,
+            "attack_bonus": 10.08,
+            "spell_dc": 19.38,
+            "spell_attack_bonus": 11.22
+        },
+        "mode": {
+            "hp": 45,
+            "ac": 18,
+            "fort": 9,
+            "refl": 11,
+            "will": 7,
+            "attack_bonus": 11,
+            "spell_dc": 20,
+            "spell_attack_bonus": 12
+        }
     },
     {
         "level": "4",
-        "avg_hp": 61.69,
-        "avg_ac": 19.92,
-        "avg_fort": 10.83,
-        "avg_refl": 10.57,
-        "avg_will": 9.81,
-        "avg_attack_bonus": 12.24,
-        "avg_spell_dc": 20.52,
-        "avg_spell_attack_bonus": 13.0
+        "avg": {
+            "hp": 61.69,
+            "ac": 19.92,
+            "fort": 10.83,
+            "refl": 10.57,
+            "will": 9.81,
+            "attack_bonus": 12.24,
+            "spell_dc": 20.52,
+            "spell_attack_bonus": 13.0
+        },
+        "mode": {
+            "hp": 60,
+            "ac": 21,
+            "fort": 13,
+            "refl": 13,
+            "will": 10,
+            "attack_bonus": 14,
+            "spell_dc": 21,
+            "spell_attack_bonus": 13
+        }
     },
     {
         "level": "5",
-        "avg_hp": 77.58,
-        "avg_ac": 18.6,
-        "avg_fort": 11.15,
-        "avg_refl": 10.38,
-        "avg_will": 9.31,
-        "avg_attack_bonus": 13.24,
-        "avg_spell_dc": 21.79,
-        "avg_spell_attack_bonus": 14.0
+        "avg": {
+            "hp": 77.58,
+            "ac": 18.6,
+            "fort": 11.15,
+            "refl": 10.38,
+            "will": 9.31,
+            "attack_bonus": 13.24,
+            "spell_dc": 21.79,
+            "spell_attack_bonus": 14.0
+        },
+        "mode": {
+            "hp": 75,
+            "ac": 22,
+            "fort": 15,
+            "refl": 15,
+            "will": 10,
+            "attack_bonus": 15,
+            "spell_dc": 22,
+            "spell_attack_bonus": 14
+        }
     },
     {
         "level": "6",
-        "avg_hp": 101.45,
-        "avg_ac": 22.11,
-        "avg_fort": 13.67,
-        "avg_refl": 13.06,
-        "avg_will": 12.37,
-        "avg_attack_bonus": 16.0,
-        "avg_spell_dc": 23.63,
-        "avg_spell_attack_bonus": 15.6
+        "avg": {
+            "hp": 101.45,
+            "ac": 22.11,
+            "fort": 13.67,
+            "refl": 13.06,
+            "will": 12.37,
+            "attack_bonus": 16.0,
+            "spell_dc": 23.63,
+            "spell_attack_bonus": 15.6
+        },
+        "mode": {
+            "hp": 95,
+            "ac": 24,
+            "fort": 16,
+            "refl": 12,
+            "will": 12,
+            "attack_bonus": 17,
+            "spell_dc": 24,
+            "spell_attack_bonus": 16
+        }
     },
     {
         "level": "7",
-        "avg_hp": 115.03,
-        "avg_ac": 23.53,
-        "avg_fort": 14.93,
-        "avg_refl": 14.14,
-        "avg_will": 13.5,
-        "avg_attack_bonus": 16.94,
-        "avg_spell_dc": 24.74,
-        "avg_spell_attack_bonus": 17.11
+        "avg": {
+            "hp": 115.03,
+            "ac": 23.53,
+            "fort": 14.93,
+            "refl": 14.14,
+            "will": 13.5,
+            "attack_bonus": 16.94,
+            "spell_dc": 24.74,
+            "spell_attack_bonus": 17.11
+        },
+        "mode": {
+            "hp": 100,
+            "ac": 25,
+            "fort": 17,
+            "refl": 17,
+            "will": 15,
+            "attack_bonus": 18,
+            "spell_dc": 25,
+            "spell_attack_bonus": 17
+        }
     },
     {
         "level": "8",
-        "avg_hp": 137.14,
-        "avg_ac": 25.27,
-        "avg_fort": 15.98,
-        "avg_refl": 14.7,
-        "avg_will": 14.92,
-        "avg_attack_bonus": 18.48,
-        "avg_spell_dc": 25.79,
-        "avg_spell_attack_bonus": 17.7
+        "avg": {
+            "hp": 137.14,
+            "ac": 25.27,
+            "fort": 15.98,
+            "refl": 14.7,
+            "will": 14.92,
+            "attack_bonus": 18.48,
+            "spell_dc": 25.79,
+            "spell_attack_bonus": 17.7
+        },
+        "mode": {
+            "hp": 135,
+            "ac": 27,
+            "fort": 18,
+            "refl": 16,
+            "will": 14,
+            "attack_bonus": 20,
+            "spell_dc": 26,
+            "spell_attack_bonus": 18
+        }
     },
     {
         "level": "9",
-        "avg_hp": 160.15,
-        "avg_ac": 27.27,
-        "avg_fort": 18.64,
-        "avg_refl": 17.62,
-        "avg_will": 17.07,
-        "avg_attack_bonus": 20.09,
-        "avg_spell_dc": 27.67,
-        "avg_spell_attack_bonus": 19.6
+        "avg": {
+            "hp": 160.15,
+            "ac": 27.27,
+            "fort": 18.64,
+            "refl": 17.62,
+            "will": 17.07,
+            "attack_bonus": 20.09,
+            "spell_dc": 27.67,
+            "spell_attack_bonus": 19.6
+        },
+        "mode": {
+            "hp": 155,
+            "ac": 28,
+            "fort": 19,
+            "refl": 18,
+            "will": 16,
+            "attack_bonus": 21,
+            "spell_dc": 28,
+            "spell_attack_bonus": 20
+        }
     },
     {
         "level": "10",
-        "avg_hp": 179.85,
-        "avg_ac": 29.16,
-        "avg_fort": 19.66,
-        "avg_refl": 18.46,
-        "avg_will": 18.21,
-        "avg_attack_bonus": 21.7,
-        "avg_spell_dc": 28.64,
-        "avg_spell_attack_bonus": 21.22
+        "avg": {
+            "hp": 179.85,
+            "ac": 29.16,
+            "fort": 19.66,
+            "refl": 18.46,
+            "will": 18.21,
+            "attack_bonus": 21.7,
+            "spell_dc": 28.64,
+            "spell_attack_bonus": 21.22
+        },
+        "mode": {
+            "hp": 175,
+            "ac": 30,
+            "fort": 21,
+            "refl": 19,
+            "will": 19,
+            "attack_bonus": 23,
+            "spell_dc": 29,
+            "spell_attack_bonus": 21
+        }
     },
     {
         "level": "11",
-        "avg_hp": 197.96,
-        "avg_ac": 29.94,
-        "avg_fort": 21.83,
-        "avg_refl": 19.87,
-        "avg_will": 19.74,
-        "avg_attack_bonus": 20.81,
-        "avg_spell_dc": 29.56,
-        "avg_spell_attack_bonus": 21.5
+        "avg": {
+            "hp": 197.96,
+            "ac": 29.94,
+            "fort": 21.83,
+            "refl": 19.87,
+            "will": 19.74,
+            "attack_bonus": 20.81,
+            "spell_dc": 29.56,
+            "spell_attack_bonus": 21.5
+        },
+        "mode": {
+            "hp": 195,
+            "ac": 31,
+            "fort": 24,
+            "refl": 20,
+            "will": 18,
+            "attack_bonus": 24,
+            "spell_dc": 30,
+            "spell_attack_bonus": 22
+        }
     },
     {
         "level": "12",
-        "avg_hp": 219.1,
-        "avg_ac": 32.52,
-        "avg_fort": 22.96,
-        "avg_refl": 21.16,
-        "avg_will": 21.74,
-        "avg_attack_bonus": 23.71,
-        "avg_spell_dc": 31.9,
-        "avg_spell_attack_bonus": 24.4
+        "avg": {
+            "hp": 219.1,
+            "ac": 32.52,
+            "fort": 22.96,
+            "refl": 21.16,
+            "will": 21.74,
+            "attack_bonus": 23.71,
+            "spell_dc": 31.9,
+            "spell_attack_bonus": 24.4
+        },
+        "mode": {
+            "hp": 215,
+            "ac": 33,
+            "fort": 25,
+            "refl": 22,
+            "will": 22,
+            "attack_bonus": 25,
+            "spell_dc": 32,
+            "spell_attack_bonus": 24
+        }
     },
     {
         "level": "13",
-        "avg_hp": 248.88,
-        "avg_ac": 32.42,
-        "avg_fort": 24.1,
-        "avg_refl": 21.52,
-        "avg_will": 22.44,
-        "avg_attack_bonus": 25.36,
-        "avg_spell_dc": 32.96,
-        "avg_spell_attack_bonus": 24.8
+        "avg": {
+            "hp": 248.88,
+            "ac": 32.42,
+            "fort": 24.1,
+            "refl": 21.52,
+            "will": 22.44,
+            "attack_bonus": 25.36,
+            "spell_dc": 32.96,
+            "spell_attack_bonus": 24.8
+        },
+        "mode": {
+            "hp": 270,
+            "ac": 34,
+            "fort": 26,
+            "refl": 23,
+            "will": 23,
+            "attack_bonus": 27,
+            "spell_dc": 33,
+            "spell_attack_bonus": 25
+        }
     },
     {
         "level": "14",
-        "avg_hp": 261.63,
-        "avg_ac": 35.42,
-        "avg_fort": 25.23,
-        "avg_refl": 24.72,
-        "avg_will": 25.12,
-        "avg_attack_bonus": 27.43,
-        "avg_spell_dc": 33.94,
-        "avg_spell_attack_bonus": 26.58
+        "avg": {
+            "hp": 261.63,
+            "ac": 35.42,
+            "fort": 25.23,
+            "refl": 24.72,
+            "will": 25.12,
+            "attack_bonus": 27.43,
+            "spell_dc": 33.94,
+            "spell_attack_bonus": 26.58
+        },
+        "mode": {
+            "hp": 285,
+            "ac": 36,
+            "fort": 28,
+            "refl": 24,
+            "will": 26,
+            "attack_bonus": 29,
+            "spell_dc": 34,
+            "spell_attack_bonus": 26
+        }
     },
     {
         "level": "15",
-        "avg_hp": 287.92,
-        "avg_ac": 33.64,
-        "avg_fort": 24.89,
-        "avg_refl": 23.33,
-        "avg_will": 24.08,
-        "avg_attack_bonus": 29.56,
-        "avg_spell_dc": 36.5,
-        "avg_spell_attack_bonus": 29.3
+        "avg": {
+            "hp": 287.92,
+            "ac": 33.64,
+            "fort": 24.89,
+            "refl": 23.33,
+            "will": 24.08,
+            "attack_bonus": 29.56,
+            "spell_dc": 36.5,
+            "spell_attack_bonus": 29.3
+        },
+        "mode": {
+            "hp": 275,
+            "ac": 37,
+            "fort": 27,
+            "refl": 25,
+            "will": 29,
+            "attack_bonus": 30,
+            "spell_dc": 36,
+            "spell_attack_bonus": 30
+        }
     },
     {
         "level": "16",
-        "avg_hp": 287.57,
-        "avg_ac": 35.79,
-        "avg_fort": 26.86,
-        "avg_refl": 25.96,
-        "avg_will": 25.61,
-        "avg_attack_bonus": 31.54,
-        "avg_spell_dc": 37.0,
-        "avg_spell_attack_bonus": 28.75
+        "avg": {
+            "hp": 287.57,
+            "ac": 35.79,
+            "fort": 26.86,
+            "refl": 25.96,
+            "will": 25.61,
+            "attack_bonus": 31.54,
+            "spell_dc": 37.0,
+            "spell_attack_bonus": 28.75
+        },
+        "mode": {
+            "hp": 300,
+            "ac": 39,
+            "fort": 30,
+            "refl": 30,
+            "will": 28,
+            "attack_bonus": 32,
+            "spell_dc": 37,
+            "spell_attack_bonus": 29
+        }
     },
     {
         "level": "17",
-        "avg_hp": 318.91,
-        "avg_ac": 39.96,
-        "avg_fort": 30.0,
-        "avg_refl": 29.09,
-        "avg_will": 29.91,
-        "avg_attack_bonus": 32.95,
-        "avg_spell_dc": 38.68,
-        "avg_spell_attack_bonus": 31.75
+        "avg": {
+            "hp": 318.91,
+            "ac": 39.96,
+            "fort": 30.0,
+            "refl": 29.09,
+            "will": 29.91,
+            "attack_bonus": 32.95,
+            "spell_dc": 38.68,
+            "spell_attack_bonus": 31.75
+        },
+        "mode": {
+            "hp": 315,
+            "ac": 40,
+            "fort": 32,
+            "refl": 29,
+            "will": 32,
+            "attack_bonus": 33,
+            "spell_dc": 38,
+            "spell_attack_bonus": 34
+        }
     },
     {
         "level": "18",
-        "avg_hp": 344.46,
-        "avg_ac": 41.67,
-        "avg_fort": 32.17,
-        "avg_refl": 29.13,
-        "avg_will": 30.92,
-        "avg_attack_bonus": 34.81,
-        "avg_spell_dc": 40.47,
-        "avg_spell_attack_bonus": 33.5
+        "avg": {
+            "hp": 344.46,
+            "ac": 41.67,
+            "fort": 32.17,
+            "refl": 29.13,
+            "will": 30.92,
+            "attack_bonus": 34.81,
+            "spell_dc": 40.47,
+            "spell_attack_bonus": 33.5
+        },
+        "mode": {
+            "hp": 360,
+            "ac": 42,
+            "fort": 33,
+            "refl": 30,
+            "will": 33,
+            "attack_bonus": 35,
+            "spell_dc": 40,
+            "spell_attack_bonus": 35
+        }
     },
     {
         "level": "19",
-        "avg_hp": 362.25,
-        "avg_ac": 40.56,
-        "avg_fort": 31.06,
-        "avg_refl": 29.81,
-        "avg_will": 30.94,
-        "avg_attack_bonus": 33.54,
-        "avg_spell_dc": 41.31,
-        "avg_spell_attack_bonus": 35.5
+        "avg": {
+            "hp": 362.25,
+            "ac": 40.56,
+            "fort": 31.06,
+            "refl": 29.81,
+            "will": 30.94,
+            "attack_bonus": 33.54,
+            "spell_dc": 41.31,
+            "spell_attack_bonus": 35.5
+        },
+        "mode": {
+            "hp": 410,
+            "ac": 43,
+            "fort": 35,
+            "refl": 32,
+            "will": 35,
+            "attack_bonus": 37,
+            "spell_dc": 41,
+            "spell_attack_bonus": 37
+        }
     },
     {
         "level": "20",
-        "avg_hp": 391.19,
-        "avg_ac": 41.1,
-        "avg_fort": 32.05,
-        "avg_refl": 29.19,
-        "avg_will": 31.67,
-        "avg_attack_bonus": 34.5,
-        "avg_spell_dc": 42.59,
-        "avg_spell_attack_bonus": 34.2
+        "avg": {
+            "hp": 391.19,
+            "ac": 41.1,
+            "fort": 32.05,
+            "refl": 29.19,
+            "will": 31.67,
+            "attack_bonus": 34.5,
+            "spell_dc": 42.59,
+            "spell_attack_bonus": 34.2
+        },
+        "mode": {
+            "hp": 375,
+            "ac": 45,
+            "fort": 35,
+            "refl": 32,
+            "will": 34,
+            "attack_bonus": 38,
+            "spell_dc": 42,
+            "spell_attack_bonus": 34
+        }
     },
     {
         "level": "21",
-        "avg_hp": 422.5,
-        "avg_ac": 46.13,
-        "avg_fort": 37.88,
-        "avg_refl": 34.75,
-        "avg_will": 35.63,
-        "avg_attack_bonus": 39.52,
-        "avg_spell_dc": 44.5,
-        "avg_spell_attack_bonus": 35.5
+        "avg": {
+            "hp": 422.5,
+            "ac": 46.13,
+            "fort": 37.88,
+            "refl": 34.75,
+            "will": 35.63,
+            "attack_bonus": 39.52,
+            "spell_dc": 44.5,
+            "spell_attack_bonus": 35.5
+        },
+        "mode": {
+            "hp": 500,
+            "ac": 47,
+            "fort": 38,
+            "refl": 34,
+            "will": 38,
+            "attack_bonus": 40,
+            "spell_dc": 44,
+            "spell_attack_bonus": 37
+        }
     },
     {
         "level": "22",
-        "avg_hp": 492.0,
-        "avg_ac": 46.8,
-        "avg_fort": 37.0,
-        "avg_refl": 37.6,
-        "avg_will": 35.0,
-        "avg_attack_bonus": 39.77,
-        "avg_spell_dc": 45.0,
-        "avg_spell_attack_bonus": 41.0
+        "avg": {
+            "hp": 492.0,
+            "ac": 46.8,
+            "fort": 37.0,
+            "refl": 37.6,
+            "will": 35.0,
+            "attack_bonus": 39.77,
+            "spell_dc": 45.0,
+            "spell_attack_bonus": 41.0
+        },
+        "mode": {
+            "hp": 540,
+            "ac": 48,
+            "fort": 39,
+            "refl": 36,
+            "will": 33,
+            "attack_bonus": 42,
+            "spell_dc": 45,
+            "spell_attack_bonus": 41
+        }
     },
     {
         "level": "23",
-        "avg_hp": 477.0,
-        "avg_ac": 39.2,
-        "avg_fort": 30.4,
-        "avg_refl": 29.2,
-        "avg_will": 31.2,
-        "avg_attack_bonus": 40.82,
-        "avg_spell_dc": 45.25,
-        "avg_spell_attack_bonus": 38.0
+        "avg": {
+            "hp": 477.0,
+            "ac": 39.2,
+            "fort": 30.4,
+            "refl": 29.2,
+            "will": 31.2,
+            "attack_bonus": 40.82,
+            "spell_dc": 45.25,
+            "spell_attack_bonus": 38.0
+        },
+        "mode": {
+            "hp": 500,
+            "ac": 49,
+            "fort": 41,
+            "refl": 37,
+            "will": 37,
+            "attack_bonus": 42,
+            "spell_dc": 46,
+            "spell_attack_bonus": 38
+        }
     },
     {
         "level": "24",
-        "avg_hp": 512.5,
-        "avg_ac": 51.5,
-        "avg_fort": 43.5,
-        "avg_refl": 39.5,
-        "avg_will": 39.5,
-        "avg_attack_bonus": 44.25,
-        "avg_spell_dc": 48.0,
-        "avg_spell_attack_bonus": null
+        "avg": {
+            "hp": 512.5,
+            "ac": 51.5,
+            "fort": 43.5,
+            "refl": 39.5,
+            "will": 39.5,
+            "attack_bonus": 44.25,
+            "spell_dc": 48.0,
+            "spell_attack_bonus": null
+        },
+        "mode": {
+            "hp": 525,
+            "ac": 52,
+            "fort": 44,
+            "refl": 40,
+            "will": 42,
+            "attack_bonus": 44.5,
+            "spell_dc": 48,
+            "spell_attack_bonus": null
+        }
     },
     {
         "level": "25",
-        "avg_hp": 550.0,
-        "avg_ac": 54.0,
-        "avg_fort": 42.0,
-        "avg_refl": 40.0,
-        "avg_will": 43.0,
-        "avg_attack_bonus": 46.0,
-        "avg_spell_dc": 49.0,
-        "avg_spell_attack_bonus": 43.0
+        "avg": {
+            "hp": 550.0,
+            "ac": 54.0,
+            "fort": 42.0,
+            "refl": 40.0,
+            "will": 43.0,
+            "attack_bonus": 46.0,
+            "spell_dc": 49.0,
+            "spell_attack_bonus": 43.0
+        },
+        "mode": {
+            "hp": 550,
+            "ac": 54,
+            "fort": 42,
+            "refl": 40,
+            "will": 43,
+            "attack_bonus": 46,
+            "spell_dc": 49,
+            "spell_attack_bonus": 43
+        }
     }
 ]
