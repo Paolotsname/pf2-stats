@@ -1,10 +1,9 @@
 from dataclasses import dataclass
 import json
 
-classes_profs_json = {}
 with open("class_data.json", "r", encoding="utf-8") as f:
     classes_profs_json = json.load(f)
-enemy_avg_json = {}
+
 with open("enemy_data.json", "r", encoding="utf-8") as f:
     enemy_avg_json = json.load(f)
 
@@ -124,6 +123,7 @@ class Sheet:
                 f"chance character fails: {value[1]}% "
                 f"chance character hits: {value[2]}% "
                 f"chance character crit hits: {value[3]}%"
+                f"  {sum(value)}"
             )
         for key, value in enemy_rates.items():
             print(
@@ -132,23 +132,26 @@ class Sheet:
                 f"chance enemy fails: {value[1]}% "
                 f"chance enemy hits: {value[2]}% "
                 f"chance enemy crit hits: {value[3]}%"
+                f"  {sum(value)}"
             )
 
 
-def clamp(n, min, max):
-    if n < min:
-        return min
-    elif n > max:
-        return max
+def clamp(minValue, n, maxValue) -> float:
+    if n < minValue:
+        return minValue
+    elif n > maxValue:
+        return maxValue
     else:
         return n
 
 
-# a minToHit value of 11.2 means that when the dice rolls 11
-# there's a 20% value of it being a failure
-# and 80% value of it being a hit
+# a target of 11.2 is calculated by taking
+# the rates for target 11 and target 12.
+# then calculating them together with:
+# 20% of the rates for target 11
+# 80% of the rates for target 12
 # so it would be a total of 59% chance to hit before subtracting critical hits
-def get_d20_rates(proficiency: int, target: float) -> (float, float, float, float):
+def get_d20_rates(proficiency: int, target: float) -> tuple[float, float, float, float]:
     if proficiency is None or target is None:
         print("enemy has null value")
         return (0, 0, 0, 0)
@@ -156,46 +159,54 @@ def get_d20_rates(proficiency: int, target: float) -> (float, float, float, floa
     # 2-19
     diceFacesUsed = 0
 
-    # defender's critical ac minus attacker's modifier and a +1 to create an offset and start at a dice value 2
-    minToCrit = (target + 10) - proficiency + 1
-    sidesThatCritHit = clamp(21 - minToCrit, 0, 18 - diceFacesUsed)
+    minToCrit = (target + 10) - proficiency
+    sidesThatCritHit = 19 - (minToCrit - 1)
+    sidesThatCritHit = clamp(0, sidesThatCritHit, 18)
     diceFacesUsed += sidesThatCritHit
 
-    minToHit = (target) - proficiency + 1
-    sidesThatHit = clamp(21 - minToHit - diceFacesUsed, 0, 18 - diceFacesUsed)
+    minToHit = (target) - proficiency
+    sidesThatHit = 19 - (minToHit - 1) - diceFacesUsed
+    sidesThatHit = clamp(0, sidesThatHit, 18 - diceFacesUsed)
     diceFacesUsed += sidesThatHit
 
-    minToFail = (target - 9) - proficiency + 1
-    sidesThatFail = clamp(21 - minToFail - diceFacesUsed, 0, 18 - diceFacesUsed)
+    minToFail = (target - 9) - proficiency
+    sidesThatFail = 19 - (minToFail - 1) - diceFacesUsed
+    sidesThatFail = clamp(0, sidesThatFail, 18 - diceFacesUsed)
     diceFacesUsed += sidesThatFail
 
     sidesThatCritFail = 18 - diceFacesUsed
 
+    # Nat 20
+    Nat20Value = proficiency + 20
+    if Nat20Value >= target - 1:
+        value = Nat20Value - (target - 1)
+        value = clamp(0, value, 1)
+        sidesThatCritHit += value
+        sidesThatHit += 1 - value
+    elif Nat20Value >= (target - 1) - 9:
+        value = Nat20Value - (target - 1) + 9
+        value = clamp(0, value, 1)
+        sidesThatHit += value
+        sidesThatFail += 1 - value
+    else:
+        sidesThatFail += 1
+
     # Nat 1
+    # calculated in the opposite direction
     Nat1Value = proficiency + 1
     if Nat1Value >= target + 10:
-        value = clamp(Nat1Value - target + 10 + 1, 0, 1)
+        value = Nat1Value - (target - 1) + 10
+        value = clamp(0, value, 1)
         sidesThatHit += value
         sidesThatFail += 1 - value
     elif Nat1Value >= target:
-        value = clamp(Nat1Value - target + 1, 0, 1)
+        value = Nat1Value - (target - 1)
+        value = clamp(0, value, 1)
         sidesThatFail += value
         sidesThatCritFail += 1 - value
     else:
         sidesThatCritFail += 1
 
-    # Nat 20
-    Nat20Value = proficiency + 20
-    if Nat20Value + 1 >= target:
-        value = clamp(Nat20Value - target + 1, 0, 1)
-        sidesThatCritHit += value
-        sidesThatHit += 1 - value
-    elif Nat20Value + 1 > target - 10:
-        value = clamp(Nat20Value - target + 10, 0, 1)
-        sidesThatHit += value
-        sidesThatFail += 1 - value
-    else:
-        sidesThatFail += 1
 
     return (
         round(sidesThatCritFail * 5, 2),
@@ -205,7 +216,7 @@ def get_d20_rates(proficiency: int, target: float) -> (float, float, float, floa
     )
 
 
-def get_save_rates(prof, target, profLevel):
+def get_save_rates(prof, target, profLevel) -> tuple[float, float, float, float]:
     cf, f, s, cs = get_d20_rates(prof, target)
     if profLevel >= 6:
         cs = s + cs
@@ -216,21 +227,23 @@ def get_save_rates(prof, target, profLevel):
     return cf, f, s, cs
 
 
-def get_strike_rates(prof, target, agile=0):
-    if agile:
-        weapon_rates0 = get_d20_rates(prof, target)
-        weapon_rates1 = get_d20_rates(prof - 4, target)
-        weapon_rates2 = get_d20_rates(prof - 8, target)
-    else:
-        weapon_rates0 = get_d20_rates(prof, target)
-        weapon_rates1 = get_d20_rates(prof - 5, target)
-        weapon_rates2 = get_d20_rates(prof - 10, target)
-
+def get_strike_rates(prof, target, agile=0) -> tuple[
+    tuple[float, float, float, float],
+    tuple[float, float, float, float],
+    tuple[float, float, float, float],
+]:
+    weapon_rates0 = get_d20_rates(prof, target)
+    weapon_rates1 = get_d20_rates(prof - 5 + agile, target)
+    weapon_rates2 = get_d20_rates(prof - 10 + (agile * 2), target)
     return weapon_rates0, weapon_rates1, weapon_rates2
 
 
 #
 # c:
-enemy_level = 1
-enemy = enemy_avg_json[enemy_level + 1]["average"]
-test = Sheet("alchemist", 1).print_rates(enemy)
+#enemy_level = 1
+#enemy = enemy_avg_json[enemy_level + 1]["average"]
+#test = Sheet("alchemist", 1).print_rates(enemy)
+print(19+10)
+print(get_d20_rates(10,30))
+print(get_d20_rates(10,30.5))
+print(get_d20_rates(10,31))
