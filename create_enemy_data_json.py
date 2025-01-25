@@ -170,21 +170,41 @@ def execute_sql_on_csv(csv_file_path, json_file_path):
         cursor.execute(sql_command_mode)
         mode_results = cursor.fetchall()
 
+        #step 7:
+        sql_command_median = """
+        SELECT
+            level,
+            NULL as hp,
+            NULL as ac,
+            NULL as fort,
+            NULL as refl,
+            NULL as will,
+            NULL as attack_bonus,
+            NULL as spell_dc,
+            NULL as spell_attack_bonus
+        FROM foo
+        GROUP BY level
+        ORDER BY CAST(level AS INTEGER) ASC;
+        """
+        cursor.execute(sql_command_median)
+        median_results = cursor.fetchall()
+
         # Step 7: Process attack_bonus values outside of SQL queries
         attacks_per_level = [[] for _ in range(27)]  # Correct initialization
         attack_values_avg = [0 for _ in range(27)]  # Correct initialization
         attack_values_mode = [0 for _ in range(27)]  # Correct initialization
+        attack_values_median = [0 for _ in range(27)]
 
         for row in data_rows:
             # Split attack_bonus values by spaces or commas (ensure cleaning of any extraneous characters)
-            attacks_list = [x.strip(",+") for x in row["attack_bonus"].split()]
+            attacks_list = [x.strip(",+ ") for x in row["attack_bonus"].split()]
 
             # Ensure the list contains valid integers (filtering out any non-numeric entries)
             valid_attacks = [int(x) for x in attacks_list if x.isdigit()]
 
             # Calculate average attack bonus for each level
             if valid_attacks:
-                level = int(row["level"]) - 1  # Convert level to 0-based index
+                level = int(row["level"]) + 1  # Convert level to 0-based index
                 attacks_per_level[level].extend(valid_attacks)
 
         for i in range(27):
@@ -193,23 +213,28 @@ def execute_sql_on_csv(csv_file_path, json_file_path):
                     sum(attacks_per_level[i]) / len(attacks_per_level[i]), 2
                 )
                 attack_values_mode[i] = statistics.mode(attacks_per_level[i])
+                attack_values_median[i] = statistics.median(attacks_per_level[i])
+
+        print(attack_values_avg, attack_values_mode, attack_values_median)
 
         # Step 8: Save results to a JSON file with the desired structure
         result_dict = []
         column_names = [description[0] for description in cursor.description]
 
         # Combine average and mode results into the JSON structure
-        for i, (avg_row, mode_row) in enumerate(zip(average_results, mode_results)):
+        for i, (avg_row, mode_row, median_row) in enumerate(zip(average_results, mode_results, median_results)):
             level = avg_row[0]  # Fetch the level from average result
             average = dict(zip(column_names[1:], avg_row[1:]))  # Get averages from row
             mode = dict(zip(column_names[1:], mode_row[1:]))  # Get mode from row
+            median = dict(zip(column_names[1:], median_row[1:]))
 
             # Insert attack values into the JSON result
             average["attack_bonus"] = attack_values_avg[i]
             mode["attack_bonus"] = attack_values_mode[i]
+            median["attack_bonus"] = attack_values_median[i]
 
             result_dict.append(
-                {"level": level, "average": average, "mode": mode}
+                {"level": level, "average": average, "mode": mode, "median": median}
             )  # Store 'average' and 'mode' values at the same level
 
         # Step 9: Close the database connection
