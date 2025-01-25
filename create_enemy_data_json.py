@@ -14,7 +14,7 @@ def execute_sql_on_csv(csv_file_path, json_file_path):
         data_rows = list(csvreader)
 
         # Step 2: Connect to an in-memory SQLite database
-        conn = sqlite3.connect(":memory:")  # or provide a file path for a persistent DB
+        conn = sqlite3.connect(":memory:")
         cursor = conn.cursor()
 
         # Optional: Increase the memory cache to improve performance
