@@ -30,6 +30,36 @@
             "attack_bonus": 6.0,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "average_pwl": {
+            "hp": 8.02,
+            "ac": 14.52,
+            "fort": 3.85,
+            "refl": 5.5,
+            "will": 4.19,
+            "attack_bonus": 5.91,
+            "spell_dc": 15.0,
+            "spell_attack_bonus": null
+        },
+        "mode_pwl": {
+            "hp": 8,
+            "ac": 15,
+            "fort": 2,
+            "refl": 7,
+            "will": 3,
+            "attack_bonus": 7,
+            "spell_dc": 16,
+            "spell_attack_bonus": null
+        },
+        "median_pwl": {
+            "hp": null,
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 6.0,
+            "spell_dc": null,
+            "spell_attack_bonus": null
         }
     },
     {
@@ -55,6 +85,36 @@
             "spell_attack_bonus": null
         },
         "median": {
+            "hp": null,
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 7,
+            "spell_dc": null,
+            "spell_attack_bonus": null
+        },
+        "average_pwl": {
+            "hp": 16.55,
+            "ac": 15.2,
+            "fort": 5.88,
+            "refl": 6.08,
+            "will": 4.28,
+            "attack_bonus": 6.46,
+            "spell_dc": 14.71,
+            "spell_attack_bonus": null
+        },
+        "mode_pwl": {
+            "hp": 15,
+            "ac": 16,
+            "fort": 7,
+            "refl": 7,
+            "will": 4,
+            "attack_bonus": 7,
+            "spell_dc": 15,
+            "spell_attack_bonus": null
+        },
+        "median_pwl": {
             "hp": null,
             "ac": null,
             "fort": null,
@@ -96,6 +156,33 @@
             "attack_bonus": 8,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "average_pwl": {
+            "ac": 14.66,
+            "fort": 5.05,
+            "refl": 6.37,
+            "will": 4.4,
+            "attack_bonus": 6.83,
+            "spell_dc": 15.46,
+            "spell_attack_bonus": 7.550000000000001
+        },
+        "mode_pwl": {
+            "ac": 15,
+            "fort": 5,
+            "refl": 8,
+            "will": 4,
+            "attack_bonus": 8,
+            "spell_dc": 16,
+            "spell_attack_bonus": 8
+        },
+        "median_pwl": {
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 7,
+            "spell_dc": null,
+            "spell_attack_bonus": null
         }
     },
     {
@@ -127,6 +214,33 @@
             "refl": null,
             "will": null,
             "attack_bonus": 10.0,
+            "spell_dc": null,
+            "spell_attack_bonus": null
+        },
+        "average_pwl": {
+            "ac": 14.969999999999999,
+            "fort": 5.79,
+            "refl": 6.07,
+            "will": 4.54,
+            "attack_bonus": 7.58,
+            "spell_dc": 15.36,
+            "spell_attack_bonus": 7.33
+        },
+        "mode_pwl": {
+            "ac": 16,
+            "fort": 5,
+            "refl": 8,
+            "will": 4,
+            "attack_bonus": 8,
+            "spell_dc": 16,
+            "spell_attack_bonus": 8
+        },
+        "median_pwl": {
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 8.0,
             "spell_dc": null,
             "spell_attack_bonus": null
         }
@@ -162,6 +276,33 @@
             "attack_bonus": 11,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "average_pwl": {
+            "ac": 13.7,
+            "fort": 5.3100000000000005,
+            "refl": 5.6,
+            "will": 3.9699999999999998,
+            "attack_bonus": 7.6,
+            "spell_dc": 16.38,
+            "spell_attack_bonus": 8.22
+        },
+        "mode_pwl": {
+            "ac": 15,
+            "fort": 6,
+            "refl": 8,
+            "will": 4,
+            "attack_bonus": 8,
+            "spell_dc": 17,
+            "spell_attack_bonus": 9
+        },
+        "median_pwl": {
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 8,
+            "spell_dc": null,
+            "spell_attack_bonus": null
         }
     },
     {
@@ -193,6 +334,33 @@
             "refl": null,
             "will": null,
             "attack_bonus": 13,
+            "spell_dc": null,
+            "spell_attack_bonus": null
+        },
+        "average_pwl": {
+            "ac": 15.920000000000002,
+            "fort": 6.83,
+            "refl": 6.57,
+            "will": 5.8100000000000005,
+            "attack_bonus": 9.05,
+            "spell_dc": 16.52,
+            "spell_attack_bonus": 9.0
+        },
+        "mode_pwl": {
+            "ac": 17,
+            "fort": 9,
+            "refl": 9,
+            "will": 6,
+            "attack_bonus": 10,
+            "spell_dc": 17,
+            "spell_attack_bonus": 9
+        },
+        "median_pwl": {
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 9,
             "spell_dc": null,
             "spell_attack_bonus": null
         }
@@ -228,6 +396,33 @@
             "attack_bonus": 14,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "average_pwl": {
+            "ac": 13.600000000000001,
+            "fort": 6.15,
+            "refl": 5.380000000000001,
+            "will": 4.3100000000000005,
+            "attack_bonus": 8.96,
+            "spell_dc": 16.79,
+            "spell_attack_bonus": 9.0
+        },
+        "mode_pwl": {
+            "ac": 17,
+            "fort": 10,
+            "refl": 10,
+            "will": 5,
+            "attack_bonus": 10,
+            "spell_dc": 17,
+            "spell_attack_bonus": 9
+        },
+        "median_pwl": {
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 9,
+            "spell_dc": null,
+            "spell_attack_bonus": null
         }
     },
     {
@@ -259,6 +454,33 @@
             "refl": null,
             "will": null,
             "attack_bonus": 16,
+            "spell_dc": null,
+            "spell_attack_bonus": null
+        },
+        "average_pwl": {
+            "ac": 16.11,
+            "fort": 7.67,
+            "refl": 7.0600000000000005,
+            "will": 6.369999999999999,
+            "attack_bonus": 10.170000000000002,
+            "spell_dc": 17.63,
+            "spell_attack_bonus": 9.6
+        },
+        "mode_pwl": {
+            "ac": 18,
+            "fort": 10,
+            "refl": 6,
+            "will": 6,
+            "attack_bonus": 11,
+            "spell_dc": 18,
+            "spell_attack_bonus": 10
+        },
+        "median_pwl": {
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 10,
             "spell_dc": null,
             "spell_attack_bonus": null
         }
@@ -294,6 +516,33 @@
             "attack_bonus": 18,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "average_pwl": {
+            "ac": 16.53,
+            "fort": 7.93,
+            "refl": 7.140000000000001,
+            "will": 6.5,
+            "attack_bonus": 10.34,
+            "spell_dc": 17.74,
+            "spell_attack_bonus": 10.11
+        },
+        "mode_pwl": {
+            "ac": 18,
+            "fort": 10,
+            "refl": 10,
+            "will": 8,
+            "attack_bonus": 11,
+            "spell_dc": 18,
+            "spell_attack_bonus": 10
+        },
+        "median_pwl": {
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 11,
+            "spell_dc": null,
+            "spell_attack_bonus": null
         }
     },
     {
@@ -325,6 +574,33 @@
             "refl": null,
             "will": null,
             "attack_bonus": 20,
+            "spell_dc": null,
+            "spell_attack_bonus": null
+        },
+        "average_pwl": {
+            "ac": 17.27,
+            "fort": 7.98,
+            "refl": 6.699999999999999,
+            "will": 6.92,
+            "attack_bonus": 11.120000000000001,
+            "spell_dc": 17.79,
+            "spell_attack_bonus": 9.7
+        },
+        "mode_pwl": {
+            "ac": 19,
+            "fort": 10,
+            "refl": 8,
+            "will": 6,
+            "attack_bonus": 12,
+            "spell_dc": 18,
+            "spell_attack_bonus": 10
+        },
+        "median_pwl": {
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 12,
             "spell_dc": null,
             "spell_attack_bonus": null
         }
@@ -360,6 +636,33 @@
             "attack_bonus": 21,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "average_pwl": {
+            "ac": 18.27,
+            "fort": 9.64,
+            "refl": 8.620000000000001,
+            "will": 8.07,
+            "attack_bonus": 11.370000000000001,
+            "spell_dc": 18.67,
+            "spell_attack_bonus": 10.600000000000001
+        },
+        "mode_pwl": {
+            "ac": 19,
+            "fort": 10,
+            "refl": 9,
+            "will": 7,
+            "attack_bonus": 12,
+            "spell_dc": 19,
+            "spell_attack_bonus": 11
+        },
+        "median_pwl": {
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 12,
+            "spell_dc": null,
+            "spell_attack_bonus": null
         }
     },
     {
@@ -391,6 +694,33 @@
             "refl": null,
             "will": null,
             "attack_bonus": 23,
+            "spell_dc": null,
+            "spell_attack_bonus": null
+        },
+        "average_pwl": {
+            "ac": 19.16,
+            "fort": 9.66,
+            "refl": 8.46,
+            "will": 8.21,
+            "attack_bonus": 12.34,
+            "spell_dc": 18.64,
+            "spell_attack_bonus": 11.219999999999999
+        },
+        "mode_pwl": {
+            "ac": 20,
+            "fort": 11,
+            "refl": 9,
+            "will": 9,
+            "attack_bonus": 13,
+            "spell_dc": 19,
+            "spell_attack_bonus": 11
+        },
+        "median_pwl": {
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 13,
             "spell_dc": null,
             "spell_attack_bonus": null
         }
@@ -426,6 +756,33 @@
             "attack_bonus": 24.0,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "average_pwl": {
+            "ac": 18.94,
+            "fort": 10.829999999999998,
+            "refl": 8.870000000000001,
+            "will": 8.739999999999998,
+            "attack_bonus": 12.399999999999999,
+            "spell_dc": 18.56,
+            "spell_attack_bonus": 10.5
+        },
+        "mode_pwl": {
+            "ac": 20,
+            "fort": 13,
+            "refl": 9,
+            "will": 7,
+            "attack_bonus": 13,
+            "spell_dc": 19,
+            "spell_attack_bonus": 11
+        },
+        "median_pwl": {
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 13.0,
+            "spell_dc": null,
+            "spell_attack_bonus": null
         }
     },
     {
@@ -457,6 +814,33 @@
             "refl": null,
             "will": null,
             "attack_bonus": 25,
+            "spell_dc": null,
+            "spell_attack_bonus": null
+        },
+        "average_pwl": {
+            "ac": 20.520000000000003,
+            "fort": 10.96,
+            "refl": 9.16,
+            "will": 9.739999999999998,
+            "attack_bonus": 13.239999999999998,
+            "spell_dc": 19.9,
+            "spell_attack_bonus": 12.399999999999999
+        },
+        "mode_pwl": {
+            "ac": 21,
+            "fort": 13,
+            "refl": 10,
+            "will": 10,
+            "attack_bonus": 13,
+            "spell_dc": 20,
+            "spell_attack_bonus": 12
+        },
+        "median_pwl": {
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 13,
             "spell_dc": null,
             "spell_attack_bonus": null
         }
@@ -492,6 +876,33 @@
             "attack_bonus": 27,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "average_pwl": {
+            "ac": 19.42,
+            "fort": 11.100000000000001,
+            "refl": 8.52,
+            "will": 9.440000000000001,
+            "attack_bonus": 13.469999999999999,
+            "spell_dc": 19.96,
+            "spell_attack_bonus": 11.8
+        },
+        "mode_pwl": {
+            "ac": 21,
+            "fort": 13,
+            "refl": 10,
+            "will": 10,
+            "attack_bonus": 14,
+            "spell_dc": 20,
+            "spell_attack_bonus": 12
+        },
+        "median_pwl": {
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 14,
+            "spell_dc": null,
+            "spell_attack_bonus": null
         }
     },
     {
@@ -523,6 +934,33 @@
             "refl": null,
             "will": null,
             "attack_bonus": 29.0,
+            "spell_dc": null,
+            "spell_attack_bonus": null
+        },
+        "average_pwl": {
+            "ac": 21.42,
+            "fort": 11.23,
+            "refl": 10.719999999999999,
+            "will": 11.120000000000001,
+            "attack_bonus": 14.579999999999998,
+            "spell_dc": 19.939999999999998,
+            "spell_attack_bonus": 12.579999999999998
+        },
+        "mode_pwl": {
+            "ac": 22,
+            "fort": 14,
+            "refl": 10,
+            "will": 12,
+            "attack_bonus": 15,
+            "spell_dc": 20,
+            "spell_attack_bonus": 12
+        },
+        "median_pwl": {
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 15.0,
             "spell_dc": null,
             "spell_attack_bonus": null
         }
@@ -558,6 +996,33 @@
             "attack_bonus": 30,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "average_pwl": {
+            "ac": 18.64,
+            "fort": 9.89,
+            "refl": 8.329999999999998,
+            "will": 9.079999999999998,
+            "attack_bonus": 14.77,
+            "spell_dc": 21.5,
+            "spell_attack_bonus": 14.3
+        },
+        "mode_pwl": {
+            "ac": 22,
+            "fort": 12,
+            "refl": 10,
+            "will": 14,
+            "attack_bonus": 15,
+            "spell_dc": 21,
+            "spell_attack_bonus": 15
+        },
+        "median_pwl": {
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 15,
+            "spell_dc": null,
+            "spell_attack_bonus": null
         }
     },
     {
@@ -589,6 +1054,33 @@
             "refl": null,
             "will": null,
             "attack_bonus": 32,
+            "spell_dc": null,
+            "spell_attack_bonus": null
+        },
+        "average_pwl": {
+            "ac": 19.79,
+            "fort": 10.86,
+            "refl": 9.96,
+            "will": 9.61,
+            "attack_bonus": 15.7,
+            "spell_dc": 21.0,
+            "spell_attack_bonus": 12.75
+        },
+        "mode_pwl": {
+            "ac": 23,
+            "fort": 14,
+            "refl": 14,
+            "will": 12,
+            "attack_bonus": 17,
+            "spell_dc": 21,
+            "spell_attack_bonus": 13
+        },
+        "median_pwl": {
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 16,
             "spell_dc": null,
             "spell_attack_bonus": null
         }
@@ -624,6 +1116,33 @@
             "attack_bonus": 33.0,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "average_pwl": {
+            "ac": 22.96,
+            "fort": 13.0,
+            "refl": 12.09,
+            "will": 12.91,
+            "attack_bonus": 15.850000000000001,
+            "spell_dc": 21.68,
+            "spell_attack_bonus": 14.75
+        },
+        "mode_pwl": {
+            "ac": 23,
+            "fort": 15,
+            "refl": 12,
+            "will": 15,
+            "attack_bonus": 16,
+            "spell_dc": 21,
+            "spell_attack_bonus": 17
+        },
+        "median_pwl": {
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 16.0,
+            "spell_dc": null,
+            "spell_attack_bonus": null
         }
     },
     {
@@ -655,6 +1174,33 @@
             "refl": null,
             "will": null,
             "attack_bonus": 35,
+            "spell_dc": null,
+            "spell_attack_bonus": null
+        },
+        "average_pwl": {
+            "ac": 23.67,
+            "fort": 14.170000000000002,
+            "refl": 11.129999999999999,
+            "will": 12.920000000000002,
+            "attack_bonus": 16.740000000000002,
+            "spell_dc": 22.47,
+            "spell_attack_bonus": 15.5
+        },
+        "mode_pwl": {
+            "ac": 24,
+            "fort": 15,
+            "refl": 12,
+            "will": 15,
+            "attack_bonus": 17,
+            "spell_dc": 22,
+            "spell_attack_bonus": 17
+        },
+        "median_pwl": {
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 17,
             "spell_dc": null,
             "spell_attack_bonus": null
         }
@@ -690,6 +1236,33 @@
             "attack_bonus": 36,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "average_pwl": {
+            "ac": 21.560000000000002,
+            "fort": 12.059999999999999,
+            "refl": 10.809999999999999,
+            "will": 11.940000000000001,
+            "attack_bonus": 16.72,
+            "spell_dc": 22.310000000000002,
+            "spell_attack_bonus": 16.5
+        },
+        "mode_pwl": {
+            "ac": 24,
+            "fort": 16,
+            "refl": 13,
+            "will": 16,
+            "attack_bonus": 18,
+            "spell_dc": 22,
+            "spell_attack_bonus": 18
+        },
+        "median_pwl": {
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 17,
+            "spell_dc": null,
+            "spell_attack_bonus": null
         }
     },
     {
@@ -721,6 +1294,33 @@
             "refl": null,
             "will": null,
             "attack_bonus": 38.0,
+            "spell_dc": null,
+            "spell_attack_bonus": null
+        },
+        "average_pwl": {
+            "ac": 21.1,
+            "fort": 12.049999999999997,
+            "refl": 9.190000000000001,
+            "will": 11.670000000000002,
+            "attack_bonus": 17.96,
+            "spell_dc": 22.590000000000003,
+            "spell_attack_bonus": 14.200000000000003
+        },
+        "mode_pwl": {
+            "ac": 25,
+            "fort": 15,
+            "refl": 12,
+            "will": 14,
+            "attack_bonus": 18,
+            "spell_dc": 22,
+            "spell_attack_bonus": 14
+        },
+        "median_pwl": {
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 18.0,
             "spell_dc": null,
             "spell_attack_bonus": null
         }
@@ -756,6 +1356,33 @@
             "attack_bonus": 39,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "average_pwl": {
+            "ac": 25.130000000000003,
+            "fort": 16.880000000000003,
+            "refl": 13.75,
+            "will": 14.630000000000003,
+            "attack_bonus": 18.35,
+            "spell_dc": 23.5,
+            "spell_attack_bonus": 14.5
+        },
+        "mode_pwl": {
+            "ac": 26,
+            "fort": 17,
+            "refl": 13,
+            "will": 17,
+            "attack_bonus": 19,
+            "spell_dc": 23,
+            "spell_attack_bonus": 16
+        },
+        "median_pwl": {
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 18,
+            "spell_dc": null,
+            "spell_attack_bonus": null
         }
     },
     {
@@ -787,6 +1414,33 @@
             "refl": null,
             "will": null,
             "attack_bonus": 40.0,
+            "spell_dc": null,
+            "spell_attack_bonus": null
+        },
+        "average_pwl": {
+            "ac": 24.799999999999997,
+            "fort": 15.0,
+            "refl": 15.600000000000001,
+            "will": 13.0,
+            "attack_bonus": 17.439999999999998,
+            "spell_dc": 23.0,
+            "spell_attack_bonus": 19.0
+        },
+        "mode_pwl": {
+            "ac": 26,
+            "fort": 17,
+            "refl": 14,
+            "will": 11,
+            "attack_bonus": 19,
+            "spell_dc": 23,
+            "spell_attack_bonus": 19
+        },
+        "median_pwl": {
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 18.0,
             "spell_dc": null,
             "spell_attack_bonus": null
         }
@@ -822,6 +1476,33 @@
             "attack_bonus": 41.0,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "average_pwl": {
+            "ac": 16.200000000000003,
+            "fort": 7.399999999999999,
+            "refl": 6.199999999999999,
+            "will": 8.2,
+            "attack_bonus": 17.560000000000002,
+            "spell_dc": 22.25,
+            "spell_attack_bonus": 15.0
+        },
+        "mode_pwl": {
+            "ac": 26,
+            "fort": 18,
+            "refl": 14,
+            "will": 14,
+            "attack_bonus": 19,
+            "spell_dc": 23,
+            "spell_attack_bonus": 15
+        },
+        "median_pwl": {
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 18.0,
+            "spell_dc": null,
+            "spell_attack_bonus": null
         }
     },
     {
@@ -855,6 +1536,33 @@
             "attack_bonus": 44.0,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "average_pwl": {
+            "ac": 27.5,
+            "fort": 19.5,
+            "refl": 15.5,
+            "will": 15.5,
+            "attack_bonus": 20.25,
+            "spell_dc": 24.0,
+            "spell_attack_bonus": null
+        },
+        "mode_pwl": {
+            "ac": 28,
+            "fort": 20,
+            "refl": 16,
+            "will": 18,
+            "attack_bonus": 19,
+            "spell_dc": 24,
+            "spell_attack_bonus": null
+        },
+        "median_pwl": {
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 20.0,
+            "spell_dc": null,
+            "spell_attack_bonus": null
         }
     },
     {
@@ -886,6 +1594,33 @@
             "refl": null,
             "will": null,
             "attack_bonus": 46.0,
+            "spell_dc": null,
+            "spell_attack_bonus": null
+        },
+        "average_pwl": {
+            "ac": 29.0,
+            "fort": 17.0,
+            "refl": 15.0,
+            "will": 18.0,
+            "attack_bonus": 21.0,
+            "spell_dc": 24.0,
+            "spell_attack_bonus": 18.0
+        },
+        "mode_pwl": {
+            "ac": 29,
+            "fort": 17,
+            "refl": 15,
+            "will": 18,
+            "attack_bonus": 20,
+            "spell_dc": 24,
+            "spell_attack_bonus": 18
+        },
+        "median_pwl": {
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 21.0,
             "spell_dc": null,
             "spell_attack_bonus": null
         }

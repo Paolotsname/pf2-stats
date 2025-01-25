@@ -23,43 +23,41 @@ class Sheet:
         # profs are, in order: weapon, spellcasting ,armor ,fortitude, reflex, will
         self.profs = classes_profs_json[self.name][self.level]
         if self.proficiencyWithoutLevel:
-            self.proficiencyBonus = 0
+            self.levelBonus = 0
         else:
-            self.proficiencyBonus = self.level
+            self.levelBonus = self.level
         self.weaponRoll = (
             self.profs[0]
             + self.attributes[self.attackModifier]
             + self.weapon["bonus"]
-            + self.proficiencyBonus
+            + self.levelBonus
         )
         self.spell = (
-            self.profs[1]
-            + self.attributes[self.spellcastingModifier]
-            + self.proficiencyBonus
+            self.profs[1] + self.attributes[self.spellcastingModifier] + self.levelBonus
         )
         self.ac = (
             self.profs[2]
             + self.attributes["dex"]
             + self.armor["ACbonus"]
-            + self.proficiencyBonus
+            + self.levelBonus
         )
         self.fort = (
             self.profs[3]
             + self.attributes["con"]
             + self.armor["SaveBonus"]
-            + self.proficiencyBonus
+            + self.levelBonus
         )
         self.reflex = (
             self.profs[4]
             + self.attributes["dex"]
             + self.armor["SaveBonus"]
-            + self.proficiencyBonus
+            + self.levelBonus
         )
         self.will = (
             self.profs[5]
             + self.attributes["wis"]
             + self.armor["SaveBonus"]
-            + self.proficiencyBonus
+            + self.levelBonus
         )
 
     def get_rates(
@@ -207,7 +205,6 @@ def get_d20_rates(proficiency: int, target: float) -> tuple[float, float, float,
     else:
         sidesThatCritFail += 1
 
-
     return (
         round(sidesThatCritFail * 5, 2),
         round(sidesThatFail * 5, 2),
@@ -240,10 +237,10 @@ def get_strike_rates(prof, target, agile=0) -> tuple[
 
 #
 # c:
-#enemy_level = 1
-#enemy = enemy_avg_json[enemy_level + 1]["average"]
-#test = Sheet("alchemist", 1).print_rates(enemy)
-print(19+10)
-print(get_d20_rates(10,30))
-print(get_d20_rates(10,30.5))
-print(get_d20_rates(10,31))
+# enemy_level = 1
+# enemy = enemy_avg_json[enemy_level + 1]["average"]
+# test = Sheet("alchemist", 1).print_rates(enemy)
+print(19 + 10)
+print(get_d20_rates(10, 30))
+print(get_d20_rates(10, 30.5))
+print(get_d20_rates(10, 31))
