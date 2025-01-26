@@ -1,20 +1,31 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 import json
 
 with open("class_data.json", "r", encoding="utf-8") as f:
     classes_profs_json = json.load(f)
 
 with open("enemy_data.json", "r", encoding="utf-8") as f:
-    enemy_avg_json = json.load(f)
+    enemies_stats_json = json.load(f)
 
 
 @dataclass
 class Sheet:
     name: str
     level: int
-    attributes = {"str": 0, "dex": 0, "con": 0, "int": 0, "wis": 0, "cha": 0}
-    weapon = {"agile": 0, "bonus": 0, "dieSize": 2}
-    armor = {"ACbonus": 0, "SaveBonus": 0, "cap": 0}
+    attributes: dict = field(
+        default_factory=lambda: {
+            "str": 0,
+            "dex": 0,
+            "con": 0,
+            "int": 0,
+            "wis": 0,
+            "cha": 0,
+        }
+    )
+    weapon: dict = field(default_factory=lambda: {"agile": 0, "bonus": 0, "dieSize": 2})
+    armor: dict = field(
+        default_factory=lambda: {"ACbonus": 0, "SaveBonus": 0, "cap": 0}
+    )
     attackModifier: str = "str"
     spellcastingModifier: str = "cha"
     proficiencyWithoutLevel: bool = False
@@ -176,12 +187,14 @@ def get_d20_rates(proficiency: int, target: float) -> tuple[float, float, float,
 
     # Nat 20
     Nat20Value = proficiency + 20
-    if Nat20Value >= target - 1:
+    # for when Nat 20 will be at least a hit
+    if Nat20Value > target - 1:
         value = Nat20Value - (target - 1)
         value = clamp(0, value, 1)
         sidesThatCritHit += value
         sidesThatHit += 1 - value
-    elif Nat20Value >= (target - 1) - 9:
+    # for when Nat 20 will be at least a failure
+    elif Nat20Value > (target - 1) - 9:
         value = Nat20Value - (target - 1) + 9
         value = clamp(0, value, 1)
         sidesThatHit += value
@@ -237,10 +250,12 @@ def get_strike_rates(prof, target, agile=0) -> tuple[
 
 #
 # c:
-# enemy_level = 1
-# enemy = enemy_avg_json[enemy_level + 1]["average"]
-# test = Sheet("alchemist", 1).print_rates(enemy)
-print(19 + 10)
-print(get_d20_rates(10, 30))
-print(get_d20_rates(10, 30.5))
-print(get_d20_rates(10, 31))
+enemy_level = 1
+enemy = enemies_stats_json[enemy_level + 1]["average"]
+test = Sheet(
+    "fighter",
+    1,
+    attributes={"str": 4, "dex": 2, "con": 2, "int": 0, "wis": 1, "cha": 0},
+).print_rates(enemy)
+# for i in range(1, 21):
+#    print(get_d20_rates(i, 31))
