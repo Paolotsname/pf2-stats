@@ -189,32 +189,33 @@ def get_d20_rates(proficiency: int, target: float) -> tuple[float, float, float,
     Nat20Value = proficiency + 20
     # for when Nat 20 will be at least a hit
     if Nat20Value > target - 1:
-        value = Nat20Value - (target - 1)
-        value = clamp(0, value, 1)
-        sidesThatCritHit += value
-        sidesThatHit += 1 - value
+        percentageThatCritHit = Nat20Value - (target - 1)
+        percentageThatCritHit = clamp(0, percentageThatCritHit, 1)
+        sidesThatCritHit += percentageThatCritHit
+        sidesThatHit += 1 - percentageThatCritHit
     # for when Nat 20 will be at least a failure
     elif Nat20Value > (target - 1) - 9:
-        value = Nat20Value - (target - 1) + 9
-        value = clamp(0, value, 1)
-        sidesThatHit += value
-        sidesThatFail += 1 - value
+        percentageThatHit = Nat20Value - (target - 1) + 9
+        percentageThatHit = clamp(0, percentageThatHit, 1)
+        sidesThatHit += percentageThatHit
+        sidesThatFail += 1 - percentageThatHit
     else:
         sidesThatFail += 1
 
     # Nat 1
     # calculated in the opposite direction
     Nat1Value = proficiency + 1
-    if Nat1Value >= target + 10:
-        value = Nat1Value - (target - 1) + 10
-        value = clamp(0, value, 1)
-        sidesThatHit += value
-        sidesThatFail += 1 - value
-    elif Nat1Value >= target:
-        value = Nat1Value - (target - 1)
-        value = clamp(0, value, 1)
-        sidesThatFail += value
-        sidesThatCritFail += 1 - value
+    if Nat1Value > (target - 1) + 10:
+        percentageThatHit = Nat1Value - (target - 1) - 9
+        percentageThatHit = clamp(0, percentageThatHit, 1)
+        sidesThatCritHit += percentageThatHit
+        sidesThatHit += 1 - percentageThatHit
+    # for when Nat 20 will be at least a failure
+    elif Nat1Value > (target - 1):
+        percentageThatFail = Nat1Value - (target - 1)
+        percentageThatFail = clamp(0, percentageThatFail, 1)
+        sidesThatFail += percentageThatFail
+        sidesThatCritFail += 1 - percentageThatFail
     else:
         sidesThatCritFail += 1
 
@@ -250,12 +251,13 @@ def get_strike_rates(prof, target, agile=0) -> tuple[
 
 #
 # c:
-enemy_level = 1
-enemy = enemies_stats_json[enemy_level + 1]["average"]
-test = Sheet(
-    "fighter",
-    1,
-    attributes={"str": 4, "dex": 2, "con": 2, "int": 0, "wis": 1, "cha": 0},
-).print_rates(enemy)
-# for i in range(1, 21):
-#    print(get_d20_rates(i, 31))
+# enemy_level = 1
+# enemy = enemies_stats_json[enemy_level + 1]["average"]
+# test = Sheet(
+#    "fighter",
+#    1,
+#    attributes={"str": 4, "dex": 2, "con": 2, "int": 0, "wis": 1, "cha": 0},
+# ).print_rates(enemy)
+for i in range(1, 21):
+    v = 30
+    print(i + 1 - v, get_d20_rates(i, v), i + 20 - v)
