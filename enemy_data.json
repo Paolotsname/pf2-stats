@@ -1,7 +1,7 @@
 [
     {
         "level": "-1",
-        "average": {
+        "mean": {
             "hp": 8.02,
             "ac": 14.52,
             "fort": 3.85,
@@ -9,16 +9,6 @@
             "will": 4.19,
             "attack_bonus": 5.91,
             "spell_dc": 15.0,
-            "spell_attack_bonus": null
-        },
-        "mode": {
-            "hp": 8,
-            "ac": 15,
-            "fort": 2,
-            "refl": 7,
-            "will": 3,
-            "attack_bonus": 7,
-            "spell_dc": 16,
             "spell_attack_bonus": null
         },
         "median": {
@@ -31,17 +21,7 @@
             "spell_dc": null,
             "spell_attack_bonus": null
         },
-        "average_pwl": {
-            "hp": 8.02,
-            "ac": 14.52,
-            "fort": 3.85,
-            "refl": 5.5,
-            "will": 4.19,
-            "attack_bonus": 5.91,
-            "spell_dc": 15.0,
-            "spell_attack_bonus": null
-        },
-        "mode_pwl": {
+        "mode": {
             "hp": 8,
             "ac": 15,
             "fort": 2,
@@ -49,6 +29,16 @@
             "will": 3,
             "attack_bonus": 7,
             "spell_dc": 16,
+            "spell_attack_bonus": null
+        },
+        "mean_pwl": {
+            "hp": 8.02,
+            "ac": 14.52,
+            "fort": 3.85,
+            "refl": 5.5,
+            "will": 4.19,
+            "attack_bonus": 5.91,
+            "spell_dc": 15.0,
             "spell_attack_bonus": null
         },
         "median_pwl": {
@@ -59,12 +49,22 @@
             "will": null,
             "attack_bonus": 6.0,
             "spell_dc": null,
+            "spell_attack_bonus": null
+        },
+        "mode_pwl": {
+            "hp": 8,
+            "ac": 15,
+            "fort": 2,
+            "refl": 7,
+            "will": 3,
+            "attack_bonus": 7,
+            "spell_dc": 16,
             "spell_attack_bonus": null
         }
     },
     {
         "level": "0",
-        "average": {
+        "mean": {
             "hp": 16.55,
             "ac": 15.2,
             "fort": 5.88,
@@ -72,16 +72,6 @@
             "will": 4.28,
             "attack_bonus": 6.46,
             "spell_dc": 14.71,
-            "spell_attack_bonus": null
-        },
-        "mode": {
-            "hp": 15,
-            "ac": 16,
-            "fort": 7,
-            "refl": 7,
-            "will": 4,
-            "attack_bonus": 7,
-            "spell_dc": 15,
             "spell_attack_bonus": null
         },
         "median": {
@@ -94,17 +84,7 @@
             "spell_dc": null,
             "spell_attack_bonus": null
         },
-        "average_pwl": {
-            "hp": 16.55,
-            "ac": 15.2,
-            "fort": 5.88,
-            "refl": 6.08,
-            "will": 4.28,
-            "attack_bonus": 6.46,
-            "spell_dc": 14.71,
-            "spell_attack_bonus": null
-        },
-        "mode_pwl": {
+        "mode": {
             "hp": 15,
             "ac": 16,
             "fort": 7,
@@ -112,6 +92,16 @@
             "will": 4,
             "attack_bonus": 7,
             "spell_dc": 15,
+            "spell_attack_bonus": null
+        },
+        "mean_pwl": {
+            "hp": 16.55,
+            "ac": 15.2,
+            "fort": 5.88,
+            "refl": 6.08,
+            "will": 4.28,
+            "attack_bonus": 6.46,
+            "spell_dc": 14.71,
             "spell_attack_bonus": null
         },
         "median_pwl": {
@@ -123,11 +113,21 @@
             "attack_bonus": 7,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "mode_pwl": {
+            "hp": 15,
+            "ac": 16,
+            "fort": 7,
+            "refl": 7,
+            "will": 4,
+            "attack_bonus": 7,
+            "spell_dc": 15,
+            "spell_attack_bonus": null
         }
     },
     {
         "level": "1",
-        "average": {
+        "mean": {
             "hp": 20.11,
             "ac": 15.66,
             "fort": 6.05,
@@ -136,6 +136,16 @@
             "attack_bonus": 7.83,
             "spell_dc": 16.46,
             "spell_attack_bonus": 8.55
+        },
+        "median": {
+            "hp": null,
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 8,
+            "spell_dc": null,
+            "spell_attack_bonus": null
         },
         "mode": {
             "hp": 20,
@@ -147,17 +157,7 @@
             "spell_dc": 17,
             "spell_attack_bonus": 9
         },
-        "median": {
-            "hp": null,
-            "ac": null,
-            "fort": null,
-            "refl": null,
-            "will": null,
-            "attack_bonus": 8,
-            "spell_dc": null,
-            "spell_attack_bonus": null
-        },
-        "average_pwl": {
+        "mean_pwl": {
             "ac": 14.66,
             "fort": 5.05,
             "refl": 6.37,
@@ -165,15 +165,6 @@
             "attack_bonus": 6.83,
             "spell_dc": 15.46,
             "spell_attack_bonus": 7.550000000000001
-        },
-        "mode_pwl": {
-            "ac": 15,
-            "fort": 5,
-            "refl": 8,
-            "will": 4,
-            "attack_bonus": 8,
-            "spell_dc": 16,
-            "spell_attack_bonus": 8
         },
         "median_pwl": {
             "ac": null,
@@ -183,11 +174,20 @@
             "attack_bonus": 7,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "mode_pwl": {
+            "ac": 15,
+            "fort": 5,
+            "refl": 8,
+            "will": 4,
+            "attack_bonus": 8,
+            "spell_dc": 16,
+            "spell_attack_bonus": 8
         }
     },
     {
         "level": "2",
-        "average": {
+        "mean": {
             "hp": 31.42,
             "ac": 16.97,
             "fort": 7.79,
@@ -196,16 +196,6 @@
             "attack_bonus": 9.58,
             "spell_dc": 17.36,
             "spell_attack_bonus": 9.33
-        },
-        "mode": {
-            "hp": 30,
-            "ac": 18,
-            "fort": 7,
-            "refl": 10,
-            "will": 6,
-            "attack_bonus": 10,
-            "spell_dc": 18,
-            "spell_attack_bonus": 10
         },
         "median": {
             "hp": null,
@@ -217,7 +207,17 @@
             "spell_dc": null,
             "spell_attack_bonus": null
         },
-        "average_pwl": {
+        "mode": {
+            "hp": 30,
+            "ac": 18,
+            "fort": 7,
+            "refl": 10,
+            "will": 6,
+            "attack_bonus": 10,
+            "spell_dc": 18,
+            "spell_attack_bonus": 10
+        },
+        "mean_pwl": {
             "ac": 14.969999999999999,
             "fort": 5.79,
             "refl": 6.07,
@@ -225,15 +225,6 @@
             "attack_bonus": 7.58,
             "spell_dc": 15.36,
             "spell_attack_bonus": 7.33
-        },
-        "mode_pwl": {
-            "ac": 16,
-            "fort": 5,
-            "refl": 8,
-            "will": 4,
-            "attack_bonus": 8,
-            "spell_dc": 16,
-            "spell_attack_bonus": 8
         },
         "median_pwl": {
             "ac": null,
@@ -243,11 +234,20 @@
             "attack_bonus": 8.0,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "mode_pwl": {
+            "ac": 16,
+            "fort": 5,
+            "refl": 8,
+            "will": 4,
+            "attack_bonus": 8,
+            "spell_dc": 16,
+            "spell_attack_bonus": 8
         }
     },
     {
         "level": "3",
-        "average": {
+        "mean": {
             "hp": 46.38,
             "ac": 16.7,
             "fort": 8.31,
@@ -256,6 +256,16 @@
             "attack_bonus": 10.6,
             "spell_dc": 19.38,
             "spell_attack_bonus": 11.22
+        },
+        "median": {
+            "hp": null,
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 11,
+            "spell_dc": null,
+            "spell_attack_bonus": null
         },
         "mode": {
             "hp": 45,
@@ -267,17 +277,7 @@
             "spell_dc": 20,
             "spell_attack_bonus": 12
         },
-        "median": {
-            "hp": null,
-            "ac": null,
-            "fort": null,
-            "refl": null,
-            "will": null,
-            "attack_bonus": 11,
-            "spell_dc": null,
-            "spell_attack_bonus": null
-        },
-        "average_pwl": {
+        "mean_pwl": {
             "ac": 13.7,
             "fort": 5.3100000000000005,
             "refl": 5.6,
@@ -285,15 +285,6 @@
             "attack_bonus": 7.6,
             "spell_dc": 16.38,
             "spell_attack_bonus": 8.22
-        },
-        "mode_pwl": {
-            "ac": 15,
-            "fort": 6,
-            "refl": 8,
-            "will": 4,
-            "attack_bonus": 8,
-            "spell_dc": 17,
-            "spell_attack_bonus": 9
         },
         "median_pwl": {
             "ac": null,
@@ -303,11 +294,20 @@
             "attack_bonus": 8,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "mode_pwl": {
+            "ac": 15,
+            "fort": 6,
+            "refl": 8,
+            "will": 4,
+            "attack_bonus": 8,
+            "spell_dc": 17,
+            "spell_attack_bonus": 9
         }
     },
     {
         "level": "4",
-        "average": {
+        "mean": {
             "hp": 61.69,
             "ac": 19.92,
             "fort": 10.83,
@@ -316,6 +316,16 @@
             "attack_bonus": 13.05,
             "spell_dc": 20.52,
             "spell_attack_bonus": 13.0
+        },
+        "median": {
+            "hp": null,
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 13,
+            "spell_dc": null,
+            "spell_attack_bonus": null
         },
         "mode": {
             "hp": 60,
@@ -327,17 +337,7 @@
             "spell_dc": 21,
             "spell_attack_bonus": 13
         },
-        "median": {
-            "hp": null,
-            "ac": null,
-            "fort": null,
-            "refl": null,
-            "will": null,
-            "attack_bonus": 13,
-            "spell_dc": null,
-            "spell_attack_bonus": null
-        },
-        "average_pwl": {
+        "mean_pwl": {
             "ac": 15.920000000000002,
             "fort": 6.83,
             "refl": 6.57,
@@ -345,15 +345,6 @@
             "attack_bonus": 9.05,
             "spell_dc": 16.52,
             "spell_attack_bonus": 9.0
-        },
-        "mode_pwl": {
-            "ac": 17,
-            "fort": 9,
-            "refl": 9,
-            "will": 6,
-            "attack_bonus": 10,
-            "spell_dc": 17,
-            "spell_attack_bonus": 9
         },
         "median_pwl": {
             "ac": null,
@@ -363,11 +354,20 @@
             "attack_bonus": 9,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "mode_pwl": {
+            "ac": 17,
+            "fort": 9,
+            "refl": 9,
+            "will": 6,
+            "attack_bonus": 10,
+            "spell_dc": 17,
+            "spell_attack_bonus": 9
         }
     },
     {
         "level": "5",
-        "average": {
+        "mean": {
             "hp": 77.58,
             "ac": 18.6,
             "fort": 11.15,
@@ -376,6 +376,16 @@
             "attack_bonus": 13.96,
             "spell_dc": 21.79,
             "spell_attack_bonus": 14.0
+        },
+        "median": {
+            "hp": null,
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 14,
+            "spell_dc": null,
+            "spell_attack_bonus": null
         },
         "mode": {
             "hp": 75,
@@ -387,17 +397,7 @@
             "spell_dc": 22,
             "spell_attack_bonus": 14
         },
-        "median": {
-            "hp": null,
-            "ac": null,
-            "fort": null,
-            "refl": null,
-            "will": null,
-            "attack_bonus": 14,
-            "spell_dc": null,
-            "spell_attack_bonus": null
-        },
-        "average_pwl": {
+        "mean_pwl": {
             "ac": 13.600000000000001,
             "fort": 6.15,
             "refl": 5.380000000000001,
@@ -405,15 +405,6 @@
             "attack_bonus": 8.96,
             "spell_dc": 16.79,
             "spell_attack_bonus": 9.0
-        },
-        "mode_pwl": {
-            "ac": 17,
-            "fort": 10,
-            "refl": 10,
-            "will": 5,
-            "attack_bonus": 10,
-            "spell_dc": 17,
-            "spell_attack_bonus": 9
         },
         "median_pwl": {
             "ac": null,
@@ -423,11 +414,20 @@
             "attack_bonus": 9,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "mode_pwl": {
+            "ac": 17,
+            "fort": 10,
+            "refl": 10,
+            "will": 5,
+            "attack_bonus": 10,
+            "spell_dc": 17,
+            "spell_attack_bonus": 9
         }
     },
     {
         "level": "6",
-        "average": {
+        "mean": {
             "hp": 101.45,
             "ac": 22.11,
             "fort": 13.67,
@@ -436,6 +436,16 @@
             "attack_bonus": 16.17,
             "spell_dc": 23.63,
             "spell_attack_bonus": 15.6
+        },
+        "median": {
+            "hp": null,
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 16,
+            "spell_dc": null,
+            "spell_attack_bonus": null
         },
         "mode": {
             "hp": 95,
@@ -447,17 +457,7 @@
             "spell_dc": 24,
             "spell_attack_bonus": 16
         },
-        "median": {
-            "hp": null,
-            "ac": null,
-            "fort": null,
-            "refl": null,
-            "will": null,
-            "attack_bonus": 16,
-            "spell_dc": null,
-            "spell_attack_bonus": null
-        },
-        "average_pwl": {
+        "mean_pwl": {
             "ac": 16.11,
             "fort": 7.67,
             "refl": 7.0600000000000005,
@@ -465,15 +465,6 @@
             "attack_bonus": 10.170000000000002,
             "spell_dc": 17.63,
             "spell_attack_bonus": 9.6
-        },
-        "mode_pwl": {
-            "ac": 18,
-            "fort": 10,
-            "refl": 6,
-            "will": 6,
-            "attack_bonus": 11,
-            "spell_dc": 18,
-            "spell_attack_bonus": 10
         },
         "median_pwl": {
             "ac": null,
@@ -483,11 +474,20 @@
             "attack_bonus": 10,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "mode_pwl": {
+            "ac": 18,
+            "fort": 10,
+            "refl": 6,
+            "will": 6,
+            "attack_bonus": 11,
+            "spell_dc": 18,
+            "spell_attack_bonus": 10
         }
     },
     {
         "level": "7",
-        "average": {
+        "mean": {
             "hp": 115.03,
             "ac": 23.53,
             "fort": 14.93,
@@ -496,6 +496,16 @@
             "attack_bonus": 17.34,
             "spell_dc": 24.74,
             "spell_attack_bonus": 17.11
+        },
+        "median": {
+            "hp": null,
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 18,
+            "spell_dc": null,
+            "spell_attack_bonus": null
         },
         "mode": {
             "hp": 100,
@@ -507,17 +517,7 @@
             "spell_dc": 25,
             "spell_attack_bonus": 17
         },
-        "median": {
-            "hp": null,
-            "ac": null,
-            "fort": null,
-            "refl": null,
-            "will": null,
-            "attack_bonus": 18,
-            "spell_dc": null,
-            "spell_attack_bonus": null
-        },
-        "average_pwl": {
+        "mean_pwl": {
             "ac": 16.53,
             "fort": 7.93,
             "refl": 7.140000000000001,
@@ -525,15 +525,6 @@
             "attack_bonus": 10.34,
             "spell_dc": 17.74,
             "spell_attack_bonus": 10.11
-        },
-        "mode_pwl": {
-            "ac": 18,
-            "fort": 10,
-            "refl": 10,
-            "will": 8,
-            "attack_bonus": 11,
-            "spell_dc": 18,
-            "spell_attack_bonus": 10
         },
         "median_pwl": {
             "ac": null,
@@ -543,11 +534,20 @@
             "attack_bonus": 11,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "mode_pwl": {
+            "ac": 18,
+            "fort": 10,
+            "refl": 10,
+            "will": 8,
+            "attack_bonus": 11,
+            "spell_dc": 18,
+            "spell_attack_bonus": 10
         }
     },
     {
         "level": "8",
-        "average": {
+        "mean": {
             "hp": 137.14,
             "ac": 25.27,
             "fort": 15.98,
@@ -556,6 +556,16 @@
             "attack_bonus": 19.12,
             "spell_dc": 25.79,
             "spell_attack_bonus": 17.7
+        },
+        "median": {
+            "hp": null,
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 20,
+            "spell_dc": null,
+            "spell_attack_bonus": null
         },
         "mode": {
             "hp": 135,
@@ -567,17 +577,7 @@
             "spell_dc": 26,
             "spell_attack_bonus": 18
         },
-        "median": {
-            "hp": null,
-            "ac": null,
-            "fort": null,
-            "refl": null,
-            "will": null,
-            "attack_bonus": 20,
-            "spell_dc": null,
-            "spell_attack_bonus": null
-        },
-        "average_pwl": {
+        "mean_pwl": {
             "ac": 17.27,
             "fort": 7.98,
             "refl": 6.699999999999999,
@@ -585,15 +585,6 @@
             "attack_bonus": 11.120000000000001,
             "spell_dc": 17.79,
             "spell_attack_bonus": 9.7
-        },
-        "mode_pwl": {
-            "ac": 19,
-            "fort": 10,
-            "refl": 8,
-            "will": 6,
-            "attack_bonus": 12,
-            "spell_dc": 18,
-            "spell_attack_bonus": 10
         },
         "median_pwl": {
             "ac": null,
@@ -603,11 +594,20 @@
             "attack_bonus": 12,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "mode_pwl": {
+            "ac": 19,
+            "fort": 10,
+            "refl": 8,
+            "will": 6,
+            "attack_bonus": 12,
+            "spell_dc": 18,
+            "spell_attack_bonus": 10
         }
     },
     {
         "level": "9",
-        "average": {
+        "mean": {
             "hp": 160.15,
             "ac": 27.27,
             "fort": 18.64,
@@ -616,6 +616,16 @@
             "attack_bonus": 20.37,
             "spell_dc": 27.67,
             "spell_attack_bonus": 19.6
+        },
+        "median": {
+            "hp": null,
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 21,
+            "spell_dc": null,
+            "spell_attack_bonus": null
         },
         "mode": {
             "hp": 155,
@@ -627,17 +637,7 @@
             "spell_dc": 28,
             "spell_attack_bonus": 20
         },
-        "median": {
-            "hp": null,
-            "ac": null,
-            "fort": null,
-            "refl": null,
-            "will": null,
-            "attack_bonus": 21,
-            "spell_dc": null,
-            "spell_attack_bonus": null
-        },
-        "average_pwl": {
+        "mean_pwl": {
             "ac": 18.27,
             "fort": 9.64,
             "refl": 8.620000000000001,
@@ -645,15 +645,6 @@
             "attack_bonus": 11.370000000000001,
             "spell_dc": 18.67,
             "spell_attack_bonus": 10.600000000000001
-        },
-        "mode_pwl": {
-            "ac": 19,
-            "fort": 10,
-            "refl": 9,
-            "will": 7,
-            "attack_bonus": 12,
-            "spell_dc": 19,
-            "spell_attack_bonus": 11
         },
         "median_pwl": {
             "ac": null,
@@ -663,11 +654,20 @@
             "attack_bonus": 12,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "mode_pwl": {
+            "ac": 19,
+            "fort": 10,
+            "refl": 9,
+            "will": 7,
+            "attack_bonus": 12,
+            "spell_dc": 19,
+            "spell_attack_bonus": 11
         }
     },
     {
         "level": "10",
-        "average": {
+        "mean": {
             "hp": 179.85,
             "ac": 29.16,
             "fort": 19.66,
@@ -676,6 +676,16 @@
             "attack_bonus": 22.34,
             "spell_dc": 28.64,
             "spell_attack_bonus": 21.22
+        },
+        "median": {
+            "hp": null,
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 23,
+            "spell_dc": null,
+            "spell_attack_bonus": null
         },
         "mode": {
             "hp": 175,
@@ -687,17 +697,7 @@
             "spell_dc": 29,
             "spell_attack_bonus": 21
         },
-        "median": {
-            "hp": null,
-            "ac": null,
-            "fort": null,
-            "refl": null,
-            "will": null,
-            "attack_bonus": 23,
-            "spell_dc": null,
-            "spell_attack_bonus": null
-        },
-        "average_pwl": {
+        "mean_pwl": {
             "ac": 19.16,
             "fort": 9.66,
             "refl": 8.46,
@@ -705,15 +705,6 @@
             "attack_bonus": 12.34,
             "spell_dc": 18.64,
             "spell_attack_bonus": 11.219999999999999
-        },
-        "mode_pwl": {
-            "ac": 20,
-            "fort": 11,
-            "refl": 9,
-            "will": 9,
-            "attack_bonus": 13,
-            "spell_dc": 19,
-            "spell_attack_bonus": 11
         },
         "median_pwl": {
             "ac": null,
@@ -723,11 +714,20 @@
             "attack_bonus": 13,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "mode_pwl": {
+            "ac": 20,
+            "fort": 11,
+            "refl": 9,
+            "will": 9,
+            "attack_bonus": 13,
+            "spell_dc": 19,
+            "spell_attack_bonus": 11
         }
     },
     {
         "level": "11",
-        "average": {
+        "mean": {
             "hp": 197.96,
             "ac": 29.94,
             "fort": 21.83,
@@ -736,16 +736,6 @@
             "attack_bonus": 23.4,
             "spell_dc": 29.56,
             "spell_attack_bonus": 21.5
-        },
-        "mode": {
-            "hp": 195,
-            "ac": 31,
-            "fort": 24,
-            "refl": 20,
-            "will": 18,
-            "attack_bonus": 24,
-            "spell_dc": 30,
-            "spell_attack_bonus": 22
         },
         "median": {
             "hp": null,
@@ -757,7 +747,17 @@
             "spell_dc": null,
             "spell_attack_bonus": null
         },
-        "average_pwl": {
+        "mode": {
+            "hp": 195,
+            "ac": 31,
+            "fort": 24,
+            "refl": 20,
+            "will": 18,
+            "attack_bonus": 24,
+            "spell_dc": 30,
+            "spell_attack_bonus": 22
+        },
+        "mean_pwl": {
             "ac": 18.94,
             "fort": 10.829999999999998,
             "refl": 8.870000000000001,
@@ -765,15 +765,6 @@
             "attack_bonus": 12.399999999999999,
             "spell_dc": 18.56,
             "spell_attack_bonus": 10.5
-        },
-        "mode_pwl": {
-            "ac": 20,
-            "fort": 13,
-            "refl": 9,
-            "will": 7,
-            "attack_bonus": 13,
-            "spell_dc": 19,
-            "spell_attack_bonus": 11
         },
         "median_pwl": {
             "ac": null,
@@ -783,11 +774,20 @@
             "attack_bonus": 13.0,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "mode_pwl": {
+            "ac": 20,
+            "fort": 13,
+            "refl": 9,
+            "will": 7,
+            "attack_bonus": 13,
+            "spell_dc": 19,
+            "spell_attack_bonus": 11
         }
     },
     {
         "level": "12",
-        "average": {
+        "mean": {
             "hp": 219.1,
             "ac": 32.52,
             "fort": 22.96,
@@ -796,6 +796,16 @@
             "attack_bonus": 25.24,
             "spell_dc": 31.9,
             "spell_attack_bonus": 24.4
+        },
+        "median": {
+            "hp": null,
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 25,
+            "spell_dc": null,
+            "spell_attack_bonus": null
         },
         "mode": {
             "hp": 215,
@@ -807,17 +817,7 @@
             "spell_dc": 32,
             "spell_attack_bonus": 24
         },
-        "median": {
-            "hp": null,
-            "ac": null,
-            "fort": null,
-            "refl": null,
-            "will": null,
-            "attack_bonus": 25,
-            "spell_dc": null,
-            "spell_attack_bonus": null
-        },
-        "average_pwl": {
+        "mean_pwl": {
             "ac": 20.520000000000003,
             "fort": 10.96,
             "refl": 9.16,
@@ -825,15 +825,6 @@
             "attack_bonus": 13.239999999999998,
             "spell_dc": 19.9,
             "spell_attack_bonus": 12.399999999999999
-        },
-        "mode_pwl": {
-            "ac": 21,
-            "fort": 13,
-            "refl": 10,
-            "will": 10,
-            "attack_bonus": 13,
-            "spell_dc": 20,
-            "spell_attack_bonus": 12
         },
         "median_pwl": {
             "ac": null,
@@ -843,11 +834,20 @@
             "attack_bonus": 13,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "mode_pwl": {
+            "ac": 21,
+            "fort": 13,
+            "refl": 10,
+            "will": 10,
+            "attack_bonus": 13,
+            "spell_dc": 20,
+            "spell_attack_bonus": 12
         }
     },
     {
         "level": "13",
-        "average": {
+        "mean": {
             "hp": 248.88,
             "ac": 32.42,
             "fort": 24.1,
@@ -856,6 +856,16 @@
             "attack_bonus": 26.47,
             "spell_dc": 32.96,
             "spell_attack_bonus": 24.8
+        },
+        "median": {
+            "hp": null,
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 27,
+            "spell_dc": null,
+            "spell_attack_bonus": null
         },
         "mode": {
             "hp": 270,
@@ -867,17 +877,7 @@
             "spell_dc": 33,
             "spell_attack_bonus": 25
         },
-        "median": {
-            "hp": null,
-            "ac": null,
-            "fort": null,
-            "refl": null,
-            "will": null,
-            "attack_bonus": 27,
-            "spell_dc": null,
-            "spell_attack_bonus": null
-        },
-        "average_pwl": {
+        "mean_pwl": {
             "ac": 19.42,
             "fort": 11.100000000000001,
             "refl": 8.52,
@@ -885,15 +885,6 @@
             "attack_bonus": 13.469999999999999,
             "spell_dc": 19.96,
             "spell_attack_bonus": 11.8
-        },
-        "mode_pwl": {
-            "ac": 21,
-            "fort": 13,
-            "refl": 10,
-            "will": 10,
-            "attack_bonus": 14,
-            "spell_dc": 20,
-            "spell_attack_bonus": 12
         },
         "median_pwl": {
             "ac": null,
@@ -903,11 +894,20 @@
             "attack_bonus": 14,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "mode_pwl": {
+            "ac": 21,
+            "fort": 13,
+            "refl": 10,
+            "will": 10,
+            "attack_bonus": 14,
+            "spell_dc": 20,
+            "spell_attack_bonus": 12
         }
     },
     {
         "level": "14",
-        "average": {
+        "mean": {
             "hp": 261.63,
             "ac": 35.42,
             "fort": 25.23,
@@ -916,16 +916,6 @@
             "attack_bonus": 28.58,
             "spell_dc": 33.94,
             "spell_attack_bonus": 26.58
-        },
-        "mode": {
-            "hp": 285,
-            "ac": 36,
-            "fort": 28,
-            "refl": 24,
-            "will": 26,
-            "attack_bonus": 29,
-            "spell_dc": 34,
-            "spell_attack_bonus": 26
         },
         "median": {
             "hp": null,
@@ -937,7 +927,17 @@
             "spell_dc": null,
             "spell_attack_bonus": null
         },
-        "average_pwl": {
+        "mode": {
+            "hp": 285,
+            "ac": 36,
+            "fort": 28,
+            "refl": 24,
+            "will": 26,
+            "attack_bonus": 29,
+            "spell_dc": 34,
+            "spell_attack_bonus": 26
+        },
+        "mean_pwl": {
             "ac": 21.42,
             "fort": 11.23,
             "refl": 10.719999999999999,
@@ -945,15 +945,6 @@
             "attack_bonus": 14.579999999999998,
             "spell_dc": 19.939999999999998,
             "spell_attack_bonus": 12.579999999999998
-        },
-        "mode_pwl": {
-            "ac": 22,
-            "fort": 14,
-            "refl": 10,
-            "will": 12,
-            "attack_bonus": 15,
-            "spell_dc": 20,
-            "spell_attack_bonus": 12
         },
         "median_pwl": {
             "ac": null,
@@ -963,11 +954,20 @@
             "attack_bonus": 15.0,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "mode_pwl": {
+            "ac": 22,
+            "fort": 14,
+            "refl": 10,
+            "will": 12,
+            "attack_bonus": 15,
+            "spell_dc": 20,
+            "spell_attack_bonus": 12
         }
     },
     {
         "level": "15",
-        "average": {
+        "mean": {
             "hp": 287.92,
             "ac": 33.64,
             "fort": 24.89,
@@ -976,6 +976,16 @@
             "attack_bonus": 29.77,
             "spell_dc": 36.5,
             "spell_attack_bonus": 29.3
+        },
+        "median": {
+            "hp": null,
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 30,
+            "spell_dc": null,
+            "spell_attack_bonus": null
         },
         "mode": {
             "hp": 275,
@@ -987,17 +997,7 @@
             "spell_dc": 36,
             "spell_attack_bonus": 30
         },
-        "median": {
-            "hp": null,
-            "ac": null,
-            "fort": null,
-            "refl": null,
-            "will": null,
-            "attack_bonus": 30,
-            "spell_dc": null,
-            "spell_attack_bonus": null
-        },
-        "average_pwl": {
+        "mean_pwl": {
             "ac": 18.64,
             "fort": 9.89,
             "refl": 8.329999999999998,
@@ -1005,15 +1005,6 @@
             "attack_bonus": 14.77,
             "spell_dc": 21.5,
             "spell_attack_bonus": 14.3
-        },
-        "mode_pwl": {
-            "ac": 22,
-            "fort": 12,
-            "refl": 10,
-            "will": 14,
-            "attack_bonus": 15,
-            "spell_dc": 21,
-            "spell_attack_bonus": 15
         },
         "median_pwl": {
             "ac": null,
@@ -1023,11 +1014,20 @@
             "attack_bonus": 15,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "mode_pwl": {
+            "ac": 22,
+            "fort": 12,
+            "refl": 10,
+            "will": 14,
+            "attack_bonus": 15,
+            "spell_dc": 21,
+            "spell_attack_bonus": 15
         }
     },
     {
         "level": "16",
-        "average": {
+        "mean": {
             "hp": 287.57,
             "ac": 35.79,
             "fort": 26.86,
@@ -1036,16 +1036,6 @@
             "attack_bonus": 31.7,
             "spell_dc": 37.0,
             "spell_attack_bonus": 28.75
-        },
-        "mode": {
-            "hp": 300,
-            "ac": 39,
-            "fort": 30,
-            "refl": 30,
-            "will": 28,
-            "attack_bonus": 33,
-            "spell_dc": 37,
-            "spell_attack_bonus": 29
         },
         "median": {
             "hp": null,
@@ -1057,7 +1047,17 @@
             "spell_dc": null,
             "spell_attack_bonus": null
         },
-        "average_pwl": {
+        "mode": {
+            "hp": 300,
+            "ac": 39,
+            "fort": 30,
+            "refl": 30,
+            "will": 28,
+            "attack_bonus": 33,
+            "spell_dc": 37,
+            "spell_attack_bonus": 29
+        },
+        "mean_pwl": {
             "ac": 19.79,
             "fort": 10.86,
             "refl": 9.96,
@@ -1065,15 +1065,6 @@
             "attack_bonus": 15.7,
             "spell_dc": 21.0,
             "spell_attack_bonus": 12.75
-        },
-        "mode_pwl": {
-            "ac": 23,
-            "fort": 14,
-            "refl": 14,
-            "will": 12,
-            "attack_bonus": 17,
-            "spell_dc": 21,
-            "spell_attack_bonus": 13
         },
         "median_pwl": {
             "ac": null,
@@ -1083,11 +1074,20 @@
             "attack_bonus": 16,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "mode_pwl": {
+            "ac": 23,
+            "fort": 14,
+            "refl": 14,
+            "will": 12,
+            "attack_bonus": 17,
+            "spell_dc": 21,
+            "spell_attack_bonus": 13
         }
     },
     {
         "level": "17",
-        "average": {
+        "mean": {
             "hp": 318.91,
             "ac": 39.96,
             "fort": 30.0,
@@ -1096,16 +1096,6 @@
             "attack_bonus": 32.85,
             "spell_dc": 38.68,
             "spell_attack_bonus": 31.75
-        },
-        "mode": {
-            "hp": 315,
-            "ac": 40,
-            "fort": 32,
-            "refl": 29,
-            "will": 32,
-            "attack_bonus": 33,
-            "spell_dc": 38,
-            "spell_attack_bonus": 34
         },
         "median": {
             "hp": null,
@@ -1117,7 +1107,17 @@
             "spell_dc": null,
             "spell_attack_bonus": null
         },
-        "average_pwl": {
+        "mode": {
+            "hp": 315,
+            "ac": 40,
+            "fort": 32,
+            "refl": 29,
+            "will": 32,
+            "attack_bonus": 33,
+            "spell_dc": 38,
+            "spell_attack_bonus": 34
+        },
+        "mean_pwl": {
             "ac": 22.96,
             "fort": 13.0,
             "refl": 12.09,
@@ -1125,15 +1125,6 @@
             "attack_bonus": 15.850000000000001,
             "spell_dc": 21.68,
             "spell_attack_bonus": 14.75
-        },
-        "mode_pwl": {
-            "ac": 23,
-            "fort": 15,
-            "refl": 12,
-            "will": 15,
-            "attack_bonus": 16,
-            "spell_dc": 21,
-            "spell_attack_bonus": 17
         },
         "median_pwl": {
             "ac": null,
@@ -1143,11 +1134,20 @@
             "attack_bonus": 16.0,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "mode_pwl": {
+            "ac": 23,
+            "fort": 15,
+            "refl": 12,
+            "will": 15,
+            "attack_bonus": 16,
+            "spell_dc": 21,
+            "spell_attack_bonus": 17
         }
     },
     {
         "level": "18",
-        "average": {
+        "mean": {
             "hp": 344.46,
             "ac": 41.67,
             "fort": 32.17,
@@ -1156,6 +1156,16 @@
             "attack_bonus": 34.74,
             "spell_dc": 40.47,
             "spell_attack_bonus": 33.5
+        },
+        "median": {
+            "hp": null,
+            "ac": null,
+            "fort": null,
+            "refl": null,
+            "will": null,
+            "attack_bonus": 35,
+            "spell_dc": null,
+            "spell_attack_bonus": null
         },
         "mode": {
             "hp": 360,
@@ -1167,17 +1177,7 @@
             "spell_dc": 40,
             "spell_attack_bonus": 35
         },
-        "median": {
-            "hp": null,
-            "ac": null,
-            "fort": null,
-            "refl": null,
-            "will": null,
-            "attack_bonus": 35,
-            "spell_dc": null,
-            "spell_attack_bonus": null
-        },
-        "average_pwl": {
+        "mean_pwl": {
             "ac": 23.67,
             "fort": 14.170000000000002,
             "refl": 11.129999999999999,
@@ -1185,15 +1185,6 @@
             "attack_bonus": 16.740000000000002,
             "spell_dc": 22.47,
             "spell_attack_bonus": 15.5
-        },
-        "mode_pwl": {
-            "ac": 24,
-            "fort": 15,
-            "refl": 12,
-            "will": 15,
-            "attack_bonus": 17,
-            "spell_dc": 22,
-            "spell_attack_bonus": 17
         },
         "median_pwl": {
             "ac": null,
@@ -1203,11 +1194,20 @@
             "attack_bonus": 17,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "mode_pwl": {
+            "ac": 24,
+            "fort": 15,
+            "refl": 12,
+            "will": 15,
+            "attack_bonus": 17,
+            "spell_dc": 22,
+            "spell_attack_bonus": 17
         }
     },
     {
         "level": "19",
-        "average": {
+        "mean": {
             "hp": 362.25,
             "ac": 40.56,
             "fort": 31.06,
@@ -1216,16 +1216,6 @@
             "attack_bonus": 35.72,
             "spell_dc": 41.31,
             "spell_attack_bonus": 35.5
-        },
-        "mode": {
-            "hp": 410,
-            "ac": 43,
-            "fort": 35,
-            "refl": 32,
-            "will": 35,
-            "attack_bonus": 37,
-            "spell_dc": 41,
-            "spell_attack_bonus": 37
         },
         "median": {
             "hp": null,
@@ -1237,7 +1227,17 @@
             "spell_dc": null,
             "spell_attack_bonus": null
         },
-        "average_pwl": {
+        "mode": {
+            "hp": 410,
+            "ac": 43,
+            "fort": 35,
+            "refl": 32,
+            "will": 35,
+            "attack_bonus": 37,
+            "spell_dc": 41,
+            "spell_attack_bonus": 37
+        },
+        "mean_pwl": {
             "ac": 21.560000000000002,
             "fort": 12.059999999999999,
             "refl": 10.809999999999999,
@@ -1245,15 +1245,6 @@
             "attack_bonus": 16.72,
             "spell_dc": 22.310000000000002,
             "spell_attack_bonus": 16.5
-        },
-        "mode_pwl": {
-            "ac": 24,
-            "fort": 16,
-            "refl": 13,
-            "will": 16,
-            "attack_bonus": 18,
-            "spell_dc": 22,
-            "spell_attack_bonus": 18
         },
         "median_pwl": {
             "ac": null,
@@ -1263,11 +1254,20 @@
             "attack_bonus": 17,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "mode_pwl": {
+            "ac": 24,
+            "fort": 16,
+            "refl": 13,
+            "will": 16,
+            "attack_bonus": 18,
+            "spell_dc": 22,
+            "spell_attack_bonus": 18
         }
     },
     {
         "level": "20",
-        "average": {
+        "mean": {
             "hp": 391.19,
             "ac": 41.1,
             "fort": 32.05,
@@ -1276,16 +1276,6 @@
             "attack_bonus": 37.96,
             "spell_dc": 42.59,
             "spell_attack_bonus": 34.2
-        },
-        "mode": {
-            "hp": 375,
-            "ac": 45,
-            "fort": 35,
-            "refl": 32,
-            "will": 34,
-            "attack_bonus": 38,
-            "spell_dc": 42,
-            "spell_attack_bonus": 34
         },
         "median": {
             "hp": null,
@@ -1297,7 +1287,17 @@
             "spell_dc": null,
             "spell_attack_bonus": null
         },
-        "average_pwl": {
+        "mode": {
+            "hp": 375,
+            "ac": 45,
+            "fort": 35,
+            "refl": 32,
+            "will": 34,
+            "attack_bonus": 38,
+            "spell_dc": 42,
+            "spell_attack_bonus": 34
+        },
+        "mean_pwl": {
             "ac": 21.1,
             "fort": 12.049999999999997,
             "refl": 9.190000000000001,
@@ -1305,15 +1305,6 @@
             "attack_bonus": 17.96,
             "spell_dc": 22.590000000000003,
             "spell_attack_bonus": 14.200000000000003
-        },
-        "mode_pwl": {
-            "ac": 25,
-            "fort": 15,
-            "refl": 12,
-            "will": 14,
-            "attack_bonus": 18,
-            "spell_dc": 22,
-            "spell_attack_bonus": 14
         },
         "median_pwl": {
             "ac": null,
@@ -1323,11 +1314,20 @@
             "attack_bonus": 18.0,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "mode_pwl": {
+            "ac": 25,
+            "fort": 15,
+            "refl": 12,
+            "will": 14,
+            "attack_bonus": 18,
+            "spell_dc": 22,
+            "spell_attack_bonus": 14
         }
     },
     {
         "level": "21",
-        "average": {
+        "mean": {
             "hp": 422.5,
             "ac": 46.13,
             "fort": 37.88,
@@ -1336,16 +1336,6 @@
             "attack_bonus": 39.35,
             "spell_dc": 44.5,
             "spell_attack_bonus": 35.5
-        },
-        "mode": {
-            "hp": 500,
-            "ac": 47,
-            "fort": 38,
-            "refl": 34,
-            "will": 38,
-            "attack_bonus": 40,
-            "spell_dc": 44,
-            "spell_attack_bonus": 37
         },
         "median": {
             "hp": null,
@@ -1357,7 +1347,17 @@
             "spell_dc": null,
             "spell_attack_bonus": null
         },
-        "average_pwl": {
+        "mode": {
+            "hp": 500,
+            "ac": 47,
+            "fort": 38,
+            "refl": 34,
+            "will": 38,
+            "attack_bonus": 40,
+            "spell_dc": 44,
+            "spell_attack_bonus": 37
+        },
+        "mean_pwl": {
             "ac": 25.130000000000003,
             "fort": 16.880000000000003,
             "refl": 13.75,
@@ -1365,15 +1365,6 @@
             "attack_bonus": 18.35,
             "spell_dc": 23.5,
             "spell_attack_bonus": 14.5
-        },
-        "mode_pwl": {
-            "ac": 26,
-            "fort": 17,
-            "refl": 13,
-            "will": 17,
-            "attack_bonus": 19,
-            "spell_dc": 23,
-            "spell_attack_bonus": 16
         },
         "median_pwl": {
             "ac": null,
@@ -1383,11 +1374,20 @@
             "attack_bonus": 18,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "mode_pwl": {
+            "ac": 26,
+            "fort": 17,
+            "refl": 13,
+            "will": 17,
+            "attack_bonus": 19,
+            "spell_dc": 23,
+            "spell_attack_bonus": 16
         }
     },
     {
         "level": "22",
-        "average": {
+        "mean": {
             "hp": 492.0,
             "ac": 46.8,
             "fort": 37.0,
@@ -1396,16 +1396,6 @@
             "attack_bonus": 39.44,
             "spell_dc": 45.0,
             "spell_attack_bonus": 41.0
-        },
-        "mode": {
-            "hp": 540,
-            "ac": 48,
-            "fort": 39,
-            "refl": 36,
-            "will": 33,
-            "attack_bonus": 41,
-            "spell_dc": 45,
-            "spell_attack_bonus": 41
         },
         "median": {
             "hp": null,
@@ -1417,7 +1407,17 @@
             "spell_dc": null,
             "spell_attack_bonus": null
         },
-        "average_pwl": {
+        "mode": {
+            "hp": 540,
+            "ac": 48,
+            "fort": 39,
+            "refl": 36,
+            "will": 33,
+            "attack_bonus": 41,
+            "spell_dc": 45,
+            "spell_attack_bonus": 41
+        },
+        "mean_pwl": {
             "ac": 24.799999999999997,
             "fort": 15.0,
             "refl": 15.600000000000001,
@@ -1425,15 +1425,6 @@
             "attack_bonus": 17.439999999999998,
             "spell_dc": 23.0,
             "spell_attack_bonus": 19.0
-        },
-        "mode_pwl": {
-            "ac": 26,
-            "fort": 17,
-            "refl": 14,
-            "will": 11,
-            "attack_bonus": 19,
-            "spell_dc": 23,
-            "spell_attack_bonus": 19
         },
         "median_pwl": {
             "ac": null,
@@ -1443,11 +1434,20 @@
             "attack_bonus": 18.0,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "mode_pwl": {
+            "ac": 26,
+            "fort": 17,
+            "refl": 14,
+            "will": 11,
+            "attack_bonus": 19,
+            "spell_dc": 23,
+            "spell_attack_bonus": 19
         }
     },
     {
         "level": "23",
-        "average": {
+        "mean": {
             "hp": 477.0,
             "ac": 39.2,
             "fort": 30.4,
@@ -1456,16 +1456,6 @@
             "attack_bonus": 40.56,
             "spell_dc": 45.25,
             "spell_attack_bonus": 38.0
-        },
-        "mode": {
-            "hp": 500,
-            "ac": 49,
-            "fort": 41,
-            "refl": 37,
-            "will": 37,
-            "attack_bonus": 42,
-            "spell_dc": 46,
-            "spell_attack_bonus": 38
         },
         "median": {
             "hp": null,
@@ -1477,7 +1467,17 @@
             "spell_dc": null,
             "spell_attack_bonus": null
         },
-        "average_pwl": {
+        "mode": {
+            "hp": 500,
+            "ac": 49,
+            "fort": 41,
+            "refl": 37,
+            "will": 37,
+            "attack_bonus": 42,
+            "spell_dc": 46,
+            "spell_attack_bonus": 38
+        },
+        "mean_pwl": {
             "ac": 16.200000000000003,
             "fort": 7.399999999999999,
             "refl": 6.199999999999999,
@@ -1485,15 +1485,6 @@
             "attack_bonus": 17.560000000000002,
             "spell_dc": 22.25,
             "spell_attack_bonus": 15.0
-        },
-        "mode_pwl": {
-            "ac": 26,
-            "fort": 18,
-            "refl": 14,
-            "will": 14,
-            "attack_bonus": 19,
-            "spell_dc": 23,
-            "spell_attack_bonus": 15
         },
         "median_pwl": {
             "ac": null,
@@ -1503,11 +1494,20 @@
             "attack_bonus": 18.0,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "mode_pwl": {
+            "ac": 26,
+            "fort": 18,
+            "refl": 14,
+            "will": 14,
+            "attack_bonus": 19,
+            "spell_dc": 23,
+            "spell_attack_bonus": 15
         }
     },
     {
         "level": "24",
-        "average": {
+        "mean": {
             "hp": 512.5,
             "ac": 51.5,
             "fort": 43.5,
@@ -1515,16 +1515,6 @@
             "will": 39.5,
             "attack_bonus": 44.25,
             "spell_dc": 48.0,
-            "spell_attack_bonus": null
-        },
-        "mode": {
-            "hp": 525,
-            "ac": 52,
-            "fort": 44,
-            "refl": 40,
-            "will": 42,
-            "attack_bonus": 43,
-            "spell_dc": 48,
             "spell_attack_bonus": null
         },
         "median": {
@@ -1537,22 +1527,23 @@
             "spell_dc": null,
             "spell_attack_bonus": null
         },
-        "average_pwl": {
+        "mode": {
+            "hp": 525,
+            "ac": 52,
+            "fort": 44,
+            "refl": 40,
+            "will": 42,
+            "attack_bonus": 43,
+            "spell_dc": 48,
+            "spell_attack_bonus": null
+        },
+        "mean_pwl": {
             "ac": 27.5,
             "fort": 19.5,
             "refl": 15.5,
             "will": 15.5,
             "attack_bonus": 20.25,
             "spell_dc": 24.0,
-            "spell_attack_bonus": null
-        },
-        "mode_pwl": {
-            "ac": 28,
-            "fort": 20,
-            "refl": 16,
-            "will": 18,
-            "attack_bonus": 19,
-            "spell_dc": 24,
             "spell_attack_bonus": null
         },
         "median_pwl": {
@@ -1563,11 +1554,20 @@
             "attack_bonus": 20.0,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "mode_pwl": {
+            "ac": 28,
+            "fort": 20,
+            "refl": 16,
+            "will": 18,
+            "attack_bonus": 19,
+            "spell_dc": 24,
+            "spell_attack_bonus": null
         }
     },
     {
         "level": "25",
-        "average": {
+        "mean": {
             "hp": 550.0,
             "ac": 54.0,
             "fort": 42.0,
@@ -1576,16 +1576,6 @@
             "attack_bonus": 46.0,
             "spell_dc": 49.0,
             "spell_attack_bonus": 43.0
-        },
-        "mode": {
-            "hp": 550,
-            "ac": 54,
-            "fort": 42,
-            "refl": 40,
-            "will": 43,
-            "attack_bonus": 45,
-            "spell_dc": 49,
-            "spell_attack_bonus": 43
         },
         "median": {
             "hp": null,
@@ -1597,7 +1587,17 @@
             "spell_dc": null,
             "spell_attack_bonus": null
         },
-        "average_pwl": {
+        "mode": {
+            "hp": 550,
+            "ac": 54,
+            "fort": 42,
+            "refl": 40,
+            "will": 43,
+            "attack_bonus": 45,
+            "spell_dc": 49,
+            "spell_attack_bonus": 43
+        },
+        "mean_pwl": {
             "ac": 29.0,
             "fort": 17.0,
             "refl": 15.0,
@@ -1605,15 +1605,6 @@
             "attack_bonus": 21.0,
             "spell_dc": 24.0,
             "spell_attack_bonus": 18.0
-        },
-        "mode_pwl": {
-            "ac": 29,
-            "fort": 17,
-            "refl": 15,
-            "will": 18,
-            "attack_bonus": 20,
-            "spell_dc": 24,
-            "spell_attack_bonus": 18
         },
         "median_pwl": {
             "ac": null,
@@ -1623,6 +1614,15 @@
             "attack_bonus": 21.0,
             "spell_dc": null,
             "spell_attack_bonus": null
+        },
+        "mode_pwl": {
+            "ac": 29,
+            "fort": 17,
+            "refl": 15,
+            "will": 18,
+            "attack_bonus": 20,
+            "spell_dc": 24,
+            "spell_attack_bonus": 18
         }
     }
 ]

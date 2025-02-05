@@ -1,0 +1,9 @@
+.form-container {
+    display: flex; /*maybe put them inside one of these*/
+    flex-direction: column;
+    gap: 10px;
+    border: 5px outset red;
+    margin: 20px;
+    padding: 10px;
+    display: inline-block;
+}

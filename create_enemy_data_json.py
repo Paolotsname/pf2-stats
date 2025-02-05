@@ -78,7 +78,7 @@ with open(csv_file_path, newline="") as csvfile:
             ),
         )
 
-    # Step 5: Averages
+    # Step 5: Means
     sql_command_avg = """
     SELECT
         level,
@@ -95,7 +95,7 @@ with open(csv_file_path, newline="") as csvfile:
     ORDER BY CAST(level AS INTEGER) ASC;
     """
     cursor.execute(sql_command_avg)
-    average_results = cursor.fetchall()
+    mean_results = cursor.fetchall()
 
     # Step 6: Modes (Excluding zeroes)
     sql_command_mode = """
@@ -197,7 +197,7 @@ with open(csv_file_path, newline="") as csvfile:
         # Ensure the list contains valid integers (filtering out any non-numeric entries)
         valid_attacks = [int(x) for x in attacks_list if x.isdigit()]
 
-        # Calculate average attack bonus for each level
+        # Calculate averages attack bonus for each level
         if valid_attacks:
             level = int(row["level"]) + 1
             attacks_per_level[level].extend(valid_attacks)
@@ -214,20 +214,20 @@ with open(csv_file_path, newline="") as csvfile:
     column_names = [description[0] for description in cursor.description]
 
     for i, (avg_row, mode_row, median_row) in enumerate(
-        zip(average_results, mode_results, median_results)
+        zip(mean_results, mode_results, median_results)
     ):
-        level = avg_row[0]  # Fetch the level from average result
-        average = dict(zip(column_names[1:], avg_row[1:]))
-        mode = dict(zip(column_names[1:], mode_row[1:]))
+        level = avg_row[0]  # Fetch the level from averages result
+        mean = dict(zip(column_names[1:], avg_row[1:]))
         median = dict(zip(column_names[1:], median_row[1:]))
+        mode = dict(zip(column_names[1:], mode_row[1:]))
 
         # Insert attack values into the JSON result
-        average["attack_bonus"] = attack_values_avg[i]
-        mode["attack_bonus"] = attack_values_mode[i]
+        mean["attack_bonus"] = attack_values_avg[i]
         median["attack_bonus"] = attack_values_median[i]
+        mode["attack_bonus"] = attack_values_mode[i]
 
         result_dict.append(
-            {"level": level, "average": average, "mode": mode, "median": median}
+            {"level": level, "mean": mean, "median": median, "mode": mode}
         )
 
     # Step 9: Close the database connection
