@@ -244,9 +244,9 @@ with open(csv_file_path, newline="") as csvfile:
                 for inner_key in inner_keys:
                     if inner_key == "hp":
                         if result_dict[i + 1][key][inner_key] is not None:
-                            result_dict[i + 1][key + "_pwl"][inner_key] = (
-                                result_dict[i + 1][key][inner_key] - i
-                            )
+                            result_dict[i + 1][key + "_pwl"][inner_key] = result_dict[
+                                i + 1
+                            ][key][inner_key]
                         else:
                             result_dict[i + 1][key + "_pwl"][inner_key] = None
                     if inner_key != "hp":
