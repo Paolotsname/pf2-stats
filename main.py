@@ -2,6 +2,8 @@ from dataclasses import dataclass, field
 import json
 
 with open("class_data.json", "r", encoding="utf-8") as f:
+    # classes_profs_json has proficiencies in this order:
+    # weapon, spellcasting, armor, fortitude, reflex, will
     classes_profs_json = json.load(f)
 
 with open("enemy_data.json", "r", encoding="utf-8") as f:
@@ -31,7 +33,6 @@ class Sheet:
     proficiencyWithoutLevel: bool = False
 
     def __post_init__(self):
-        # profs are, in order: weapon, spellcasting ,armor ,fortitude, reflex, will
         self.profs = classes_profs_json[self.name][self.level]
         if self.proficiencyWithoutLevel:
             self.levelBonus = 0
