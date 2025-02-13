@@ -158,7 +158,7 @@
             "spell_attack_bonus": 9
         },
         "mean_pwl": {
-            "hp": 19.11,
+            "hp": 20.11,
             "ac": 14.66,
             "fort": 5.05,
             "refl": 6.37,
@@ -178,7 +178,7 @@
             "spell_attack_bonus": null
         },
         "mode_pwl": {
-            "hp": 19,
+            "hp": 20,
             "ac": 15,
             "fort": 5,
             "refl": 8,
@@ -221,7 +221,7 @@
             "spell_attack_bonus": 10
         },
         "mean_pwl": {
-            "hp": 29.42,
+            "hp": 31.42,
             "ac": 14.969999999999999,
             "fort": 5.79,
             "refl": 6.07,
@@ -241,7 +241,7 @@
             "spell_attack_bonus": null
         },
         "mode_pwl": {
-            "hp": 28,
+            "hp": 30,
             "ac": 16,
             "fort": 5,
             "refl": 8,
@@ -284,7 +284,7 @@
             "spell_attack_bonus": 12
         },
         "mean_pwl": {
-            "hp": 43.38,
+            "hp": 46.38,
             "ac": 13.7,
             "fort": 5.3100000000000005,
             "refl": 5.6,
@@ -304,7 +304,7 @@
             "spell_attack_bonus": null
         },
         "mode_pwl": {
-            "hp": 42,
+            "hp": 45,
             "ac": 15,
             "fort": 6,
             "refl": 8,
@@ -347,7 +347,7 @@
             "spell_attack_bonus": 13
         },
         "mean_pwl": {
-            "hp": 57.69,
+            "hp": 61.69,
             "ac": 15.920000000000002,
             "fort": 6.83,
             "refl": 6.57,
@@ -367,7 +367,7 @@
             "spell_attack_bonus": null
         },
         "mode_pwl": {
-            "hp": 56,
+            "hp": 60,
             "ac": 17,
             "fort": 9,
             "refl": 9,
@@ -410,7 +410,7 @@
             "spell_attack_bonus": 14
         },
         "mean_pwl": {
-            "hp": 72.58,
+            "hp": 77.58,
             "ac": 13.600000000000001,
             "fort": 6.15,
             "refl": 5.380000000000001,
@@ -430,7 +430,7 @@
             "spell_attack_bonus": null
         },
         "mode_pwl": {
-            "hp": 70,
+            "hp": 75,
             "ac": 17,
             "fort": 10,
             "refl": 10,
@@ -473,7 +473,7 @@
             "spell_attack_bonus": 16
         },
         "mean_pwl": {
-            "hp": 95.45,
+            "hp": 101.45,
             "ac": 16.11,
             "fort": 7.67,
             "refl": 7.0600000000000005,
@@ -493,7 +493,7 @@
             "spell_attack_bonus": null
         },
         "mode_pwl": {
-            "hp": 89,
+            "hp": 95,
             "ac": 18,
             "fort": 10,
             "refl": 6,
@@ -536,7 +536,7 @@
             "spell_attack_bonus": 17
         },
         "mean_pwl": {
-            "hp": 108.03,
+            "hp": 115.03,
             "ac": 16.53,
             "fort": 7.93,
             "refl": 7.140000000000001,
@@ -556,7 +556,7 @@
             "spell_attack_bonus": null
         },
         "mode_pwl": {
-            "hp": 93,
+            "hp": 100,
             "ac": 18,
             "fort": 10,
             "refl": 10,
@@ -599,7 +599,7 @@
             "spell_attack_bonus": 18
         },
         "mean_pwl": {
-            "hp": 129.14,
+            "hp": 137.14,
             "ac": 17.27,
             "fort": 7.98,
             "refl": 6.699999999999999,
@@ -619,7 +619,7 @@
             "spell_attack_bonus": null
         },
         "mode_pwl": {
-            "hp": 127,
+            "hp": 135,
             "ac": 19,
             "fort": 10,
             "refl": 8,
@@ -662,7 +662,7 @@
             "spell_attack_bonus": 20
         },
         "mean_pwl": {
-            "hp": 151.15,
+            "hp": 160.15,
             "ac": 18.27,
             "fort": 9.64,
             "refl": 8.620000000000001,
@@ -682,7 +682,7 @@
             "spell_attack_bonus": null
         },
         "mode_pwl": {
-            "hp": 146,
+            "hp": 155,
             "ac": 19,
             "fort": 10,
             "refl": 9,
@@ -725,7 +725,7 @@
             "spell_attack_bonus": 21
         },
         "mean_pwl": {
-            "hp": 169.85,
+            "hp": 179.85,
             "ac": 19.16,
             "fort": 9.66,
             "refl": 8.46,
@@ -745,7 +745,7 @@
             "spell_attack_bonus": null
         },
         "mode_pwl": {
-            "hp": 165,
+            "hp": 175,
             "ac": 20,
             "fort": 11,
             "refl": 9,
@@ -788,7 +788,7 @@
             "spell_attack_bonus": 22
         },
         "mean_pwl": {
-            "hp": 186.96,
+            "hp": 197.96,
             "ac": 18.94,
             "fort": 10.829999999999998,
             "refl": 8.870000000000001,
@@ -808,7 +808,7 @@
             "spell_attack_bonus": null
         },
         "mode_pwl": {
-            "hp": 184,
+            "hp": 195,
             "ac": 20,
             "fort": 13,
             "refl": 9,
@@ -851,7 +851,7 @@
             "spell_attack_bonus": 24
         },
         "mean_pwl": {
-            "hp": 207.1,
+            "hp": 219.1,
             "ac": 20.520000000000003,
             "fort": 10.96,
             "refl": 9.16,
@@ -871,7 +871,7 @@
             "spell_attack_bonus": null
         },
         "mode_pwl": {
-            "hp": 203,
+            "hp": 215,
             "ac": 21,
             "fort": 13,
             "refl": 10,
@@ -914,7 +914,7 @@
             "spell_attack_bonus": 25
         },
         "mean_pwl": {
-            "hp": 235.88,
+            "hp": 248.88,
             "ac": 19.42,
             "fort": 11.100000000000001,
             "refl": 8.52,
@@ -934,7 +934,7 @@
             "spell_attack_bonus": null
         },
         "mode_pwl": {
-            "hp": 257,
+            "hp": 270,
             "ac": 21,
             "fort": 13,
             "refl": 10,
@@ -977,7 +977,7 @@
             "spell_attack_bonus": 26
         },
         "mean_pwl": {
-            "hp": 247.63,
+            "hp": 261.63,
             "ac": 21.42,
             "fort": 11.23,
             "refl": 10.719999999999999,
@@ -997,7 +997,7 @@
             "spell_attack_bonus": null
         },
         "mode_pwl": {
-            "hp": 271,
+            "hp": 285,
             "ac": 22,
             "fort": 14,
             "refl": 10,
@@ -1040,7 +1040,7 @@
             "spell_attack_bonus": 30
         },
         "mean_pwl": {
-            "hp": 272.92,
+            "hp": 287.92,
             "ac": 18.64,
             "fort": 9.89,
             "refl": 8.329999999999998,
@@ -1060,7 +1060,7 @@
             "spell_attack_bonus": null
         },
         "mode_pwl": {
-            "hp": 260,
+            "hp": 275,
             "ac": 22,
             "fort": 12,
             "refl": 10,
@@ -1103,7 +1103,7 @@
             "spell_attack_bonus": 29
         },
         "mean_pwl": {
-            "hp": 271.57,
+            "hp": 287.57,
             "ac": 19.79,
             "fort": 10.86,
             "refl": 9.96,
@@ -1123,7 +1123,7 @@
             "spell_attack_bonus": null
         },
         "mode_pwl": {
-            "hp": 284,
+            "hp": 300,
             "ac": 23,
             "fort": 14,
             "refl": 14,
@@ -1166,7 +1166,7 @@
             "spell_attack_bonus": 34
         },
         "mean_pwl": {
-            "hp": 301.91,
+            "hp": 318.91,
             "ac": 22.96,
             "fort": 13.0,
             "refl": 12.09,
@@ -1186,7 +1186,7 @@
             "spell_attack_bonus": null
         },
         "mode_pwl": {
-            "hp": 298,
+            "hp": 315,
             "ac": 23,
             "fort": 15,
             "refl": 12,
@@ -1229,7 +1229,7 @@
             "spell_attack_bonus": 35
         },
         "mean_pwl": {
-            "hp": 326.46,
+            "hp": 344.46,
             "ac": 23.67,
             "fort": 14.170000000000002,
             "refl": 11.129999999999999,
@@ -1249,7 +1249,7 @@
             "spell_attack_bonus": null
         },
         "mode_pwl": {
-            "hp": 342,
+            "hp": 360,
             "ac": 24,
             "fort": 15,
             "refl": 12,
@@ -1292,7 +1292,7 @@
             "spell_attack_bonus": 37
         },
         "mean_pwl": {
-            "hp": 343.25,
+            "hp": 362.25,
             "ac": 21.560000000000002,
             "fort": 12.059999999999999,
             "refl": 10.809999999999999,
@@ -1312,7 +1312,7 @@
             "spell_attack_bonus": null
         },
         "mode_pwl": {
-            "hp": 391,
+            "hp": 410,
             "ac": 24,
             "fort": 16,
             "refl": 13,
@@ -1355,7 +1355,7 @@
             "spell_attack_bonus": 34
         },
         "mean_pwl": {
-            "hp": 371.19,
+            "hp": 391.19,
             "ac": 21.1,
             "fort": 12.049999999999997,
             "refl": 9.190000000000001,
@@ -1375,7 +1375,7 @@
             "spell_attack_bonus": null
         },
         "mode_pwl": {
-            "hp": 355,
+            "hp": 375,
             "ac": 25,
             "fort": 15,
             "refl": 12,
@@ -1418,7 +1418,7 @@
             "spell_attack_bonus": 37
         },
         "mean_pwl": {
-            "hp": 401.5,
+            "hp": 422.5,
             "ac": 25.130000000000003,
             "fort": 16.880000000000003,
             "refl": 13.75,
@@ -1438,7 +1438,7 @@
             "spell_attack_bonus": null
         },
         "mode_pwl": {
-            "hp": 479,
+            "hp": 500,
             "ac": 26,
             "fort": 17,
             "refl": 13,
@@ -1481,7 +1481,7 @@
             "spell_attack_bonus": 41
         },
         "mean_pwl": {
-            "hp": 470.0,
+            "hp": 492.0,
             "ac": 24.799999999999997,
             "fort": 15.0,
             "refl": 15.600000000000001,
@@ -1501,7 +1501,7 @@
             "spell_attack_bonus": null
         },
         "mode_pwl": {
-            "hp": 518,
+            "hp": 540,
             "ac": 26,
             "fort": 17,
             "refl": 14,
@@ -1544,7 +1544,7 @@
             "spell_attack_bonus": 38
         },
         "mean_pwl": {
-            "hp": 454.0,
+            "hp": 477.0,
             "ac": 16.200000000000003,
             "fort": 7.399999999999999,
             "refl": 6.199999999999999,
@@ -1564,7 +1564,7 @@
             "spell_attack_bonus": null
         },
         "mode_pwl": {
-            "hp": 477,
+            "hp": 500,
             "ac": 26,
             "fort": 18,
             "refl": 14,
@@ -1607,7 +1607,7 @@
             "spell_attack_bonus": null
         },
         "mean_pwl": {
-            "hp": 488.5,
+            "hp": 512.5,
             "ac": 27.5,
             "fort": 19.5,
             "refl": 15.5,
@@ -1627,7 +1627,7 @@
             "spell_attack_bonus": null
         },
         "mode_pwl": {
-            "hp": 501,
+            "hp": 525,
             "ac": 28,
             "fort": 20,
             "refl": 16,
@@ -1670,7 +1670,7 @@
             "spell_attack_bonus": 43
         },
         "mean_pwl": {
-            "hp": 525.0,
+            "hp": 550.0,
             "ac": 29.0,
             "fort": 17.0,
             "refl": 15.0,
@@ -1690,7 +1690,7 @@
             "spell_attack_bonus": null
         },
         "mode_pwl": {
-            "hp": 525,
+            "hp": 550,
             "ac": 29,
             "fort": 17,
             "refl": 15,
