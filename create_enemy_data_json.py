@@ -242,6 +242,13 @@ with open(csv_file_path, newline="") as csvfile:
             for i in range(1, 26):
                 result_dict[i + 1][key + "_pwl"] = dict()
                 for inner_key in inner_keys:
+                    if inner_key == "hp":
+                        if result_dict[i + 1][key][inner_key] is not None:
+                            result_dict[i + 1][key + "_pwl"][inner_key] = (
+                                result_dict[i + 1][key][inner_key] - i
+                            )
+                        else:
+                            result_dict[i + 1][key + "_pwl"][inner_key] = None
                     if inner_key != "hp":
                         if result_dict[i + 1][key][inner_key] is not None:
                             result_dict[i + 1][key + "_pwl"][inner_key] = (
