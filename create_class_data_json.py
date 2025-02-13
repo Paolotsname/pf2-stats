@@ -41,7 +41,7 @@ def save_to_file(dict_of_lists, fileName):
 
 
 list_classes = {
-    "animist": {
+    "Animist": {
         "weapon": prof_list(10, 10),
         "spellcasting": prof_list(6, 8, 4, 2),
         "armor": prof_list(10, 10),
@@ -49,7 +49,7 @@ list_classes = {
         "refl": prof_list(10, 10),
         "will": prof_list(0, 12, 8),
     },
-    "alchemist": {
+    "Alchemist": {
         "weapon": prof_list(4, 8, 8),
         "spellcasting": NON_CASTER,
         "armor": prof_list(12, 6, 2),
@@ -57,7 +57,7 @@ list_classes = {
         "refl": prof_list(0, 14, 6),
         "will": prof_list(6, 14),
     },
-    "barbarian": {
+    "Barbarian": {
         "weapon": prof_list(4, 8, 8),
         "spellcasting": NON_CASTER,
         "armor": prof_list(12, 6, 2),
@@ -65,7 +65,7 @@ list_classes = {
         "refl": prof_list(8, 12),
         "will": prof_list(14, 6),
     },
-    "bard": {
+    "Bard": {
         "weapon": prof_list(10, 10),
         "spellcasting": prof_list(6, 8, 4, 2),
         "armor": prof_list(12, 8),
@@ -73,7 +73,7 @@ list_classes = {
         "refl": prof_list(2, 18),
         "will": prof_list(0, 8, 8, 4),
     },
-    "champion": {
+    "Champion": {
         "weapon": prof_list(4, 8, 8),
         "spellcasting": prof_list(8, 8, 4),
         "armor": prof_list(6, 6, 4, 4),
@@ -81,7 +81,7 @@ list_classes = {
         "refl": prof_list(8, 12),
         "will": prof_list(0, 10, 10),
     },
-    "cleric (cloistered)": {
+    "Cleric (cloistered)": {
         "weapon": prof_list(10, 10),
         "spellcasting": prof_list(6, 8, 4, 2),
         "armor": prof_list(12, 8),
@@ -89,7 +89,7 @@ list_classes = {
         "refl": prof_list(10, 10),
         "will": prof_list(0, 8, 12),
     },
-    "cleric (warpriest)": {
+    "Cleric (warpriest)": {
         "weapon": prof_list(6, 12, 2),
         "spellcasting": prof_list(10, 8, 2),
         "armor": prof_list(12, 8),
@@ -97,7 +97,7 @@ list_classes = {
         "refl": prof_list(10, 10),
         "will": prof_list(8, 12),
     },
-    "cleric (battle harbinger)": {
+    "Cleric (battle harbinger)": {
         "weapon": prof_list(4, 8, 8),
         "spellcasting": prof_list(10, 10),
         "armor": prof_list(12, 6, 2),
@@ -105,7 +105,7 @@ list_classes = {
         "refl": prof_list(10, 10),
         "will": prof_list(0, 14, 6),
     },
-    "commander (playtest)": {
+    "Commander (playtest)": {
         "weapon": prof_list(4, 8, 8),
         "spellcasting": NON_CASTER,
         "armor": prof_list(10, 6, 4),
@@ -113,7 +113,7 @@ list_classes = {
         "refl": prof_list(0, 14, 6),
         "will": prof_list(0, 10, 10),
     },
-    "druid": {
+    "Druid": {
         "weapon": prof_list(10, 10),
         "spellcasting": prof_list(6, 8, 4, 2),
         "armor": prof_list(12, 8),
@@ -121,7 +121,7 @@ list_classes = {
         "refl": prof_list(4, 16),
         "will": prof_list(10, 10),
     },
-    "exemplar": {
+    "Exemplar": {
         "weapon": prof_list(4, 8, 8),
         "spellcasting": NON_CASTER,
         "armor": prof_list(10, 8, 2),
@@ -129,7 +129,7 @@ list_classes = {
         "refl": prof_list(8, 12),
         "will": prof_list(0, 6, 6, 8),
     },
-    "fighter": {
+    "Fighter": {
         "weapon": prof_list(0, 4, 8, 8),
         "spellcasting": NON_CASTER,
         "armor": prof_list(10, 6, 4),
@@ -137,7 +137,7 @@ list_classes = {
         "refl": prof_list(0, 14, 6),
         "will": prof_list(2, 18),
     },
-    "guardian (playtest)": {
+    "Guardian (playtest)": {
         "weapon": prof_list(4, 8, 8),
         "spellcasting": NON_CASTER,
         "armor": prof_list(4, 6, 4, 6),
@@ -145,7 +145,7 @@ list_classes = {
         "refl": prof_list(4, 14, 2),
         "will": prof_list(0, 14, 6),
     },
-    "gunslinger": {
+    "Gunslinger": {
         "weapon": prof_list(0, 4, 8, 8),
         "spellcasting": NON_CASTER,
         "armor": prof_list(12, 6, 2),
@@ -153,7 +153,7 @@ list_classes = {
         "refl": prof_list(0, 10, 10),
         "will": prof_list(2, 18),
     },
-    "inventor": {
+    "Inventor": {
         "weapon": prof_list(4, 8, 8),
         "spellcasting": NON_CASTER,
         "armor": prof_list(10, 8, 2),
@@ -161,7 +161,7 @@ list_classes = {
         "refl": prof_list(6, 14),
         "will": prof_list(0, 10, 10),
     },
-    "investigator": {
+    "Investigator": {
         "weapon": prof_list(4, 8, 8),
         "spellcasting": NON_CASTER,
         "armor": prof_list(12, 6, 2),
@@ -169,7 +169,7 @@ list_classes = {
         "refl": prof_list(0, 14, 6),
         "will": prof_list(0, 10, 6, 4),
     },
-    "kineticist": {
+    "Kineticist": {
         "weapon": prof_list(4, 8, 8),
         "spellcasting": NON_CASTER,
         "armor": prof_list(12, 6, 2),
@@ -177,7 +177,7 @@ list_classes = {
         "refl": prof_list(0, 10, 10),
         "will": prof_list(2, 18),
     },
-    "magus": {
+    "Magus": {
         "weapon": prof_list(4, 8, 8),
         "spellcasting": prof_list(8, 8, 4),
         "armor": prof_list(10, 6, 4),
@@ -185,7 +185,7 @@ list_classes = {
         "refl": prof_list(4, 16),
         "will": prof_list(0, 8, 12),
     },
-    "monk": {
+    "Monk": {
         "weapon": prof_list(4, 8, 8),
         "spellcasting": prof_list(8, 8, 4),
         "armor": prof_list(0, 12, 4, 4),
@@ -193,7 +193,7 @@ list_classes = {
         "refl": prof_list(0, 20),
         "will": prof_list(0, 20),
     },
-    "necromancer (playtest)": {
+    "Necromancer (playtest)": {
         "weapon": prof_list(10, 10),
         "spellcasting": prof_list(6, 8, 4, 2),
         "armor": prof_list(12, 8),
@@ -201,7 +201,7 @@ list_classes = {
         "refl": prof_list(4, 16),
         "will": prof_list(2, 18),
     },
-    "oracle": {
+    "Oracle": {
         "weapon": prof_list(10, 10),
         "spellcasting": prof_list(6, 8, 4, 2),
         "armor": prof_list(12, 8),
@@ -209,7 +209,7 @@ list_classes = {
         "refl": prof_list(12, 8),
         "will": prof_list(6, 10, 4),
     },
-    "psychic": {
+    "Psychic": {
         "weapon": prof_list(10, 10),
         "spellcasting": prof_list(6, 8, 4, 2),
         "armor": prof_list(12, 8),
@@ -217,7 +217,7 @@ list_classes = {
         "refl": prof_list(4, 16),
         "will": prof_list(0, 10, 6, 4),
     },
-    "ranger": {
+    "Ranger": {
         "weapon": prof_list(4, 8, 8),
         "spellcasting": NON_CASTER,
         "armor": prof_list(10, 8, 2),
@@ -225,7 +225,7 @@ list_classes = {
         "refl": prof_list(0, 6, 8, 6),
         "will": prof_list(2, 18),
     },
-    "rogue": {
+    "Rogue": {
         "weapon": prof_list(4, 8, 8),
         "spellcasting": NON_CASTER,
         "armor": prof_list(12, 6, 2),
@@ -233,7 +233,7 @@ list_classes = {
         "refl": prof_list(0, 6, 6, 8),
         "will": prof_list(0, 16, 4),
     },
-    "runesmith (playtest)": {
+    "Runesmith (playtest)": {
         "weapon": prof_list(4, 8, 8),
         "spellcasting": NON_CASTER,
         "armor": prof_list(12, 6, 2),
@@ -241,7 +241,7 @@ list_classes = {
         "refl": prof_list(6, 14),
         "will": prof_list(0, 20),
     },
-    "sorcerer": {
+    "Sorcerer": {
         "weapon": prof_list(10, 10),
         "spellcasting": prof_list(6, 8, 4, 2),
         "armor": prof_list(12, 8),
@@ -249,7 +249,7 @@ list_classes = {
         "refl": prof_list(8, 12),
         "will": prof_list(0, 16, 4),
     },
-    "summoner": {
+    "Summoner": {
         "weapon": prof_list(4, 8, 8),
         "spellcasting": prof_list(8, 8, 4),
         "armor": prof_list(12, 8),
@@ -257,7 +257,7 @@ list_classes = {
         "refl": prof_list(8, 12),
         "will": prof_list(0, 14, 6),
     },
-    "swashbuckler": {
+    "Swashbuckler": {
         "weapon": prof_list(4, 8, 8),
         "spellcasting": NON_CASTER,
         "armor": prof_list(12, 6, 2),
@@ -265,7 +265,7 @@ list_classes = {
         "refl": prof_list(0, 6, 6, 9),
         "will": prof_list(0, 16, 4),
     },
-    "thaumaturge": {
+    "Thaumaturge": {
         "weapon": prof_list(4, 8, 8),
         "spellcasting": NON_CASTER,
         "armor": prof_list(10, 8, 2),
@@ -273,7 +273,7 @@ list_classes = {
         "refl": prof_list(2, 18),
         "will": prof_list(0, 6, 6, 8),
     },
-    "witch": {
+    "Witch": {
         "weapon": prof_list(10, 10),
         "spellcasting": prof_list(6, 8, 4, 2),
         "armor": prof_list(12, 8),
@@ -281,7 +281,7 @@ list_classes = {
         "refl": prof_list(8, 12),
         "will": prof_list(0, 16, 4),
     },
-    "wizard": {
+    "Wizard": {
         "weapon": prof_list(10, 10),
         "spellcasting": prof_list(6, 8, 4, 2),
         "armor": prof_list(12, 8),

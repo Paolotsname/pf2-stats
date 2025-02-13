@@ -1,5 +1,5 @@
 {
-    "animist": [
+    "Animist": [
         [
             2,
             2,
@@ -161,7 +161,7 @@
             6
         ]
     ],
-    "alchemist": [
+    "Alchemist": [
         [
             2,
             0,
@@ -323,7 +323,7 @@
             4
         ]
     ],
-    "barbarian": [
+    "Barbarian": [
         [
             2,
             0,
@@ -485,7 +485,7 @@
             4
         ]
     ],
-    "bard": [
+    "Bard": [
         [
             2,
             2,
@@ -647,7 +647,7 @@
             8
         ]
     ],
-    "champion": [
+    "Champion": [
         [
             2,
             2,
@@ -809,7 +809,7 @@
             6
         ]
     ],
-    "cleric (cloistered)": [
+    "Cleric (cloistered)": [
         [
             2,
             2,
@@ -971,7 +971,7 @@
             6
         ]
     ],
-    "cleric (warpriest)": [
+    "Cleric (warpriest)": [
         [
             2,
             2,
@@ -1133,7 +1133,7 @@
             4
         ]
     ],
-    "cleric (battle harbinger)": [
+    "Cleric (battle harbinger)": [
         [
             2,
             2,
@@ -1295,7 +1295,7 @@
             6
         ]
     ],
-    "commander (playtest)": [
+    "Commander (playtest)": [
         [
             2,
             0,
@@ -1457,7 +1457,7 @@
             6
         ]
     ],
-    "druid": [
+    "Druid": [
         [
             2,
             2,
@@ -1619,7 +1619,7 @@
             4
         ]
     ],
-    "exemplar": [
+    "Exemplar": [
         [
             2,
             0,
@@ -1781,7 +1781,7 @@
             8
         ]
     ],
-    "fighter": [
+    "Fighter": [
         [
             4,
             0,
@@ -1943,7 +1943,7 @@
             4
         ]
     ],
-    "guardian (playtest)": [
+    "Guardian (playtest)": [
         [
             2,
             0,
@@ -2105,7 +2105,7 @@
             6
         ]
     ],
-    "gunslinger": [
+    "Gunslinger": [
         [
             4,
             0,
@@ -2267,7 +2267,7 @@
             4
         ]
     ],
-    "inventor": [
+    "Inventor": [
         [
             2,
             0,
@@ -2429,7 +2429,7 @@
             6
         ]
     ],
-    "investigator": [
+    "Investigator": [
         [
             2,
             0,
@@ -2591,7 +2591,7 @@
             8
         ]
     ],
-    "kineticist": [
+    "Kineticist": [
         [
             2,
             0,
@@ -2753,7 +2753,7 @@
             4
         ]
     ],
-    "magus": [
+    "Magus": [
         [
             2,
             2,
@@ -2915,7 +2915,7 @@
             6
         ]
     ],
-    "monk": [
+    "Monk": [
         [
             2,
             2,
@@ -3077,7 +3077,7 @@
             4
         ]
     ],
-    "necromancer (playtest)": [
+    "Necromancer (playtest)": [
         [
             2,
             2,
@@ -3239,7 +3239,7 @@
             4
         ]
     ],
-    "oracle": [
+    "Oracle": [
         [
             2,
             2,
@@ -3401,7 +3401,7 @@
             6
         ]
     ],
-    "psychic": [
+    "Psychic": [
         [
             2,
             2,
@@ -3563,7 +3563,7 @@
             8
         ]
     ],
-    "ranger": [
+    "Ranger": [
         [
             2,
             0,
@@ -3725,7 +3725,7 @@
             4
         ]
     ],
-    "rogue": [
+    "Rogue": [
         [
             2,
             0,
@@ -3887,7 +3887,7 @@
             6
         ]
     ],
-    "runesmith (playtest)": [
+    "Runesmith (playtest)": [
         [
             2,
             0,
@@ -4049,7 +4049,7 @@
             4
         ]
     ],
-    "sorcerer": [
+    "Sorcerer": [
         [
             2,
             2,
@@ -4211,7 +4211,7 @@
             6
         ]
     ],
-    "summoner": [
+    "Summoner": [
         [
             2,
             2,
@@ -4373,7 +4373,7 @@
             6
         ]
     ],
-    "swashbuckler": [
+    "Swashbuckler": [
         [
             2,
             0,
@@ -4535,7 +4535,7 @@
             6
         ]
     ],
-    "thaumaturge": [
+    "Thaumaturge": [
         [
             2,
             0,
@@ -4697,7 +4697,7 @@
             8
         ]
     ],
-    "witch": [
+    "Witch": [
         [
             2,
             2,
@@ -4859,7 +4859,7 @@
             6
         ]
     ],
-    "wizard": [
+    "Wizard": [
         [
             2,
             2,
