@@ -45,7 +45,7 @@ list_classes = {
         "weapon": prof_list(10, 10),
         "spellcasting": prof_list(6, 8, 4, 2),
         "armor": prof_list(10, 10),
-        "fort": prof_list(0, 2, 18),
+        "fort": prof_list(2, 18),
         "refl": prof_list(10, 10),
         "will": prof_list(0, 12, 8),
     },
