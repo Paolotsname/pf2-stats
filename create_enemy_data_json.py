@@ -85,7 +85,7 @@ with open(csv_file_path, newline="") as csvfile:
         ROUND(AVG(hp), 2) as hp,
         ROUND(AVG(ac), 2) as ac,
         ROUND(AVG(fortitude), 2) as fort,
-        ROUND(AVG(reflex), 2) as refl,
+        ROUND(AVG(reflex), 2) as reflex,
         ROUND(AVG(will), 2) as will,
         NULL as attack_bonus,
         ROUND(AVG(CASE WHEN spell_dc != 0 THEN spell_dc END), 2) as spell_dc,
@@ -132,7 +132,7 @@ with open(csv_file_path, newline="") as csvfile:
             GROUP BY reflex
             ORDER BY COUNT(reflex) DESC
             LIMIT 1
-        ) AS refl,
+        ) AS reflex,
         (
             SELECT will
             FROM foo
@@ -172,7 +172,7 @@ with open(csv_file_path, newline="") as csvfile:
         NULL as hp,
         NULL as ac,
         NULL as fort,
-        NULL as refl,
+        NULL as reflex,
         NULL as will,
         NULL as attack_bonus,
         NULL as spell_dc,
