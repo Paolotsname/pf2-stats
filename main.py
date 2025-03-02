@@ -205,7 +205,7 @@ def get_d20_rates(proficiency: int, target: float) -> tuple[float, float, float,
     # we find how many faces on the dice up to 19 are crit hits
     # by subtracting the total of faces (19) by the amout that's
     # not crit hits
-    ## this does mean that we are calculating the range from 1 to 19,
+    ## this does mean that we are calculating the range from 19 to 1,
     ## but since we are clamping it down later it doesn't matter
     sidesThatCritHit = 19 - (minToCrit - 1)
     # sidesThatCritHit can't be less than 0
