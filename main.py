@@ -206,7 +206,8 @@ def get_d20_rates(proficiency: int, target: float) -> tuple[float, float, float,
     # by subtracting the total of faces (19) by the amout that's
     # not crit hits
     ## this does mean that we are calculating the range from 19 to 1,
-    ## but since we are clamping it down later it doesn't matter
+    ## but since we are clamping it down later,
+    ## it will transform into a range from 19 to 2
     sidesThatCritHit = 19 - (minToCrit - 1)
     # sidesThatCritHit can't be less than 0
     # sidesThatCritHit can't more than 18 (number of faces between 2 and 19)
