@@ -196,12 +196,23 @@ def get_d20_rates(proficiency: int, target: float) -> tuple[float, float, float,
         print("enemy has null value")
         return (0, 0, 0, 0)
 
-    # 2-19
+    # [2, 19]
     diceFacesUsed = 0
 
+    # we calculate the minimum number on dice needed for
+    # (proficiency bonus + dice rolled) to be for a crit
     minToCrit = (target + 10) - proficiency
+    # we find how many faces on the dice up to 19 are crit hits
+    # by subtracting the total of faces (19) by the amout that's
+    # not crit hits
+    ## this does mean that we are calculating the range from 1 to 19,
+    ## but since we are clamping it down later it doesn't matter
     sidesThatCritHit = 19 - (minToCrit - 1)
+    # sidesThatCritHit can't be less than 0
+    # sidesThatCritHit can't more than 18 (number of faces between 2 and 19)
     sidesThatCritHit = clamp(0, sidesThatCritHit, 18)
+    # we save how many faces are crit hits, so when we find how many are at least normal hits
+    # we can reduce the amount that are crit hits from it and find how many are normal hits
     diceFacesUsed += sidesThatCritHit
 
     minToHit = (target) - proficiency
@@ -214,6 +225,7 @@ def get_d20_rates(proficiency: int, target: float) -> tuple[float, float, float,
     sidesThatFail = clamp(0, sidesThatFail, 18 - diceFacesUsed)
     diceFacesUsed += sidesThatFail
 
+    # sidesThatCritFail will be the leftover faces
     sidesThatCritFail = 18 - diceFacesUsed
 
     # Nat 20
@@ -234,7 +246,6 @@ def get_d20_rates(proficiency: int, target: float) -> tuple[float, float, float,
         sidesThatFail += 1
 
     # Nat 1
-    # calculated in the opposite direction
     Nat1Value = proficiency + 1
     if Nat1Value > (target - 1) + 10:
         percentageThatHit = Nat1Value - (target - 1) - 9
@@ -282,13 +293,13 @@ def get_strike_rates(prof, target, agile=0) -> tuple[
 
 #
 # c:
-enemy_level = 1
-enemy = enemies_stats_json[enemy_level + 1]["mean"]
-test = Sheet(
-    "Fighter",
-    1,
-    attributes={"str": 4, "dex": 2, "con": 2, "int": 0, "wis": 1, "cha": 0},
-).print_rates(enemy)
-# for i in range(1, 21):
-#    v = 30
-#    print(i + 1 - v, get_d20_rates(i, v), i + 20 - v)
+# enemy_level = 1
+# enemy = enemies_stats_json[enemy_level + 1]["mean"]
+# test = Sheet(
+#     "Fighter",
+#     1,
+#     attributes={"str": 4, "dex": 2, "con": 2, "int": 0, "wis": 1, "cha": 0},
+# ).print_rates(enemy)
+for i in range(1, 21):
+   v = 30
+   print(i + 1 - v, get_d20_rates(i, v), i + 20 - v)
