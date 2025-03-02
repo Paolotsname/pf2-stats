@@ -185,12 +185,8 @@ def clamp(minValue, n, maxValue) -> float:
         return n
 
 
-# a target of 11.2 is calculated by taking
-# the rates for target 11 and target 12.
-# then calculating them together with:
-# 20% of the rates for target 11
-# 80% of the rates for target 12
-# so it would be a total of 59% chance to hit before subtracting critical hits
+# a target of 11.2 will have the same result as the weighted average of target = 11 and target =12,
+# where target 11 has a weight of 80% and 12 has a weight of 20%
 def get_d20_rates(proficiency: int, target: float) -> tuple[float, float, float, float]:
     if proficiency is None or target is None:
         print("enemy has null value")
