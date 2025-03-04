@@ -176,11 +176,11 @@ class Sheet:
             )
 
 
-def clamp(minValue, n, maxValue) -> float:
-    if n < minValue:
-        return minValue
-    elif n > maxValue:
-        return maxValue
+def clamp(min_value, n, max_value) -> float:
+    if n < min_value:
+        return min_value
+    elif n > max_value:
+        return max_value
     else:
         return n
 
@@ -193,85 +193,85 @@ def get_d20_rates(proficiency: int, target: float) -> tuple[float, float, float,
         return (0, 0, 0, 0)
 
     # [2, 19]
-    diceFacesUsed = 0
+    dice_faces_used = 0
 
     # we calculate the minimum number on dice needed for
     # (proficiency bonus + dice rolled) to be for a crit
-    minToCrit = (target + 10) - proficiency
+    min_to_crit = (target + 10) - proficiency
     # we find how many faces on the dice up to 19 are crit hits
     # by subtracting the total of faces (19) by the amout that's
     # not crit hits
     ## this does mean that we are calculating the range from 19 to 1,
     ## but since we are clamping it down later,
     ## it will transform into a range from 19 to 2
-    sidesThatCritHit = 19 - (minToCrit - 1)
-    # sidesThatCritHit can't be less than 0
-    # sidesThatCritHit can't more than 18 (number of faces between 2 and 19)
-    sidesThatCritHit = clamp(0, sidesThatCritHit, 18)
+    sides_that_crit_hit = 19 - (min_to_crit - 1)
+    # sides_that_crit_hit can't be less than 0
+    # sides_that_crit_hit can't more than 18 (number of faces between 2 and 19)
+    sides_that_crit_hit = clamp(0, sides_that_crit_hit, 18)
     # we save how many faces are crit hits, so when we find how many are at least normal hits
     # we can reduce the amount that are crit hits from it and find how many are normal hits
-    diceFacesUsed += sidesThatCritHit
+    dice_faces_used += sides_that_crit_hit
 
-    minToHit = (target) - proficiency
-    sidesThatHit = 19 - (minToHit - 1) - diceFacesUsed
-    sidesThatHit = clamp(0, sidesThatHit, 18 - diceFacesUsed)
-    diceFacesUsed += sidesThatHit
+    min_to_hit = (target) - proficiency
+    sides_that_hit = 19 - (min_to_hit - 1) - dice_faces_used
+    sides_that_hit = clamp(0, sides_that_hit, 18 - dice_faces_used)
+    dice_faces_used += sides_that_hit
 
-    minToFail = (target - 9) - proficiency
-    sidesThatFail = 19 - (minToFail - 1) - diceFacesUsed
-    sidesThatFail = clamp(0, sidesThatFail, 18 - diceFacesUsed)
-    diceFacesUsed += sidesThatFail
+    min_to_fail = (target - 9) - proficiency
+    sides_that_fail = 19 - (min_to_fail - 1) - dice_faces_used
+    sides_that_fail = clamp(0, sides_that_fail, 18 - dice_faces_used)
+    dice_faces_used += sides_that_fail
 
-    # sidesThatCritFail will be the leftover faces
-    sidesThatCritFail = 18 - diceFacesUsed
+    # sides_that_crit_fail will be the leftover faces
+    sides_that_crit_fail = 18 - dice_faces_used
 
     # Nat 20
-    Nat20Value = proficiency + 20
+    nat20_value = proficiency + 20
     # for when Nat 20 will be at least a hit
-    if Nat20Value > target - 1:
-        percentageThatCritHit = Nat20Value - (target - 1)
-        percentageThatCritHit = clamp(0, percentageThatCritHit, 1)
-        sidesThatCritHit += percentageThatCritHit
-        sidesThatHit += 1 - percentageThatCritHit
+    if nat20_value > target - 1:
+        percentage_that_crit_hit = nat20_value - (target - 1)
+        percentage_that_crit_hit = clamp(0, percentage_that_crit_hit, 1)
+        sides_that_crit_hit += percentage_that_crit_hit
+        sides_that_hit += 1 - percentage_that_crit_hit
     # for when Nat 20 will be at least a failure
-    elif Nat20Value > (target - 1) - 9:
-        percentageThatHit = Nat20Value - (target - 1) + 9
-        percentageThatHit = clamp(0, percentageThatHit, 1)
-        sidesThatHit += percentageThatHit
-        sidesThatFail += 1 - percentageThatHit
+    elif nat20_value > (target - 1) - 9:
+        percentage_that_hit = nat20_value - (target - 1) + 9
+        percentage_that_hit = clamp(0, percentage_that_hit, 1)
+        sides_that_hit += percentage_that_hit
+        sides_that_fail += 1 - percentage_that_hit
     else:
-        sidesThatFail += 1
+        sides_that_fail += 1
 
     # Nat 1
-    Nat1Value = proficiency + 1
-    if Nat1Value > (target - 1) + 10:
-        percentageThatHit = Nat1Value - (target - 1) - 9
-        percentageThatHit = clamp(0, percentageThatHit, 1)
-        sidesThatCritHit += percentageThatHit
-        sidesThatHit += 1 - percentageThatHit
+    nat1_value = proficiency + 1
+    if nat1_value > (target - 1) + 10:
+        percentage_that_hit = nat1_value - (target - 1) - 9
+        percentage_that_hit = clamp(0, percentage_that_hit, 1)
+        sides_that_crit_hit += percentage_that_hit
+        sides_that_hit += 1 - percentage_that_hit
     # for when Nat 20 will be at least a failure
-    elif Nat1Value > (target - 1):
-        percentageThatFail = Nat1Value - (target - 1)
-        percentageThatFail = clamp(0, percentageThatFail, 1)
-        sidesThatFail += percentageThatFail
-        sidesThatCritFail += 1 - percentageThatFail
+    elif nat1_value > (target - 1):
+        percentage_that_fail = nat1_value - (target - 1)
+        percentage_that_fail = clamp(0, percentage_that_fail, 1)
+        sides_that_fail += percentage_that_fail
+        sides_that_crit_fail += 1 - percentage_that_fail
     else:
-        sidesThatCritFail += 1
+        sides_that_crit_fail += 1
 
     return (
-        round(sidesThatCritFail * 5, 2),
-        round(sidesThatFail * 5, 2),
-        round(sidesThatHit * 5, 2),
-        round(sidesThatCritHit * 5, 2),
+        round(sides_that_crit_fail * 5, 2),
+        round(sides_that_fail * 5, 2),
+        round(sides_that_hit * 5, 2),
+        round(sides_that_crit_hit * 5, 2),
     )
 
 
-def get_save_rates(prof, target, profLevel) -> tuple[float, float, float, float]:
+def get_save_rates(prof, target, prof_level) -> tuple[float, float, float, float]:
     cf, f, s, cs = get_d20_rates(prof, target)
-    if profLevel >= 1:
+    if prof_level >= 1:
         cs = s + cs
         s = 0
-        if profLevel >= 2:
+        if prof_level >= 2:
             f = cf + f
             cf = 0
     return cf, f, s, cs
@@ -298,5 +298,5 @@ def get_strike_rates(prof, target, agile=0) -> tuple[
 #     attributes={"str": 4, "dex": 2, "con": 2, "int": 0, "wis": 1, "cha": 0},
 # ).print_rates(enemy)
 for i in range(1, 21):
-   v = 30
-   print(i + 1 - v, get_d20_rates(i, v), i + 20 - v)
+    v = 30
+    print(i + 1 - v, get_d20_rates(i, v), i + 20 - v)
