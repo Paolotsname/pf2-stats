@@ -45,7 +45,9 @@ class Sheet:
             + self.levelBonus
         )
         self.spell = (
-            self.profs[1] + self.attributes[self.spellcastingModifier] + self.levelBonus
+            self.profs[1]
+            + self.attributes[self.spellcastingModifier]
+            + (self.levelBonus if self.profs[1] else 0)
         )
         self.ac = (
             self.profs[2]
