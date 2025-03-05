@@ -33,7 +33,7 @@ class Sheet:
     proficiencyWithoutLevel: bool = False
 
     def __post_init__(self):
-        self.profs = classes_profs_json[self.name]["proficiencies"][self.level]
+        self.profs = classes_profs_json[self.name]["proficiencies"][self.level - 1]
         if self.proficiencyWithoutLevel:
             self.levelBonus = 0
         else:
@@ -111,26 +111,26 @@ class Sheet:
             self.weaponRoll, enemy["ac"], self.weapon["agile"]
         )
         spell_that_target_ac_rates = get_d20_rates(self.spell, enemy["ac"])
-        save_against_spell_that_target_fort = get_d20_rates(
-            self.fort, enemy["spell_dc"]
+        save_against_spell_that_target_fort = get_save_rates(
+            self.fort, enemy["spell_dc"], self.saveSpecialization["fort"]
         )
-        save_against_spell_that_target_reflex = get_d20_rates(
-            self.reflex, enemy["spell_dc"]
+        save_against_spell_that_target_reflex = get_save_rates(
+            self.reflex, enemy["spell_dc"], self.saveSpecialization["reflex"]
         )
-        save_against_spell_that_target_will = get_d20_rates(
-            self.fort, enemy["spell_dc"]
+        save_against_spell_that_target_will = get_save_rates(
+            self.will, enemy["spell_dc"], self.saveSpecialization["will"]
         )
 
         striked_rates = get_d20_rates(enemy["attack_bonus"], self.ac)
         spell_striked_rates = get_d20_rates(enemy["spell_attack_bonus"], self.ac)
-        spell_that_target_fort_save_rates = get_save_rates(
-            enemy["fort"], self.spell + 10, self.saveSpecialization["fort"]
+        spell_that_target_fort_save_rates = get_d20_rates(
+            enemy["fort"], self.spell + 10
         )
-        spell_that_target_reflex_save_rates = get_save_rates(
-            enemy["reflex"], self.spell + 10, self.saveSpecialization["reflex"]
+        spell_that_target_reflex_save_rates = get_d20_rates(
+            enemy["reflex"], self.spell + 10
         )
-        spell_that_target_will_save_rates = get_save_rates(
-            enemy["will"], self.spell + 10, self.saveSpecialization["will"]
+        spell_that_target_will_save_rates = get_d20_rates(
+            enemy["will"], self.spell + 10
         )
 
         return {
@@ -161,8 +161,8 @@ class Sheet:
                 f"{key}: "
                 f"chance character crit fails: {value[0]}% "
                 f"chance character fails: {value[1]}% "
-                f"chance character hits: {value[2]}% "
-                f"chance character crit hits: {value[3]}%"
+                f"chance character succeeds: {value[2]}% "
+                f"chance character crit succeeds: {value[3]}%"
                 f"  {sum(value)}"
             )
         for key, value in enemy_rates.items():
@@ -170,8 +170,8 @@ class Sheet:
                 f"{key}: "
                 f"chance enemy crit fails: {value[0]}% "
                 f"chance enemy fails: {value[1]}% "
-                f"chance enemy hits: {value[2]}% "
-                f"chance enemy crit hits: {value[3]}%"
+                f"chance enemy succeeds: {value[2]}% "
+                f"chance enemy crit succeeds: {value[3]}%"
                 f"  {sum(value)}"
             )
 
@@ -290,13 +290,13 @@ def get_strike_rates(prof, target, agile=0) -> tuple[
 
 #
 # c:
-# enemy_level = 1
-# enemy = enemies_stats_json[enemy_level + 1]["mean"]
-# test = Sheet(
-#     "Fighter",
-#     1,
-#     attributes={"str": 4, "dex": 2, "con": 2, "int": 0, "wis": 1, "cha": 0},
-# ).print_rates(enemy)
-for i in range(1, 21):
-    v = 30
-    print(i + 1 - v, get_d20_rates(i, v), i + 20 - v)
+enemy_level = 20
+enemy = enemies_stats_json[enemy_level + 1]["mean"]
+test = Sheet(
+    "Fighter",
+    19,
+    attributes={"str": 4, "dex": 2, "con": 2, "int": 0, "wis": 1, "cha": 0},
+).print_rates(enemy)
+# for i in range(1, 21):
+#     v = 30
+#     print(i + 1 - v, get_d20_rates(i, v), i + 20 - v)
