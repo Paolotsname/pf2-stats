@@ -290,6 +290,25 @@ def get_strike_rates(prof, target, agile=0) -> tuple[
     return weapon_rates0, weapon_rates1, weapon_rates2
 
 
+def advantagize(a):
+    answer = [0, 0, 0, 0]
+    for i, result_1 in enumerate(a):
+        for j, result_2 in enumerate(a):
+            # index 0 will be cf, index 1 f...
+            answer[max(i, j)] += result_1 * result_2
+    answer = [round(a, 5) for a in answer]
+    print(answer)
+
+
+def disadvantagize(a):
+    answer = [0, 0, 0, 0]
+    for i, result_1 in enumerate(a):
+        for j, result_2 in enumerate(a):
+            answer[min(i, j)] += result_1 * result_2
+    answer = [round(a, 5) for a in answer]
+    print(answer)
+
+
 #
 # c:
 enemy_level = 20
