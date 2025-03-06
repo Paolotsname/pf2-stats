@@ -313,7 +313,7 @@ def disadvantagize(a):
 # c:
 enemy_level = 20
 enemy = enemies_stats_json[enemy_level + 1]["mean"]
-test = Sheet(
+Sheet(
     "Fighter",
     19,
     attributes={"str": 4, "dex": 2, "con": 2, "int": 0, "wis": 1, "cha": 0},
