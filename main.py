@@ -261,9 +261,21 @@ def get_d20_rates(proficiency: int, target: float, tage: str = "no") -> tuple[fl
         sides_that_crit_fail += 1
 
     if tage == "advan":
-        sides_that_crit_fail, sides_that_fail, sides_that_hit, sides_that_crit_hit = advantagize([sides_that_crit_fail, sides_that_fail, sides_that_hit, sides_that_crit_hit])
+        sides_that_crit_fail, sides_that_fail, sides_that_hit, sides_that_crit_hit = advantagize([sides_that_crit_fail/20, sides_that_fail/20, sides_that_hit/20, sides_that_crit_hit/20])
+        return (
+            round(sides_that_crit_fail*100, 2),
+            round(sides_that_fail*100, 2),
+            round(sides_that_hit*100, 2),
+            round(sides_that_crit_hit*100, 2),
+        )
     if tage == "disadvan":
-        sides_that_crit_fail, sides_that_fail, sides_that_hit, sides_that_crit_hit = disadvantagize([sides_that_crit_fail, sides_that_fail, sides_that_hit, sides_that_crit_hit])
+        sides_that_crit_fail, sides_that_fail, sides_that_hit, sides_that_crit_hit = disadvantagize([sides_that_crit_fail/20, sides_that_fail/20, sides_that_hit/20, sides_that_crit_hit/20])
+        return (
+            round(sides_that_crit_fail * 100, 2),
+            round(sides_that_fail * 100, 2),
+            round(sides_that_hit * 100, 2),
+            round(sides_that_crit_hit * 100, 2),
+        )
 
     return (
         round(sides_that_crit_fail * 5, 2),
@@ -296,11 +308,13 @@ def get_strike_rates(prof, target, agile=0) -> tuple[
 
 
 def advantagize(a):
+    print(a)
     answer = [0, 0, 0, 0]
     for i, result_1 in enumerate(a):
         for j, result_2 in enumerate(a):
             # index 0 will be cf, index 1 f...
             answer[max(i, j)] += result_1 * result_2
+    print([round(a, 5) for a in answer])
     return [round(a, 5) for a in answer]
 
 
@@ -316,7 +330,7 @@ def disadvantagize(a):
 #spellcastingModifier = "cha"
 #proficiencyWithoutLevel = False
 
-enemy_level = 20
+enemy_level = 10
 enemy = enemies_stats_json[str(enemy_level)]["mean"]
 
 Sheet(
