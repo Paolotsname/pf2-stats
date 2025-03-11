@@ -12,7 +12,7 @@ with open("enemy_data.json", "r", encoding="utf-8") as f:
 
 @dataclass
 class Sheet:
-    name: str
+    class_name: str
     level: int
     attributes: dict = field(
         default_factory=lambda: {
@@ -33,7 +33,7 @@ class Sheet:
     proficiencyWithoutLevel: bool = False
 
     def __post_init__(self):
-        self.profs = classes_profs_json[self.name]["proficiencies"][self.level - 1]
+        self.profs = classes_profs_json[self.class_name]["proficiencies"][self.level - 1]
         if self.proficiencyWithoutLevel:
             self.levelBonus = 0
         else:
@@ -74,7 +74,7 @@ class Sheet:
             + self.levelBonus
         )
 
-        helper = classes_profs_json[self.name]["saveSpecialization"]
+        helper = classes_profs_json[self.class_name]["saveSpecialization"]
         if self.level >= helper["fort"][0]:
             if self.level >= helper["fort"][1]:
                 fort_level = 2
@@ -189,7 +189,7 @@ def clamp(min_value, n, max_value) -> float:
 
 # a target of 11.2 will have the same result as the weighted average of target = 11 and target = 12,
 # where target 11 has a weight of 80% and 12 has a weight of 20%
-def get_d20_rates(proficiency: int, target: float) -> tuple[float, float, float, float]:
+def get_d20_rates(proficiency: int, target: float, tage: str = "no") -> tuple[float, float, float, float]:
     if proficiency is None or target is None:
         print("enemy has null value")
         return (0, 0, 0, 0)
@@ -260,6 +260,11 @@ def get_d20_rates(proficiency: int, target: float) -> tuple[float, float, float,
     else:
         sides_that_crit_fail += 1
 
+    if tage == "advan":
+        sides_that_crit_fail, sides_that_fail, sides_that_hit, sides_that_crit_hit = advantagize([sides_that_crit_fail, sides_that_fail, sides_that_hit, sides_that_crit_hit])
+    if tage == "disadvan":
+        sides_that_crit_fail, sides_that_fail, sides_that_hit, sides_that_crit_hit = disadvantagize([sides_that_crit_fail, sides_that_fail, sides_that_hit, sides_that_crit_hit])
+
     return (
         round(sides_that_crit_fail * 5, 2),
         round(sides_that_fail * 5, 2),
@@ -296,8 +301,7 @@ def advantagize(a):
         for j, result_2 in enumerate(a):
             # index 0 will be cf, index 1 f...
             answer[max(i, j)] += result_1 * result_2
-    answer = [round(a, 5) for a in answer]
-    print(answer)
+    return [round(a, 5) for a in answer]
 
 
 def disadvantagize(a):
@@ -305,19 +309,24 @@ def disadvantagize(a):
     for i, result_1 in enumerate(a):
         for j, result_2 in enumerate(a):
             answer[min(i, j)] += result_1 * result_2
-    answer = [round(a, 5) for a in answer]
-    print(answer)
+    return [round(a, 5) for a in answer]
 
 
-#
-# c:
+#attackModifier = "str"
+#spellcastingModifier = "cha"
+#proficiencyWithoutLevel = False
+
 enemy_level = 20
-enemy = enemies_stats_json[enemy_level + 1]["mean"]
+enemy = enemies_stats_json[str(enemy_level)]["mean"]
+
 Sheet(
-    "Fighter",
-    19,
+    class_name="Fighter",
+    level=10,
     attributes={"str": 4, "dex": 2, "con": 2, "int": 0, "wis": 1, "cha": 0},
-).print_rates(enemy)
+    weapon = {"agile": False, "bonus": 0, "dieSize": 2},
+    armor = {"ACbonus": 3, "SaveBonus": 0, "cap": 0},
+    ).print_rates(enemy)
+
 # for i in range(1, 21):
 #     v = 30
 #     print(i + 1 - v, get_d20_rates(i, v), i + 20 - v)
