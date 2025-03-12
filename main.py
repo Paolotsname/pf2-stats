@@ -1,13 +1,13 @@
 from dataclasses import dataclass, field
 import json
 
-with open("class_data.json", "r", encoding="utf-8") as f:
+with open("class_data.json", "r", encoding="utf-8") as f1:
     # classes_profs_json has proficiencies in this order:
     # weapon, spellcasting, armor, fortitude, reflex, will
-    classes_profs_json = json.load(f)
+    classes_profs_json = json.load(f1)
 
-with open("enemy_data.json", "r", encoding="utf-8") as f:
-    enemies_stats_json = json.load(f)
+with open("enemy_data.json", "r", encoding="utf-8") as f2:
+    enemies_stats_json = json.load(f2)
 
 
 @dataclass
@@ -31,6 +31,7 @@ class Sheet:
     attackModifier: str = "str"
     spellcastingModifier: str = "cha"
     proficiencyWithoutLevel: bool = False
+    vantage: str = "none"
 
     def __post_init__(self):
         self.profs = classes_profs_json[self.class_name]["proficiencies"][
@@ -110,22 +111,27 @@ class Sheet:
         self,
         enemy,
     ):
-
         weapon_map0, weapon_map1, weapon_map2 = get_strike_rates(
-            self.weaponRoll, enemy["ac"], self.weapon["agile"]
+            self.weaponRoll,
+            enemy["ac"],
+            agile=self.weapon["agile"],
+            vantage=self.vantage,
         )
         spell_that_target_ac_rates = get_d20_rates(self.spell, enemy["ac"])
         save_against_spell_that_target_fort = get_save_rates(
-            self.fort, enemy["spell_dc"], self.saveSpecialization["fort"]
+            self.fort, enemy["spell_dc"], self.saveSpecialization["fort"], self.vantage
         )
         save_against_spell_that_target_reflex = get_save_rates(
-            self.reflex, enemy["spell_dc"], self.saveSpecialization["reflex"]
+            self.reflex,
+            enemy["spell_dc"],
+            self.saveSpecialization["reflex"],
+            self.vantage,
         )
         save_against_spell_that_target_will = get_save_rates(
-            self.will, enemy["spell_dc"], self.saveSpecialization["will"]
+            self.will, enemy["spell_dc"], self.saveSpecialization["will"], self.vantage
         )
 
-        striked_rates = get_d20_rates(enemy["attack_bonus"], self.ac)
+        struck_rates = get_d20_rates(enemy["attack_bonus"], self.ac)
         spell_striked_rates = get_d20_rates(enemy["spell_attack_bonus"], self.ac)
         spell_that_target_fort_save_rates = get_d20_rates(
             enemy["fort"], self.spell + 10
@@ -148,8 +154,8 @@ class Sheet:
                 "save_against_spell_that_target_will": save_against_spell_that_target_will,
             },
             "enemy_rolls_rates": {
-                "striked_rates": striked_rates,
-                "spell_striked_rates": spell_striked_rates,
+                "struck_rates": struck_rates,
+                "spell_struck_rates": spell_striked_rates,
                 "spell_that_target_fort_save_rates": spell_that_target_fort_save_rates,
                 "spell_that_target_reflex_save_rates": spell_that_target_reflex_save_rates,
                 "spell_that_target_will_save_rates": spell_that_target_will_save_rates,
@@ -192,11 +198,10 @@ def clamp(min_value, n, max_value) -> float:
 # a target of 11.2 will have the same result as the weighted average of target = 11 and target = 12,
 # where target 11 has a weight of 80% and 12 has a weight of 20%
 def get_d20_rates(
-    proficiency: int, target: float, tage: str = "no"
+    proficiency: int, target: float, vantage: str = "normal"
 ) -> tuple[float, float, float, float]:
     if proficiency is None or target is None:
-        print("enemy has null value")
-        return (0, 0, 0, 0)
+        return 0, 0, 0, 0
 
     # [2, 19]
     dice_faces_used = 0
@@ -205,7 +210,7 @@ def get_d20_rates(
     # (proficiency bonus + dice rolled) to be for a crit
     min_to_crit = (target + 10) - proficiency
     # we find how many faces on the dice up to 19 are crit hits
-    # by subtracting the total of faces (19) by the amout that's
+    # by subtracting the total of faces (19) by the amount that's
     # not crit hits
     ## this does mean that we are calculating the range from 19 to 1,
     ## but since we are clamping it down later,
@@ -218,7 +223,7 @@ def get_d20_rates(
     # we can reduce the amount that are crit hits from it and find how many are normal hits
     dice_faces_used += sides_that_crit_hit
 
-    min_to_hit = (target) - proficiency
+    min_to_hit = target - proficiency
     sides_that_hit = 19 - (min_to_hit - 1) - dice_faces_used
     sides_that_hit = clamp(0, sides_that_hit, 18 - dice_faces_used)
     dice_faces_used += sides_that_hit
@@ -264,7 +269,7 @@ def get_d20_rates(
     else:
         sides_that_crit_fail += 1
 
-    if tage == "advan":
+    if vantage == "advantage":
         sides_that_crit_fail, sides_that_fail, sides_that_hit, sides_that_crit_hit = (
             advantagize(
                 [
@@ -281,7 +286,7 @@ def get_d20_rates(
             round(sides_that_hit * 100, 2),
             round(sides_that_crit_hit * 100, 2),
         )
-    if tage == "disadvan":
+    if vantage == "disadvantage":
         sides_that_crit_fail, sides_that_fail, sides_that_hit, sides_that_crit_hit = (
             disadvantagize(
                 [
@@ -307,8 +312,10 @@ def get_d20_rates(
     )
 
 
-def get_save_rates(prof, target, prof_level) -> tuple[float, float, float, float]:
-    cf, f, s, cs = get_d20_rates(prof, target)
+def get_save_rates(
+    prof: int, target: int, prof_level: int, vantage: str = "normal"
+) -> tuple[float, float, float, float]:
+    cf, f, s, cs = get_d20_rates(prof, target, vantage)
     if prof_level >= 1:
         cs = s + cs
         s = 0
@@ -318,25 +325,23 @@ def get_save_rates(prof, target, prof_level) -> tuple[float, float, float, float
     return cf, f, s, cs
 
 
-def get_strike_rates(prof, target, agile=0) -> tuple[
+def get_strike_rates(prof: int, target: int, vantage: str, agile: int = 0) -> tuple[
     tuple[float, float, float, float],
     tuple[float, float, float, float],
     tuple[float, float, float, float],
 ]:
-    weapon_rates0 = get_d20_rates(prof, target)
-    weapon_rates1 = get_d20_rates(prof - 5 + agile, target)
-    weapon_rates2 = get_d20_rates(prof - 10 + (agile * 2), target)
+    weapon_rates0 = get_d20_rates(prof, target, vantage)
+    weapon_rates1 = get_d20_rates(prof - 5 + agile, target, vantage)
+    weapon_rates2 = get_d20_rates(prof - 10 + (agile * 2), target, vantage)
     return weapon_rates0, weapon_rates1, weapon_rates2
 
 
 def advantagize(a):
-    print(a)
     answer = [0, 0, 0, 0]
     for i, result_1 in enumerate(a):
         for j, result_2 in enumerate(a):
             # index 0 will be cf, index 1 f...
             answer[max(i, j)] += result_1 * result_2
-    print([round(a, 5) for a in answer])
     return [round(a, 5) for a in answer]
 
 
@@ -353,15 +358,16 @@ def disadvantagize(a):
 # proficiencyWithoutLevel = False
 
 enemy_level = 10
-enemy = enemies_stats_json[str(enemy_level)]["mean"]
+enemy_stats = enemies_stats_json[str(enemy_level)]["mean"]
 
 Sheet(
     class_name="Fighter",
     level=10,
     attributes={"str": 4, "dex": 2, "con": 2, "int": 0, "wis": 1, "cha": 0},
-    weapon={"agile": False, "bonus": 0, "dieSize": 2},
+    weapon={"agile": 0, "bonus": 0, "dieSize": 2},
     armor={"ACbonus": 3, "SaveBonus": 0, "cap": 0},
-).print_rates(enemy)
+    vantage="none",
+).print_rates(enemy_stats)
 
 # for i in range(1, 21):
 #     v = 30
