@@ -79,7 +79,7 @@ with open(csv_file_path, newline="") as csvfile:
                 finally:
                     final_json[str(level - 1)][f"{avg}_pwl"][stat.name] = final_json[
                         str(level - 1)
-                    ][avg][stat.name] - (level if level > 0 else 0)
+                    ][avg][stat.name] - ((level - 1) if (level > 0 and stat.name != "hp") else 0)
 
     with open(json_file_path, "w") as jsonfile:
         json.dump(final_json, jsonfile, indent=4)
