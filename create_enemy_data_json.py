@@ -54,8 +54,9 @@ with open(csv_file_path, newline="") as csvfile:
             )
 
     final_json = {}
-    for level in range(27):
-        final_json[str(level - 1)] = {
+    for level in range(-1, 26):
+        index = level + 1
+        final_json[str(level)] = {
             "mean": {},
             "median": {},
             "mode": {},
@@ -70,16 +71,16 @@ with open(csv_file_path, newline="") as csvfile:
         ]:
             for stat in Stats:
                 try:
-                    final_json[str(level - 1)][avg][stat.name] = round(
-                        function(db[level][stat.value]), 3
+                    final_json[str(level)][avg][stat.name] = round(
+                        function(db[index][stat.value]), 3
                     )
                 # no creatures with spell_dc or spell_attack_bonus on level
                 except statistics.StatisticsError:
-                    final_json[str(level - 1)][avg][stat.name] = 0
+                    final_json[str(level)][avg][stat.name] = 0
                 finally:
-                    final_json[str(level - 1)][f"{avg}_pwl"][stat.name] = final_json[
-                        str(level - 1)
-                    ][avg][stat.name] - ((level - 1) if (level > 0 and stat.name != "hp") else 0)
+                    final_json[str(level)][f"{avg}_pwl"][stat.name] = final_json[
+                        str(level)
+                    ][avg][stat.name] - (level if (level > 0 and stat.name != "hp") else 0)
 
     with open(json_file_path, "w") as jsonfile:
         json.dump(final_json, jsonfile, indent=4)
