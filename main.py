@@ -1,5 +1,14 @@
 from dataclasses import dataclass, field
 import json
+from enum import Enum
+
+class Proficiency(Enum):
+    WEAPON_ROLL = 0
+    SPELL = 1
+    AC = 2
+    FORTITUDE = 3
+    REFLEX = 4
+    WILL = 5
 
 with open("class_data.json", "r", encoding="utf-8") as f1:
     # classes_profs_json has proficiencies in this order:
@@ -42,36 +51,36 @@ class Sheet:
         else:
             self.levelBonus = self.level
         self.weaponRoll = (
-            self.profs[0]
+            self.profs[Proficiency.WEAPON_ROLL.value]
             + self.attributes[self.attackModifier]
             + self.weapon["bonus"]
             + self.levelBonus
         )
         self.spell = (
-            self.profs[1]
+            self.profs[Proficiency.SPELL.value]
             + self.attributes[self.spellcastingModifier]
             + (self.levelBonus if self.profs[1] else 0)
         )
         self.ac = (
-            self.profs[2]
+            self.profs[Proficiency.AC.value]
             + self.attributes["dex"]
             + self.armor["ACbonus"]
             + self.levelBonus
         )
         self.fort = (
-            self.profs[3]
+            self.profs[Proficiency.FORTITUDE.value]
             + self.attributes["con"]
             + self.armor["SaveBonus"]
             + self.levelBonus
         )
         self.reflex = (
-            self.profs[4]
+            self.profs[Proficiency.REFLEX.value]
             + self.attributes["dex"]
             + self.armor["SaveBonus"]
             + self.levelBonus
         )
         self.will = (
-            self.profs[5]
+            self.profs[Proficiency.WILL.value]
             + self.attributes["wis"]
             + self.armor["SaveBonus"]
             + self.levelBonus
