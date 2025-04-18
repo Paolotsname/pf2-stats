@@ -232,6 +232,9 @@ def get_d20_rates(
     # we can reduce the amount that are crit hits from it and find how many are normal hits
     dice_faces_used += sides_that_crit_hit
 
+    # then we repeat the logic for hits and fails, subtracting the sides that
+    # already being accounted for for being enough for a better result
+
     min_to_hit = target - proficiency
     sides_that_hit = 19 - (min_to_hit - 1) - dice_faces_used
     sides_that_hit = clamp(0, sides_that_hit, 18 - dice_faces_used)
@@ -245,15 +248,15 @@ def get_d20_rates(
     # sides_that_crit_fail will be the leftover faces
     sides_that_crit_fail = 18 - dice_faces_used
 
-    # Nat 20
+    # Nat 20 logic
     nat20_value = proficiency + 20
-    # for when Nat 20 will be at least a hit
+    # for when Nat 20 would had been at least a hit
     if nat20_value > target - 1:
         percentage_that_crit_hit = nat20_value - (target - 1)
         percentage_that_crit_hit = clamp(0, percentage_that_crit_hit, 1)
         sides_that_crit_hit += percentage_that_crit_hit
         sides_that_hit += 1 - percentage_that_crit_hit
-    # for when Nat 20 will be at least a failure
+    # for when Nat 20 would had been at least a failure
     elif nat20_value > (target - 1) - 9:
         percentage_that_hit = nat20_value - (target - 1) + 9
         percentage_that_hit = clamp(0, percentage_that_hit, 1)
@@ -262,14 +265,14 @@ def get_d20_rates(
     else:
         sides_that_fail += 1
 
-    # Nat 1
+    # Nat 1 logic
     nat1_value = proficiency + 1
     if nat1_value > (target - 1) + 10:
         percentage_that_hit = nat1_value - (target - 1) - 9
         percentage_that_hit = clamp(0, percentage_that_hit, 1)
         sides_that_crit_hit += percentage_that_hit
         sides_that_hit += 1 - percentage_that_hit
-    # for when Nat 20 will be at least a failure
+    # for when Nat 20 would had been at least a failure
     elif nat1_value > (target - 1):
         percentage_that_fail = nat1_value - (target - 1)
         percentage_that_fail = clamp(0, percentage_that_fail, 1)
